@@ -1,0 +1,38 @@
+---
+title: Araru
+description: Seu acervo digital, sob seu controle.
+template: splash
+hero:
+  tagline: Ecossistema open source e self-hosted para livros, quadrinhos, mangás, revistas e documentos.
+  image:
+    file: ../../../../public/brand/araru-banner.png
+    alt: Araru, seu acervo digital sob seu controle
+  actions:
+    - text: Começar
+      link: /pt-br/docs/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Documentação
+      link: /pt-br/docs/
+      icon: open-book
+    - text: GitHub
+      link: https://github.com/araruoss
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Seu acervo. Sua infraestrutura. Suas regras.
+
+O Araru organiza e disponibiliza seu acervo sem entregar arquivos, histórico de leitura ou contas a uma plataforma comercial.
+
+<CardGrid>
+  <Card title="Privacidade por padrão" icon="lock">Banco, storage, credenciais e progresso permanecem sob seu controle.</Card>
+  <Card title="Um servidor, vários clientes" icon="seti:network">Web e futuros clientes Android e Desktop consomem a mesma API.</Card>
+  <Card title="Feito para acervos reais" icon="open-book">PDF, EPUB, MOBI, CBZ, CBR, categorias, metadados, capas, busca e progresso.</Card>
+  <Card title="Código aberto" icon="github">Arquitetura transparente, repositórios independentes e licença AGPL.</Card>
+</CardGrid>
+
+## Comece agora
+
+Use Docker Compose para iniciar PostgreSQL, Redis, Server e Web. [Acesse o guia inicial →](/pt-br/docs/getting-started/)

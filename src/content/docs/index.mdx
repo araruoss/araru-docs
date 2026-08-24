@@ -1,0 +1,46 @@
+---
+title: Araru
+description: Your digital library, under your control.
+template: splash
+hero:
+  tagline: Open-source, self-hosted digital library ecosystem for books, comics, manga, magazines and documents.
+  image:
+    file: ../../../public/brand/araru-banner.png
+    alt: Araru, your digital library under your control
+  actions:
+    - text: Get Started
+      link: /docs/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Documentation
+      link: /docs/
+      icon: open-book
+    - text: GitHub
+      link: https://github.com/araruoss
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Your collection. Your infrastructure. Your rules.
+
+Araru organizes and serves a digital collection without handing control of your files, reading history, or accounts to a commercial platform. Run the Server where you choose and connect official or third-party clients through its API.
+
+<CardGrid>
+  <Card title="Private by design" icon="lock">Your database, storage, credentials, and reading state remain on infrastructure you control.</Card>
+  <Card title="One server, many clients" icon="seti:network">Araru Server is the source of truth. Web, Android, and Desktop clients consume the same API.</Card>
+  <Card title="Built for real collections" icon="open-book">PDF, EPUB, MOBI, CBZ, and CBR readers, hierarchical folders, metadata, covers, search, and progress.</Card>
+  <Card title="Open source" icon="github">Independent repositories, transparent architecture, AGPL licensing, and contribution-friendly documentation.</Card>
+</CardGrid>
+
+## The ecosystem
+
+**Araru Server** owns authentication, catalog, metadata, search, progress, jobs, and content delivery. **Araru Web** is the current official client. Android and Desktop repositories are reserved for future clients and are not advertised as finished products.
+
+## Start in minutes
+
+Use Docker Compose to run PostgreSQL, Redis, Server, and Web, complete the first-time setup, and point Araru at your library. [Read the quick start →](/docs/getting-started/)
+
+## Community
+
+Araru is made in Brazil 🇧🇷 and developed in public. [Explore the repositories](https://github.com/araruoss), [learn how to contribute](/docs/contributing/), or [review the architecture](/docs/architecture/).

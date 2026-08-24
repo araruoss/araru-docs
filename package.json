@@ -5,11 +5,20 @@
   "license": "AGPL-3.0-only",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
-    "check": "node scripts/check-docs.js"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && node scripts/check-docs.js",
+    "search:index": "pagefind --site dist"
   },
-  "devDependencies": { "vitepress": "^1.6.4" },
+  "dependencies": {
+    "@astrojs/starlight": "^0.41.7",
+    "astro": "^7.2.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "pagefind": "^1.4.0",
+    "typescript": "^5.9.3"
+  },
   "engines": { "node": ">=22.5.0" }
 }
