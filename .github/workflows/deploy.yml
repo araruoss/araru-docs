@@ -18,7 +18,7 @@ concurrency:
 env:
   NODE_VERSION: "22"
   SITE_URL: "https://araruoss.github.io"
-  BASE_PATH: "araru-docs"
+  BASE_PATH: "/"
 
 jobs:
   build:
