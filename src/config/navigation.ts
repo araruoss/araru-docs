@@ -45,6 +45,7 @@ export const navigation = [
   tr('Metadata', 'Metadados', 'docs/metadata'),
   tr('Search', 'Busca', 'docs/search'),
   tr('Development', 'Desenvolvimento', 'docs/development'),
+  tr('Semantic versioning', 'Versionamento semântico', 'docs/development/semantic-versioning'),
   { label: 'Contributing', translations: { 'pt-BR': 'Contribuindo' }, collapsed: false, items: [
     tr('Overview', 'Visão geral', 'docs/contributing'),
     tr('Services', 'Serviços', 'docs/contributing/services'),

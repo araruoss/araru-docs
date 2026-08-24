@@ -1,5 +1,7 @@
 # Changelog
 
+Araru Docs follows [Semantic Versioning](https://semver.org/). Release entries are generated from Conventional Commits while preserving the historical notes below.
+
 ## Unreleased
 
 ### Astro documentation site
