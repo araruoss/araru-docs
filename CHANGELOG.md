@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/araruoss/araruoss.github.io/compare/v0.2.0...v0.2.1) (2026-08-24)
+
+
+### Bug Fixes
+
+* astro config ([9013566](https://github.com/araruoss/araruoss.github.io/commit/9013566f2b440b67d74df2f582f1901ec4e3aa22))
+
 ## [0.2.0](https://github.com/araruoss/araru-docs/compare/v0.1.0...v0.2.0) (2026-08-24)
 
 
