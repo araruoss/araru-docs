@@ -11,12 +11,12 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
 
   <section class="github-stats" data-github-stats hidden aria-live="polite">
     <div class="stats-summary">
-      <a href="https://github.com/araruoss?tab=followers" aria-label="Araru OSS followers on GitHub">
+      <a href="https://github.com/araruoss?tab=followers" target="_blank" rel="noopener noreferrer" aria-label="Araru OSS followers on GitHub">
         <span aria-hidden="true">◎</span>
         <strong data-followers>—</strong>
         <span data-followers-label>followers</span>
       </a>
-      <a href="https://github.com/araruoss?tab=repositories" aria-label="Araru OSS repository stars">
+      <a href="https://github.com/araruoss?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Araru OSS repository stars">
         <span aria-hidden="true">★</span>
         <strong data-total-stars>—</strong>
         <span data-stars-label>stars</span>
@@ -25,10 +25,10 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
   </section>
 
   <nav aria-label="Project">
-    <a href="https://github.com/araruoss?tab=repositories">Repositories</a>
+    <a href="https://github.com/araruoss?tab=repositories" target="_blank" rel="noopener noreferrer">Repositories</a>
     <a href={`${import.meta.env.BASE_URL}docs/`}>Documentation</a>
     <a href={`${import.meta.env.BASE_URL}docs/contributing/`}>Contributing</a>
-    <a href="https://github.com/araruoss/araru-docs/blob/main/LICENSE">License</a>
+    <a href="https://github.com/araruoss/araru-docs/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a>
   </nav>
 </div>
 

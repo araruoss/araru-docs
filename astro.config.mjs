@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { unified } from '@astrojs/markdown-remark';
+import githubLinksNewTab from './src/plugins/githubLinksNewTab.mjs';
 
 const base = `/${(process.env.BASE_PATH || '').replace(/^\/+|\/+$/g, '')}`;
 const basePath = base === '/' ? '/' : `${base}/`;
@@ -34,6 +36,8 @@ export default defineConfig({
       components: {
         Header: './src/components/Header.astro',
         Footer: './src/components/Footer.astro',
+        SocialIcons: './src/components/GithubSocial.astro',
+        EditLink: './src/components/EditLink.astro',
       },
       sidebar: [
         { label: 'Getting Started', items: [{ autogenerate: { directory: 'docs/getting-started' } }] },
@@ -59,4 +63,7 @@ export default defineConfig({
       ],
     }),
   ],
+  markdown: {
+    processor: unified({ rehypePlugins: [githubLinksNewTab] }),
+  },
 });

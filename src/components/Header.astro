@@ -2,7 +2,7 @@
 import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
 import Search from '@astrojs/starlight/components/Search.astro';
 import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
-import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+import GithubSocial from './GithubSocial.astro';
 
 const isPortuguese = Astro.locals.starlightRoute.locale === 'pt-br';
 const base = import.meta.env.BASE_URL;
@@ -20,7 +20,7 @@ const docsHref = isPortuguese ? `${base}pt-br/docs/` : `${base}docs/`;
   </div>
 
   <nav class="actions sl-hidden md:sl-flex print:hidden" aria-label="GitHub and language">
-    <div class="github"><SocialIcons /></div>
+    <div class="github"><GithubSocial /></div>
     <LanguageSelect />
   </nav>
 </div>

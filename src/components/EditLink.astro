@@ -1,0 +1,19 @@
+---
+const { editUrl } = Astro.locals.starlightRoute;
+---
+
+{editUrl && (
+  <a href={editUrl} target="_blank" rel="noopener noreferrer" class="sl-flex print:hidden">
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="1.2em" height="1.2em" fill="currentColor">
+      <path d="M19.7 7.3 16.7 4.3a1 1 0 0 0-1.4 0L4 15.6V20h4.4L19.7 8.7a1 1 0 0 0 0-1.4ZM7.6 18H6v-1.6l8.6-8.6 1.6 1.6L7.6 18Z" />
+    </svg>
+    {Astro.locals.t('page.editLink')}
+  </a>
+)}
+
+<style>
+  @layer starlight.core {
+    a { align-items: center; gap: .5rem; color: var(--sl-color-gray-3); text-decoration: none; }
+    a:hover { color: var(--sl-color-white); }
+  }
+</style>
