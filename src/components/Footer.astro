@@ -4,8 +4,30 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
 
 <DefaultFooter />
 <div class="araru-footer" aria-label="Araru project links">
-  <strong>Araru OSS</strong>
-  <span>Made in Brazil 🇧🇷</span>
+  <div class="footer-identity">
+    <strong>Araru OSS</strong>
+    <span>Made in Brazil 🇧🇷</span>
+  </div>
+
+  <section class="github-stats" data-github-stats hidden aria-live="polite">
+    <div class="stats-summary">
+      <a href="https://github.com/araruoss?tab=followers" aria-label="Araru OSS followers on GitHub">
+        <span aria-hidden="true">◎</span>
+        <strong data-followers>—</strong>
+        <span data-followers-label>followers</span>
+      </a>
+      <a href="https://github.com/araruoss?tab=repositories" aria-label="Araru OSS repository stars">
+        <span aria-hidden="true">★</span>
+        <strong data-total-stars>—</strong>
+        <span data-stars-label>stars</span>
+      </a>
+    </div>
+    <details>
+      <summary data-repositories-label>Stars by repository</summary>
+      <div class="repository-stars" data-repository-stars></div>
+    </details>
+  </section>
+
   <nav aria-label="Project">
     <a href="https://github.com/araruoss?tab=repositories">Repositories</a>
     <a href={`${import.meta.env.BASE_URL}docs/`}>Documentation</a>
@@ -14,20 +36,120 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
   </nav>
 </div>
 
+<script>
+  const account = 'araruoss';
+  const cacheKey = 'araru-github-stats-v1';
+  const cacheLifetime = 60 * 60 * 1000;
+  const container = document.querySelector<HTMLElement>('[data-github-stats]');
+
+  const renderStats = (data: { followers: number; repositories: Array<{ name: string; url: string; stars: number }> }) => {
+    if (!container) return;
+    const portuguese = document.documentElement.lang.toLowerCase().startsWith('pt');
+    const totalStars = data.repositories.reduce((total, repository) => total + repository.stars, 0);
+    const formatter = new Intl.NumberFormat(portuguese ? 'pt-BR' : 'en');
+
+    container.querySelector<HTMLElement>('[data-followers]')!.textContent = formatter.format(data.followers);
+    container.querySelector<HTMLElement>('[data-total-stars]')!.textContent = formatter.format(totalStars);
+    container.querySelector<HTMLElement>('[data-followers-label]')!.textContent = portuguese ? 'seguidores' : 'followers';
+    container.querySelector<HTMLElement>('[data-stars-label]')!.textContent = 'stars';
+    container.querySelector<HTMLElement>('[data-repositories-label]')!.textContent = portuguese ? 'Stars por repositório' : 'Stars by repository';
+
+    const list = container.querySelector<HTMLElement>('[data-repository-stars]')!;
+    list.replaceChildren(...data.repositories.map((repository) => {
+      const link = document.createElement('a');
+      const name = document.createElement('span');
+      const stars = document.createElement('strong');
+      link.href = repository.url;
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      name.textContent = repository.name;
+      stars.textContent = `★ ${formatter.format(repository.stars)}`;
+      link.append(name, stars);
+      return link;
+    }));
+    container.hidden = false;
+  };
+
+  const loadStats = async () => {
+    try {
+      const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+      if (cached?.savedAt && Date.now() - cached.savedAt < cacheLifetime) {
+        renderStats(cached.data);
+        return;
+      }
+
+      const headers = { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+      const [accountResponse, repositoriesResponse] = await Promise.all([
+        fetch(`https://api.github.com/users/${account}`, { headers }),
+        fetch(`https://api.github.com/users/${account}/repos?type=public&sort=full_name&per_page=100`, { headers }),
+      ]);
+      if (!accountResponse.ok || !repositoriesResponse.ok) throw new Error('GitHub API unavailable');
+
+      const accountData = await accountResponse.json();
+      const repositoriesData = await repositoriesResponse.json();
+      const data = {
+        followers: Number(accountData.followers || 0),
+        repositories: repositoriesData
+          .filter((repository: { archived?: boolean }) => !repository.archived)
+          .map((repository: { name: string; html_url: string; stargazers_count: number }) => ({
+            name: repository.name,
+            url: repository.html_url,
+            stars: Number(repository.stargazers_count || 0),
+          }))
+          .sort((a: { stars: number; name: string }, b: { stars: number; name: string }) => b.stars - a.stars || a.name.localeCompare(b.name)),
+      };
+      localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data }));
+      renderStats(data);
+    } catch {
+      // The footer remains compact when GitHub is unavailable or rate-limited.
+    }
+  };
+
+  loadStats();
+</script>
+
 <style>
   .araru-footer {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto minmax(18rem, 1fr) auto;
     align-items: center;
-    justify-content: center;
-    gap: .65rem 1.25rem;
+    gap: 1.25rem 2rem;
     margin-top: 2rem;
     padding: 1.5rem 0 2.5rem;
     border-top: 1px solid var(--sl-color-gray-5);
     color: var(--sl-color-gray-2);
     font-size: var(--sl-text-sm);
   }
+  .footer-identity { display: grid; gap: .2rem; white-space: nowrap; }
+  .github-stats { min-width: 0; }
+  .stats-summary { display: flex; justify-content: center; gap: .6rem; }
+  .stats-summary a {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: .65rem;
+    padding: .45rem .7rem;
+    text-decoration: none;
+  }
+  .stats-summary a:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
+  details { margin-top: .75rem; }
+  summary { cursor: pointer; text-align: center; font-size: .75rem; }
+  .repository-stars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: .4rem;
+    margin-top: .7rem;
+  }
+  .repository-stars a { display: flex; justify-content: space-between; gap: .75rem; border-radius: .4rem; padding: .35rem .5rem; text-decoration: none; }
+  .repository-stars a:hover { background: var(--sl-color-gray-6); }
+  .repository-stars span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .repository-stars strong { color: var(--araru-warm); font-variant-numeric: tabular-nums; }
   nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
   a { color: inherit; text-underline-offset: .2em; }
   a:hover { color: var(--sl-color-white); }
+  @media (max-width: 64rem) {
+    .araru-footer { grid-template-columns: 1fr; text-align: center; }
+    .footer-identity { justify-items: center; }
+  }
 </style>
