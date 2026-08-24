@@ -49,15 +49,15 @@ const docsLabel = isPortuguese ? 'Documentação' : 'Docs';
     }
     .docs-link {
       flex: none;
-      border-inline-start: 1px solid var(--sl-color-gray-5);
-      padding: .35rem 0 .35rem .9rem;
+      padding: .25rem;
       color: var(--sl-color-gray-2);
       font-size: .82rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: .01em;
       text-decoration: none;
+      text-underline-offset: .25em;
     }
-    .docs-link:hover { color: var(--sl-color-white); }
+    .docs-link:hover { color: var(--sl-color-white); text-decoration: underline; }
     .search-wrapper { justify-content: center; min-width: 0; }
     .right-group, .social-icons { align-items: center; gap: 1rem; }
     .social-icons::after {
@@ -73,7 +73,7 @@ const docsLabel = isPortuguese ? 'Documentação' : 'Docs';
     }
     @media (max-width: 30rem) {
       .title-wrapper { gap: .45rem; }
-      .docs-link { padding-inline-start: .55rem; font-size: .75rem; }
+      .docs-link { font-size: .75rem; }
     }
   }
 </style>
