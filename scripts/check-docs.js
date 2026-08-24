@@ -27,10 +27,20 @@ for (const file of markdown) {
     const href = match[1].trim().replace(/^<|>$/g, '');
     if (!href || /^(https?:|mailto:|#)/.test(href)) continue;
     const clean = decodeURIComponent(href.split('#')[0]);
-    const resolved = clean.startsWith('/')
-      ? path.resolve('src/content/docs', clean.slice(1))
-      : path.resolve(path.dirname(file), clean);
-    const candidates = [resolved, `${resolved}.md`, `${resolved}.mdx`, path.join(resolved, 'index.md'), path.join(resolved, 'index.mdx')];
+    const contentFile = file.startsWith(`src${path.sep}content${path.sep}docs${path.sep}`);
+    const bases = clean.startsWith('/')
+      ? [path.resolve('src/content/docs', clean.slice(1))]
+      : [
+          path.resolve(path.dirname(file), clean),
+          ...(contentFile ? [path.resolve(file.replace(/\.mdx?$/, ''), clean)] : []),
+        ];
+    const candidates = bases.flatMap((resolved) => [
+      resolved,
+      `${resolved}.md`,
+      `${resolved}.mdx`,
+      path.join(resolved, 'index.md'),
+      path.join(resolved, 'index.mdx'),
+    ]);
     if (!candidates.some((candidate) => fs.existsSync(candidate))) failures.push(`${file}: link inexistente ${href}`);
   }
 }

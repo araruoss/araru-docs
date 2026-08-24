@@ -7,8 +7,8 @@ Araru is developed across independent repositories. Contributions may improve th
 
 ## Choose a contribution path
 
-- [Contributing to services](contributing/services/) covers Server, Web, runtime, API, database, cache, readers, tests, and operational changes.
-- [Contributing to documentation](contributing/documentation/) covers Astro/Starlight, writing, translations, navigation, links, and local validation.
+- [Contributing to services](services/) covers Server, Web, runtime, API, database, cache, readers, tests, and operational changes.
+- [Contributing to documentation](documentation/) covers Astro/Starlight, writing, translations, navigation, links, and local validation.
 
 ## Shared workflow
 
