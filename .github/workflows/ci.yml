@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
@@ -38,8 +37,11 @@ jobs:
       - name: Security audit
         run: npm audit --omit=dev --audit-level=high
 
-      - name: Run validation
-        run: npm run check:all
+      - name: Run validation checks
+        run: npm run check
 
       - name: Build documentation
         run: npm run build
+
+      - name: Validate built routes
+        run: npm run check:routes

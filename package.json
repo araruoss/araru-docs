@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run search:index",
     "preview": "astro preview",
     "check": "astro check && npm run check:content && npm run check:links && npm run check:translations",
     "check:content": "node scripts/check-content.mjs && node scripts/test-content-checks.mjs",
