@@ -106,6 +106,7 @@ export default defineConfig({
         {
           label: 'Contributing',
           translations: { 'pt-BR': 'Contribuindo' },
+          collapsed: false,
           items: [
             { label: 'Overview', translations: { 'pt-BR': 'Visão geral' }, slug: 'docs/contributing' },
             { label: 'Services', translations: { 'pt-BR': 'Serviços' }, slug: 'docs/contributing/services' },
