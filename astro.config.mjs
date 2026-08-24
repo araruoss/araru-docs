@@ -26,7 +26,10 @@ export default defineConfig({
       social: [{ icon: 'github', label: 'Araru repositories', href: 'https://github.com/araruoss?tab=repositories' }],
       editLink: { baseUrl: 'https://github.com/araruoss/araru-docs/edit/main/' },
       customCss: ['./src/styles/araru.css'],
-      components: { Footer: './src/components/Footer.astro' },
+      components: {
+        Header: './src/components/Header.astro',
+        Footer: './src/components/Footer.astro',
+      },
       sidebar: [
         { label: 'Getting Started', items: [{ autogenerate: { directory: 'docs/getting-started' } }] },
         { label: 'Concepts', items: [{ autogenerate: { directory: 'docs/concepts' } }] },

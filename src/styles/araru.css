@@ -31,7 +31,7 @@
 body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
 
 /* Header */
-header.header {
+.header.araru-header {
   border-bottom: 1px solid color-mix(in srgb, var(--sl-color-accent) 18%, transparent);
   background: color-mix(in srgb, var(--sl-color-black) 88%, transparent);
   box-shadow: 0 12px 40px rgba(0, 0, 0, .12);

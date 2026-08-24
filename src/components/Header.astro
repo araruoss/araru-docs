@@ -1,0 +1,79 @@
+---
+import config from 'virtual:starlight/user-config';
+import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
+import Search from '@astrojs/starlight/components/Search.astro';
+import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
+import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+
+const shouldRenderSearch =
+  config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+const isPortuguese = /^\/pt-(?:br|BR)(?:\/|$)/.test(Astro.url.pathname);
+const docsHref = isPortuguese ? '/pt-br/docs/' : '/docs/';
+const docsLabel = isPortuguese ? 'Documentação' : 'Docs';
+---
+
+<div class="header araru-header">
+  <div class="title-wrapper sl-flex">
+    <SiteTitle />
+    <a class="docs-link" href={docsHref}>{docsLabel}</a>
+  </div>
+  <div class="search-wrapper sl-flex print:hidden">
+    {shouldRenderSearch && <Search />}
+  </div>
+  <div class="sl-hidden md:sl-flex print:hidden right-group">
+    <div class="sl-flex social-icons">
+      <SocialIcons />
+    </div>
+    <ThemeSelect />
+    <LanguageSelect />
+  </div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sl-nav-gap);
+      height: 100%;
+    }
+    .title-wrapper {
+      align-items: center;
+      gap: .75rem;
+      min-width: 0;
+      margin: -.25rem;
+      padding: .25rem;
+      overflow: clip;
+    }
+    .docs-link {
+      flex: none;
+      border-inline-start: 1px solid var(--sl-color-gray-5);
+      padding: .35rem 0 .35rem .9rem;
+      color: var(--sl-color-gray-2);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .01em;
+      text-decoration: none;
+    }
+    .docs-link:hover { color: var(--sl-color-white); }
+    .search-wrapper { justify-content: center; min-width: 0; }
+    .right-group, .social-icons { align-items: center; gap: 1rem; }
+    .social-icons::after {
+      content: '';
+      height: 2rem;
+      border-inline-end: 1px solid var(--sl-color-gray-5);
+    }
+
+    @media (min-width: 50rem) {
+      .header { grid-template-columns: minmax(12rem, 1fr) minmax(18rem, 32rem) minmax(12rem, 1fr); display: grid; }
+      .search-wrapper, .search-wrapper :global(site-search) { width: 100%; }
+      .right-group { justify-self: end; }
+    }
+    @media (max-width: 30rem) {
+      .title-wrapper { gap: .45rem; }
+      .docs-link { padding-inline-start: .55rem; font-size: .75rem; }
+    }
+  }
+</style>
