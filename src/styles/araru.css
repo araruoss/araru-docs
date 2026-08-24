@@ -42,7 +42,8 @@ header.header {
   font-weight: 750;
   letter-spacing: -.025em;
 }
-.site-title img { width: auto; max-width: 7rem; height: 2rem; object-fit: contain; }
+.site-title img { width: auto; max-width: 9rem; height: 2.75rem; object-fit: contain; }
+.site-title > span { display: none; }
 .social-icons a { border-radius: .65rem; }
 .social-icons a:hover { background: var(--sl-color-accent-low); color: var(--sl-color-accent-high); }
 
@@ -125,6 +126,7 @@ body:has(.araru-home-hero) .sl-markdown-content > h2 { margin-top: clamp(4rem, 8
   .araru-banner { order: -1; }
 }
 @media (max-width: 30rem) {
+  .site-title img { max-width: 7.5rem; height: 2.3rem; }
   .araru-home-copy h1 { font-size: 2.75rem; }
   .araru-actions { align-items: stretch; flex-direction: column; }
   .araru-actions > * { width: 100%; }
