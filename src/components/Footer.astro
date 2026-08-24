@@ -110,46 +110,92 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
 
 <style>
   .araru-footer {
-    display: grid;
-    grid-template-columns: auto minmax(18rem, 1fr) auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1.25rem 2rem;
+    gap: 1.35rem;
     margin-top: 2rem;
-    padding: 1.5rem 0 2.5rem;
+    padding: 2.5rem 1rem 3rem;
     border-top: 1px solid var(--sl-color-gray-5);
     color: var(--sl-color-gray-2);
     font-size: var(--sl-text-sm);
+    text-align: center;
   }
-  .footer-identity { display: grid; gap: .2rem; white-space: nowrap; }
-  .github-stats { min-width: 0; }
-  .stats-summary { display: flex; justify-content: center; gap: .6rem; }
+  .footer-identity { display: grid; justify-items: center; gap: .25rem; }
+  .footer-identity strong { color: var(--sl-color-white); font-size: 1rem; letter-spacing: -.01em; }
+  .footer-identity span { font-size: .75rem; letter-spacing: .04em; }
+  .github-stats { width: min(100%, 58rem); }
+  .stats-summary { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
   .stats-summary a {
     display: inline-flex;
     align-items: center;
-    gap: .35rem;
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: .65rem;
-    padding: .45rem .7rem;
+    gap: .45rem;
+    min-width: 9rem;
+    justify-content: center;
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent) 22%, var(--sl-color-gray-5));
+    border-radius: .9rem;
+    padding: .75rem 1rem;
+    color: var(--sl-color-gray-2);
+    background: linear-gradient(145deg, color-mix(in srgb, var(--sl-color-gray-6) 74%, transparent), transparent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035);
     text-decoration: none;
+    transition: border-color .2s ease, background .2s ease, transform .2s ease;
   }
-  .stats-summary a:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
-  details { margin-top: .75rem; }
-  summary { cursor: pointer; text-align: center; font-size: .75rem; }
+  .stats-summary a > span:first-child { color: var(--sl-color-accent-high); font-size: 1rem; }
+  .stats-summary a strong { color: var(--sl-color-white); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+  .stats-summary a:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); transform: translateY(-2px); }
+  details { margin-top: 1rem; }
+  summary {
+    width: fit-content;
+    margin-inline: auto;
+    border-radius: .6rem;
+    padding: .45rem .7rem;
+    cursor: pointer;
+    color: var(--sl-color-gray-2);
+    font-size: .75rem;
+    font-weight: 600;
+    list-style-position: inside;
+  }
+  summary:hover { color: var(--sl-color-white); background: var(--sl-color-gray-6); }
   .repository-stars {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: .4rem;
-    margin-top: .7rem;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: .55rem;
+    margin-top: .85rem;
+    padding: .85rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 46%, transparent);
   }
-  .repository-stars a { display: flex; justify-content: space-between; gap: .75rem; border-radius: .4rem; padding: .35rem .5rem; text-decoration: none; }
-  .repository-stars a:hover { background: var(--sl-color-gray-6); }
+  .repository-stars a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    border: 1px solid transparent;
+    border-radius: .65rem;
+    padding: .55rem .7rem;
+    color: var(--sl-color-gray-2);
+    background: color-mix(in srgb, var(--sl-color-black) 55%, transparent);
+    text-decoration: none;
+  }
+  .repository-stars a:hover { border-color: var(--sl-color-gray-4); color: var(--sl-color-white); background: var(--sl-color-gray-6); }
   .repository-stars span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .repository-stars strong { color: var(--araru-warm); font-variant-numeric: tabular-nums; }
-  nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+    padding-top: .2rem;
+  }
+  nav a { border-radius: .5rem; padding: .4rem .6rem; text-decoration: none; }
+  nav a:hover { background: var(--sl-color-gray-6); }
   a { color: inherit; text-underline-offset: .2em; }
   a:hover { color: var(--sl-color-white); }
-  @media (max-width: 64rem) {
-    .araru-footer { grid-template-columns: 1fr; text-align: center; }
-    .footer-identity { justify-items: center; }
+  @media (max-width: 32rem) {
+    .araru-footer { padding-inline: 0; }
+    .stats-summary a { min-width: 8rem; }
+    .repository-stars { grid-template-columns: 1fr; }
   }
 </style>
