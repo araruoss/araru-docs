@@ -103,7 +103,15 @@ export default defineConfig({
         { label: 'Metadata', translations: { 'pt-BR': 'Metadados' }, slug: 'docs/metadata' },
         { label: 'Search', translations: { 'pt-BR': 'Busca' }, slug: 'docs/search' },
         { label: 'Development', translations: { 'pt-BR': 'Desenvolvimento' }, slug: 'docs/development' },
-        { label: 'Contributing', translations: { 'pt-BR': 'Contribuindo' }, slug: 'docs/contributing' },
+        {
+          label: 'Contributing',
+          translations: { 'pt-BR': 'Contribuindo' },
+          items: [
+            { label: 'Overview', translations: { 'pt-BR': 'Visão geral' }, slug: 'docs/contributing' },
+            { label: 'Services', translations: { 'pt-BR': 'Serviços' }, slug: 'docs/contributing/services' },
+            { label: 'Documentation', translations: { 'pt-BR': 'Documentação' }, slug: 'docs/contributing/documentation' },
+          ],
+        },
         { label: 'Releases', translations: { 'pt-BR': 'Versões' }, slug: 'docs/releases' },
         { label: 'Project context', translations: { 'pt-BR': 'Contexto do projeto' }, slug: 'docs/project-context' },
       ],

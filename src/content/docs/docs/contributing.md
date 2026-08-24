@@ -1,8 +1,36 @@
 ---
 title: Contributing
-description: Issues, pull requests, testing, translations, and security.
+description: Choose how to contribute to Araru and follow the shared project workflow.
 ---
 
-Use a focused `feature/*` or `fix/*` branch, explain behavior and risk in the pull request, and add tests proportional to the change. Keep commits reviewable and avoid mixing generated data, personal libraries, secrets, or unrelated refactors.
+Araru is developed across independent repositories. Contributions may improve the Server and Web services, documentation, translations, tests, infrastructure, accessibility, or project design.
 
-Documentation and translations are code-reviewed. Keep matching slugs across locales and never present planned behavior as stable. Report vulnerabilities privately according to each repository's `SECURITY.md`, not through a public issue.
+## Choose a contribution path
+
+- [Contributing to services](contributing/services/) covers Server, Web, runtime, API, database, cache, readers, tests, and operational changes.
+- [Contributing to documentation](contributing/documentation/) covers Astro/Starlight, writing, translations, navigation, links, and local validation.
+
+## Shared workflow
+
+1. Read the repository `README.md`, `CONTRIBUTING.md`, and `SECURITY.md` before changing code.
+2. Search existing issues and discussions to avoid duplicate work.
+3. Open an issue or discussion before large, architectural, breaking, or security-sensitive changes.
+4. Fork or clone only the repository being changed and create a focused `feature/*`, `fix/*`, or `docs/*` branch.
+5. Keep the change small, preserve public contracts, and add validation proportional to its risk.
+6. Run the repository checks locally and update documentation when behavior changes.
+7. Open a pull request describing the problem, solution, validation, risks, compatibility, and screenshots when relevant.
+
+## Contribution rules
+
+- Use clear commits that contain one logical change.
+- Do not commit personal libraries, copyrighted books, generated databases, caches, `.env` files, tokens, passwords, or private URLs.
+- Do not describe planned capabilities as released.
+- Preserve opaque IDs, API routes, migration history, filesystem category behavior, and HTTP Range contracts unless an approved change explicitly replaces them.
+- Add an ADR for decisions that materially alter architecture, persistence, security, or repository boundaries.
+- Treat accessibility, responsive behavior, internationalization, and backward compatibility as acceptance criteria.
+
+## Conduct and security
+
+Be respectful and keep technical discussion focused on the work. Report vulnerabilities privately using the instructions in the affected repository's `SECURITY.md`; never disclose an exploitable issue in a public ticket.
+
+By contributing, you agree that your changes are distributed under the repository license, currently `AGPL-3.0-only` unless that repository states otherwise.
