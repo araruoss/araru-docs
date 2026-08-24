@@ -33,8 +33,7 @@ body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
 /* Header */
 .header.araru-header {
   border-bottom: 1px solid color-mix(in srgb, var(--sl-color-accent) 18%, transparent);
-  background: color-mix(in srgb, var(--sl-color-black) 96%, var(--sl-color-gray-6));
-  box-shadow: 0 4px 18px rgba(0, 0, 0, .08);
+  background: var(--sl-color-black);
 }
 .site-title {
   gap: .8rem;
@@ -60,8 +59,6 @@ body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
   border-color: var(--sl-color-accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--sl-color-accent) 24%, transparent);
 }
-.araru-header .header-actions :is(a, label) { border-radius: .5rem; }
-.araru-header .header-actions :is(a, label):hover { background: var(--sl-color-gray-6); }
 .araru-header .header-actions :is(a, select) { min-height: 2.75rem; }
 @media (max-width: 49.99rem) {
   .araru-header .header-search button[data-open-modal] { min-width: 2.75rem; min-height: 2.75rem; justify-content: center; }
