@@ -27,4 +27,4 @@ O Araru cataloga arquivos, deriva a navegação das pastas, enriquece metadados 
 - **Profile**: contexto local que isola progresso e preferências; não é uma conta autenticada.
 - **Derived File**: capa ou outro recurso regenerável.
 
-Detalhes estão no [glossário](../llm/glossary.md) e no [modelo de domínio](../llm/domain-model.md).
+Detalhes estão no [glossário](../../llm/glossary/) e no [modelo de domínio](../../llm/domain-model/).

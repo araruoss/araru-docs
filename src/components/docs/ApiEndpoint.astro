@@ -1,0 +1,10 @@
+---
+interface Props { method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'; path: string; auth?: string; summary?: string }
+const { method, path, auth, summary } = Astro.props;
+---
+<section class="api-endpoint">
+  <header><span class:list={['api-method', `api-method--${method.toLowerCase()}`]}>{method}</span><code>{path}</code></header>
+  {summary && <p>{summary}</p>}
+  {auth && <small>Auth: {auth}</small>}
+  <div><slot /></div>
+</section>

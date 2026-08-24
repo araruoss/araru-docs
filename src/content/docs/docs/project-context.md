@@ -19,4 +19,6 @@ PostgreSQL is authoritative. Category hierarchy comes from `categoryPath`/filesy
 
 ## Planned, not current
 
-Android, Desktop, R2, audiobooks, and plugin ecosystems must not be described as released. See the detailed [LLM context](llm/README/), [constraints](llm/constraints/), and [roadmap](roadmap/README/).
+Android, Desktop, R2, audiobooks, and plugin ecosystems must not be described as released. See the detailed [LLM context](../llm/readme/), [constraints](../llm/constraints/), and [roadmap](../roadmap/readme/).
+
+The maintained snapshot is available in [Current project state](./current-state/).

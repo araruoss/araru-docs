@@ -1,0 +1,66 @@
+---
+title: Writing documentation
+description: Use the reusable Araru documentation components consistently and accessibly.
+order: 4
+section: contributing
+status: stable
+---
+
+import Callout from '../../../../components/docs/Callout.astro';
+import StatusBadge from '../../../../components/docs/StatusBadge.astro';
+import RepoCard from '../../../../components/docs/RepoCard.astro';
+import StepList from '../../../../components/docs/StepList.astro';
+import ArchitectureDiagram from '../../../../components/docs/ArchitectureDiagram.astro';
+import ApiEndpoint from '../../../../components/docs/ApiEndpoint.astro';
+import Command from '../../../../components/docs/Command.astro';
+import FileTree from '../../../../components/docs/FileTree.astro';
+
+Use Markdown for ordinary prose, lists, tables, and code. Use components only when they add semantics or prevent repeated complex markup.
+
+## Callout and status
+
+`Callout` accepts `note`, `tip`, `warning`, or `danger`. `StatusBadge` accepts `stable`, `experimental`, `planned`, or `deprecated`.
+
+<Callout type="warning" title="Durable state">
+  PostgreSQL is the source of truth. Redis must contain only reconstructible or ephemeral data.
+</Callout>
+
+<p><StatusBadge status="stable" /> <StatusBadge status="experimental" /> <StatusBadge status="planned" /> <StatusBadge status="deprecated" /></p>
+
+## Repository card
+
+<RepoCard name="Araru Server" description="Core API and durable application state." github="araruoss/araru-server" status="Stable foundation" />
+
+## Steps
+
+<StepList>
+  <section><h3>Choose the owner</h3><p>Change the repository that owns the behavior.</p></section>
+  <section><h3>Validate locally</h3><p>Run checks and the production build.</p></section>
+</StepList>
+
+## Diagram
+
+<ArchitectureDiagram title="Araru service boundary" code={`flowchart LR
+  Web --> Server
+  Android -. planned .-> Server
+  Desktop -. planned .-> Server
+  Server --> PostgreSQL
+  Server --> Redis`} />
+
+`ArchitectureDiagram` uses Mermaid source, keeping evolving diagrams reviewable. Keep diagrams small, label planned edges, and provide a meaningful title.
+
+## API endpoint
+
+<ApiEndpoint method="GET" path="/api/health" auth="Public" summary="Returns the service health state." />
+
+Endpoint components summarize behavior; OpenAPI remains the authoritative contract.
+
+## Commands and file trees
+
+<Command label="Validate all documentation" command="npm run check:all" />
+
+<FileTree label="Locale pair">{`src/content/docs/
+├── docs/example.md
+└── pt-br/docs/example.md`}</FileTree>
+
+Keep command values copy-safe and never include real secrets or personal paths. File trees should show only the structure needed to explain the task.

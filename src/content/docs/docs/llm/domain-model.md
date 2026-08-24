@@ -31,4 +31,4 @@ erDiagram
 - Metadata Candidate: estrutura de runtime/persistência de campos com origem/confiança, não tabela canônica isolada.
 - BackupHistory/IntegrityReport/ReaderMetric/FeatureFlag: suporte operacional/produto.
 
-Consulte [PostgreSQL e Redis](../backend/postgresql-and-redis.md) para tabelas reais.
+Consulte [PostgreSQL e Redis](../../backend/postgresql-and-redis/) para tabelas reais.

@@ -15,4 +15,4 @@ Araru Server is the Node.js/Express backend. It owns authentication, users, prof
 - Local storage and optional Google Drive provide files.
 - Range requests allow readers to fetch large content incrementally.
 
-See [configuration](backend/configuration/), [PostgreSQL and Redis](backend/postgresql-and-redis/), and the [API](api/).
+See [configuration](../backend/configuration/), [PostgreSQL and Redis](../backend/postgresql-and-redis/), and the [API](../api/).

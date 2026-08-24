@@ -1,0 +1,13 @@
+---
+interface Props { name: string; description: string; github: string; status?: string }
+const { name, description, github, status } = Astro.props;
+const href = github.startsWith('http') ? github : `https://github.com/${github}`;
+---
+<article class="repo-card">
+  <div>
+    <h3>{name}</h3>
+    {status && <span>{status}</span>}
+  </div>
+  <p>{description}</p>
+  <a href={href} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+</article>

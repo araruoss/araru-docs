@@ -50,4 +50,4 @@ O frontend não deve acessar filesystem, bancos, paths físicos ou conter secret
 - Redis mantém caches compartilhados e nunca substitui o PostgreSQL;
 - caches são auxiliares e regeneráveis.
 
-Consulte [limitações](../roadmap/current-limitations.md) antes de propor escala horizontal ou multiusuário.
+Consulte [limitações](../../roadmap/current-limitations/) antes de propor escala horizontal ou multiusuário.

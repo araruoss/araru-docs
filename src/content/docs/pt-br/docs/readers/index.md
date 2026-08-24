@@ -16,4 +16,4 @@ status: stable
 | CBZ | imagens ZIP indexadas |
 | CBR | imagens RAR indexadas |
 
-Todos os mecanismos compartilham contratos de navegação, progresso, limpeza, limite de memória, layout responsivo e telemetria. Arquivos grandes devem ser transmitidos ou obtidos em intervalos, em vez de carregados por completo. Consulte [formatos](formats/) e [desempenho e progresso](performance-and-progress/).
+Todos os mecanismos compartilham contratos de navegação, progresso, limpeza, limite de memória, layout responsivo e telemetria. Arquivos grandes devem ser transmitidos ou obtidos em intervalos, em vez de carregados por completo. Consulte [formatos](./formats/) e [desempenho e progresso](./performance-and-progress/).

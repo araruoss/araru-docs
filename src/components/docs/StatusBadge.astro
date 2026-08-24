@@ -1,0 +1,13 @@
+---
+const labels = {
+  stable: { en: 'Stable', pt: 'Estável' },
+  experimental: { en: 'Experimental', pt: 'Experimental' },
+  planned: { en: 'Planned', pt: 'Planejado' },
+  deprecated: { en: 'Deprecated', pt: 'Descontinuado' },
+} as const;
+type Status = keyof typeof labels;
+interface Props { status: Status; label?: string }
+const { status, label } = Astro.props;
+const language = Astro.currentLocale?.toLowerCase().startsWith('pt') ? 'pt' : 'en';
+---
+<span class:list={['status-badge', `status-badge--${status}`]}>{label || labels[status][language]}</span>

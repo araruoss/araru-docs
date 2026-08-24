@@ -27,4 +27,4 @@ PDF/EPUB local aceitam `Range` quando servidos como arquivo. Respostas podem inc
 
 Status relevantes: 400 validação, 401 acesso, 403 origem/operação, 404 recurso, 409 conflito, 413 payload, 416 Range, 422 conteúdo, 429 limite e 500 falha interna.
 
-Consulte o [inventário](endpoints.md). OpenAPI é apenas uma melhoria futura.
+Consulte o [inventário](../endpoints/). OpenAPI é apenas uma melhoria futura.

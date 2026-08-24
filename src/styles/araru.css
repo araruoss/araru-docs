@@ -71,3 +71,53 @@ body:has(.araru-home-hero) .sl-markdown-content > h2 { margin-top: clamp(4rem, 8
   .araru-banner > span { right: .65rem; bottom: .65rem; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+/* Reusable documentation primitives. */
+.doc-callout,
+.repo-card,
+.api-endpoint,
+.architecture-diagram,
+.doc-command,
+.file-tree {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--sl-color-gray-6) 45%, transparent);
+}
+
+.doc-callout { padding: 1rem 1.1rem; border-inline-start: 0.3rem solid var(--sl-color-accent); }
+.doc-callout--tip { border-inline-start-color: #22c55e; }
+.doc-callout--warning { border-inline-start-color: #eab308; }
+.doc-callout--danger { border-inline-start-color: #ef4444; }
+.doc-callout > strong { display: block; margin-block-end: 0.35rem; }
+.doc-callout :last-child { margin-block-end: 0; }
+
+.status-badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 0.15rem 0.55rem; font-size: 0.75rem; font-weight: 700; }
+.status-badge--stable { color: #86efac; background: #14532d; }
+.status-badge--experimental { color: #fde68a; background: #713f12; }
+.status-badge--planned { color: #bae6fd; background: #0c4a6e; }
+.status-badge--deprecated { color: #fecaca; background: #7f1d1d; }
+
+.repo-card { padding: 1.1rem; }
+.repo-card > div { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.repo-card h3, .repo-card p { margin-block: 0 0.55rem; }
+.repo-card a { font-weight: 700; }
+
+.step-list { counter-reset: doc-step; }
+.step-list > * { position: relative; padding-inline-start: 2.75rem; }
+.step-list > *::before { counter-increment: doc-step; content: counter(doc-step); position: absolute; inset-inline-start: 0; display: grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; color: var(--sl-color-black); background: var(--sl-color-accent-high); font-weight: 800; }
+
+.architecture-diagram { margin-inline: 0; padding: 1rem; overflow-x: auto; }
+.architecture-diagram .mermaid { display: grid; min-width: min(32rem, 100%); place-items: center; background: transparent; }
+.architecture-diagram figcaption { text-align: center; color: var(--sl-color-gray-2); font-size: 0.85rem; }
+
+.api-endpoint { padding: 1rem; }
+.api-endpoint header { display: flex; align-items: center; gap: 0.75rem; overflow-x: auto; }
+.api-method { border-radius: 0.3rem; padding: 0.15rem 0.45rem; color: white; font-size: 0.75rem; font-weight: 800; }
+.api-method--get { background: #047857; } .api-method--post { background: #1d4ed8; }
+.api-method--put, .api-method--patch { background: #a16207; } .api-method--delete { background: #b91c1c; }
+
+.doc-command, .file-tree { margin-inline: 0; overflow: hidden; }
+.doc-command figcaption, .file-tree figcaption { padding: 0.55rem 0.85rem; border-block-end: 1px solid var(--sl-color-gray-5); font-size: 0.8rem; font-weight: 700; }
+.doc-command pre, .file-tree pre { margin: 0; border: 0; border-radius: 0; overflow-x: auto; }
+
+.sl-markdown-content table { display: block; max-width: 100%; overflow-x: auto; }
+@media (max-width: 40rem) { .repo-card > div { align-items: flex-start; flex-direction: column; gap: 0.25rem; } }

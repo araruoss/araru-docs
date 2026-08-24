@@ -18,4 +18,4 @@ O frontend usa capabilities em `readers/core.js` e um shell comum para loading, 
 
 O reader mantém somente página atual e vizinhas quando possível, revoga Object URLs e executa cleanup no fechamento. Progresso é formato-agnóstico: posição/página, total, percentual, conclusão e timestamp.
 
-Detalhes: [readers](../readers/overview.md).
+Detalhes: [readers](../../readers/overview/).

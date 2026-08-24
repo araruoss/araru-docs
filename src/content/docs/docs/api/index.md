@@ -10,4 +10,4 @@ Araru Server exposes JSON endpoints under `/api` and binary/range responses for 
 
 The source contract lives in [`araru-server/api/openapi.yaml`](https://github.com/araruoss/araru-server/blob/main/api/openapi.yaml). This site links to that source instead of maintaining a second divergent schema.
 
-Current endpoint notes are available in [Endpoints](endpoints/). Pagination and API versioning are not yet universal contracts; clients must not invent them.
+Current endpoint notes are available in [Endpoints](./endpoints/). Pagination and API versioning are not yet universal contracts; clients must not invent them.

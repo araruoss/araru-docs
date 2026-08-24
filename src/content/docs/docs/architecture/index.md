@@ -17,4 +17,4 @@ Clients → Express API → domain services → PostgreSQL
                            └────────────→ optional providers
 ```
 
-PostgreSQL is authoritative. Redis failure may reduce performance but must not redefine durable state. Storage paths and credentials never cross the API boundary. See the confirmed [decision records](../adr/README/).
+PostgreSQL is authoritative. Redis failure may reduce performance but must not redefine durable state. Storage paths and credentials never cross the API boundary. See the confirmed [decision records](../adr/readme/).

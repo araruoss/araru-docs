@@ -109,3 +109,10 @@ Revise também as páginas renderizadas manualmente:
 - Nenhum segredo, caminho pessoal, saída gerada do build ou conteúdo protegido foi enviado.
 
 Pequenas melhorias, como correções ortográficas, são bem-vindas. Para uma grande mudança na arquitetura da informação, abra primeiro uma issue e descreva as rotas, redirecionamentos, idiomas e plano de migração afetados.
+
+## Guias detalhados
+
+- [Escrevendo documentação](../writing-docs/) documenta os componentes MDX reutilizáveis.
+- [Adicionando documentação](../adding-documentation/) apresenta o fluxo completo de uma página.
+- [Traduções](../translations/) explica a política de idiomas e os checks automatizados.
+- [Arquitetura editorial](../docs-architecture/) registra os limites editoriais e técnicos.

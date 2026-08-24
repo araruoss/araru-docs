@@ -20,4 +20,4 @@ npm test
 npm run build
 ```
 
-See [UI architecture](frontend/overview/) and [reader/PWA](frontend/reader-and-pwa/).
+See [UI architecture](../frontend/overview/) and [reader/PWA](../frontend/reader-and-pwa/).

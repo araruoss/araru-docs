@@ -1,0 +1,8 @@
+---
+interface Props { label?: string }
+const { label } = Astro.props;
+---
+<figure class="file-tree">
+  {label && <figcaption>{label}</figcaption>}
+  <pre><code><slot /></code></pre>
+</figure>

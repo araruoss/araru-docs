@@ -17,4 +17,4 @@ Clientes → API Express → serviços de domínio → PostgreSQL
                            └────────────→ optional providers
 ```
 
-O PostgreSQL é a fonte de verdade. Uma falha no Redis pode reduzir o desempenho, mas não deve redefinir o estado persistente. Caminhos de armazenamento e credenciais nunca atravessam a fronteira da API. Consulte os [registros de decisão](../adr/README/) confirmados.
+O PostgreSQL é a fonte de verdade. Uma falha no Redis pode reduzir o desempenho, mas não deve redefinir o estado persistente. Caminhos de armazenamento e credenciais nunca atravessam a fronteira da API. Consulte os [registros de decisão](../adr/readme/) confirmados.

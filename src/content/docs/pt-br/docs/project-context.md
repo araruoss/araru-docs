@@ -19,4 +19,6 @@ O PostgreSQL é a fonte de verdade. A hierarquia de categorias vem de `categoryP
 
 ## Planejado, ainda não disponível
 
-Android, Desktop, R2, audiolivros e ecossistemas de plugins não devem ser descritos como lançados. Consulte o [contexto para LLMs](llm/README/), as [restrições](llm/constraints/) e o [roadmap](roadmap/README/) detalhados.
+Android, Desktop, R2, audiolivros e ecossistemas de plugins não devem ser descritos como lançados. Consulte o [contexto para LLMs](../llm/readme/), as [restrições](../llm/constraints/) e o [roadmap](../roadmap/readme/) detalhados.
+
+O retrato mantido do ecossistema está em [Estado atual do projeto](./current-state/).

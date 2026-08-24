@@ -16,4 +16,4 @@ Work é obra canônica; Library File é arquivo físico. Categoria é `categoryP
 
 Administração é um domínio explícito: frontend modular em `features/admin`, APIs reutilizadas e autorização server-side por `requireAdmin`. Nunca confunda `users` (autenticação) com `profiles` (contexto de consumo), nem persista configuração administrativa exclusivamente no Redis. Consulte `docs/architecture/admin-panel.md` antes de alterar setup, header, roles, profiles ou settings.
 
-Detalhes: [arquitetura](../architecture/overview.md), [data flow](../architecture/data-flow.md), [ADRs](../adr/README.md).
+Detalhes: [arquitetura](../../architecture/overview/), [data flow](../../architecture/data-flow/), [ADRs](../../adr/readme/).

@@ -8,54 +8,54 @@ status: stable
 
 Fonte de verdade técnica e arquitetural do projeto. O código é a autoridade final; estes documentos descrevem o estado verificado em agosto de 2026 e separam explicitamente implementação atual de direções futuras.
 
-Identidade e uso da marca: [Araru](brand/README.md).
+Identidade e uso da marca: [Araru](../brand/readme/).
 
 ## Começar
 
-- [Visão geral](getting-started/overview.md)
-- [Desenvolvimento local](getting-started/development.md)
-- [Variáveis de ambiente](getting-started/environment.md)
-- [Estrutura do projeto](getting-started/project-structure.md)
+- [Visão geral](../getting-started/overview/)
+- [Desenvolvimento local](../getting-started/development/)
+- [Variáveis de ambiente](../getting-started/environment/)
+- [Estrutura do projeto](../getting-started/project-structure/)
 
 ## Arquitetura atual
 
-- [Sistema e boundaries](architecture/overview.md)
-- [Fluxos de dados](architecture/data-flow.md)
-- [Storage](architecture/storage-architecture.md)
-- [Readers](architecture/reader-architecture.md)
-- [Jobs e caches](architecture/jobs-and-cache.md)
-- [Administração, usuários e perfis](architecture/admin-panel.md)
-- [Decisões arquiteturais](architecture/decisions.md)
+- [Sistema e boundaries](../architecture/overview/)
+- [Fluxos de dados](../architecture/data-flow/)
+- [Storage](../architecture/storage-architecture/)
+- [Readers](../architecture/reader-architecture/)
+- [Jobs e caches](../architecture/jobs-and-cache/)
+- [Administração, usuários e perfis](../architecture/admin-panel/)
+- [Decisões arquiteturais](../architecture/decisions/)
 
 ## Implementação
 
-- [Frontend](frontend/overview.md): [rotas e estado](frontend/routing-and-state.md), [biblioteca](frontend/library-ui.md), [reader e PWA](frontend/reader-and-pwa.md)
-- [Backend](backend/overview.md): [configuração](backend/configuration.md), [PostgreSQL e Redis](backend/postgresql-and-redis.md), [catálogo e metadados](backend/catalog-and-metadata.md), [operação e segurança](backend/operations-and-security.md)
-- [API](api/overview.md): [inventário de endpoints](api/endpoints.md)
-- [Readers](readers/overview.md): [formatos](readers/formats.md), [performance e progresso](readers/performance-and-progress.md)
-- [Infraestrutura](infrastructure/docker-and-production.md)
+- [Frontend](../frontend/overview/): [rotas e estado](../frontend/routing-and-state/), [biblioteca](../frontend/library-ui/), [reader e PWA](../frontend/reader-and-pwa/)
+- [Backend](../backend/overview/): [configuração](../backend/configuration/), [PostgreSQL e Redis](../backend/postgresql-and-redis/), [catálogo e metadados](../backend/catalog-and-metadata/), [operação e segurança](../backend/operations-and-security/)
+- [API](../api/overview/): [inventário de endpoints](../api/endpoints/)
+- [Readers](../readers/overview/): [formatos](../readers/formats/), [performance e progresso](../readers/performance-and-progress/)
+- [Infraestrutura](../infrastructure/docker-and-production/)
 
 ## Qualidade e operação
 
-- [Estratégia de testes](testing/overview.md)
-- [Matriz de cobertura](testing/test-matrix.md)
-- [Runbook](operations/runbook.md)
-- [Troubleshooting](operations/troubleshooting.md)
-- [Convenções](development/conventions.md)
-- [Guias de mudança](development/change-guides.md)
-- [Definition of Done](development/definition-of-done.md)
+- [Estratégia de testes](../testing/overview/)
+- [Matriz de cobertura](../testing/test-matrix/)
+- [Runbook](../operations/runbook/)
+- [Troubleshooting](../operations/troubleshooting/)
+- [Convenções](../development/conventions/)
+- [Guias de mudança](../development/change-guides/)
+- [Definition of Done](../development/definition-of-done/)
 
 ## Evolução
 
-- [ADRs](adr/README.md)
-- [Limitações atuais](roadmap/current-limitations.md)
-- [Evolução do backend](roadmap/backend-evolution.md)
-- [Escalabilidade](roadmap/scalability.md)
-- [Clientes futuros](roadmap/clients.md)
+- [ADRs](../adr/readme/)
+- [Limitações atuais](../roadmap/current-limitations/)
+- [Evolução do backend](../roadmap/backend-evolution/)
+- [Escalabilidade](../roadmap/scalability/)
+- [Clientes futuros](../roadmap/clients/)
 
 ## Contexto para agentes
 
-Agentes de código devem começar em [docs/llm/README.md](llm/README.md). Esse conjunto resume arquitetura, domínio, invariantes, testes e protocolo de alteração sem misturar roadmap com implementação.
+Agentes de código devem começar em [docs/llm/README.md](../llm/readme/). Esse conjunto resume arquitetura, domínio, invariantes, testes e protocolo de alteração sem misturar roadmap com implementação.
 
 ## Arquitetura resumida
 

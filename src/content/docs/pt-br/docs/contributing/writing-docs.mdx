@@ -1,0 +1,66 @@
+---
+title: Escrevendo documentação
+description: Use os componentes reutilizáveis da documentação Araru com consistência e acessibilidade.
+order: 4
+section: contributing
+status: stable
+---
+
+import Callout from '../../../../../components/docs/Callout.astro';
+import StatusBadge from '../../../../../components/docs/StatusBadge.astro';
+import RepoCard from '../../../../../components/docs/RepoCard.astro';
+import StepList from '../../../../../components/docs/StepList.astro';
+import ArchitectureDiagram from '../../../../../components/docs/ArchitectureDiagram.astro';
+import ApiEndpoint from '../../../../../components/docs/ApiEndpoint.astro';
+import Command from '../../../../../components/docs/Command.astro';
+import FileTree from '../../../../../components/docs/FileTree.astro';
+
+Use Markdown para textos comuns, listas, tabelas e código. Use componentes somente quando adicionarem semântica ou evitarem marcação complexa repetida.
+
+## Avisos e status
+
+`Callout` aceita `note`, `tip`, `warning` ou `danger`. `StatusBadge` aceita `stable`, `experimental`, `planned` ou `deprecated`.
+
+<Callout type="warning" title="Estado persistente">
+  O PostgreSQL é a fonte de verdade. O Redis deve conter somente dados reconstruíveis ou efêmeros.
+</Callout>
+
+<p><StatusBadge status="stable" /> <StatusBadge status="experimental" /> <StatusBadge status="planned" /> <StatusBadge status="deprecated" /></p>
+
+## Card de repositório
+
+<RepoCard name="Araru Server" description="API central e estado persistente da aplicação." github="araruoss/araru-server" status="Fundação estável" />
+
+## Etapas
+
+<StepList>
+  <section><h3>Escolha o responsável</h3><p>Altere o repositório que controla o comportamento.</p></section>
+  <section><h3>Valide localmente</h3><p>Execute os checks e o build de produção.</p></section>
+</StepList>
+
+## Diagrama
+
+<ArchitectureDiagram title="Limites dos serviços Araru" code={`flowchart LR
+  Web --> Server
+  Android -. planejado .-> Server
+  Desktop -. planejado .-> Server
+  Server --> PostgreSQL
+  Server --> Redis`} />
+
+`ArchitectureDiagram` usa Mermaid, mantendo diagramas em evolução revisáveis. Faça diagramas pequenos, identifique conexões planejadas e forneça um título significativo.
+
+## Endpoint da API
+
+<ApiEndpoint method="GET" path="/api/health" auth="Público" summary="Retorna o estado de saúde do serviço." />
+
+O componente resume o comportamento; o OpenAPI continua sendo o contrato autoritativo.
+
+## Comandos e árvores de arquivos
+
+<Command label="Validar toda a documentação" command="npm run check:all" />
+
+<FileTree label="Par de idiomas">{`src/content/docs/
+├── docs/exemplo.md
+└── pt-br/docs/exemplo.md`}</FileTree>
+
+Mantenha comandos seguros para copiar e nunca inclua segredos reais ou caminhos pessoais. Árvores devem mostrar somente a estrutura necessária.

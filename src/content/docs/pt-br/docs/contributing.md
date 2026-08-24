@@ -10,8 +10,8 @@ O Araru é desenvolvido em repositórios independentes. As contribuições podem
 
 ## Escolha uma forma de contribuir
 
-- [Contribuindo com os serviços](services/) aborda Server, Web, runtime, API, banco de dados, cache, leitores, testes e mudanças operacionais.
-- [Contribuindo com a documentação](documentation/) aborda Astro/Starlight, escrita, traduções, navegação, links e validação local.
+- [Contribuindo com os serviços](./services/) aborda Server, Web, runtime, API, banco de dados, cache, leitores, testes e mudanças operacionais.
+- [Contribuindo com a documentação](./documentation/) aborda Astro/Starlight, escrita, traduções, navegação, links e validação local.
 
 ## Fluxo compartilhado
 

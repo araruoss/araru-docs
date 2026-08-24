@@ -21,17 +21,17 @@ O nome se inspira de forma sutil nas araras e na biodiversidade brasileira, espe
 
 ## Índice
 
-- [Identidade](identity.md)
-- [Posicionamento](positioning.md)
-- [Voz e tom](voice-and-tone.md)
-- [Linguagem visual](visual-language.md)
-- [Cores](colors.md)
-- [Tipografia](typography.md)
-- [Logo](logo-guidelines.md)
-- [Mascote](mascot.md)
-- [Nomenclatura](naming.md)
-- [Textos de produto](product-copy.md)
-- [Acessibilidade](accessibility.md)
-- [Migração do rebranding](rebranding-migration.md)
+- [Identidade](../identity/)
+- [Posicionamento](../positioning/)
+- [Voz e tom](../voice-and-tone/)
+- [Linguagem visual](../visual-language/)
+- [Cores](../colors/)
+- [Tipografia](../typography/)
+- [Logo](../logo-guidelines/)
+- [Mascote](../mascot/)
+- [Nomenclatura](../naming/)
+- [Textos de produto](../product-copy/)
+- [Acessibilidade](../accessibility/)
+- [Migração do rebranding](../rebranding-migration/)
 
 Logo, mascote e tagline oficiais: **TBD / TO BE DEFINED**.

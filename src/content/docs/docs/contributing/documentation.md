@@ -109,3 +109,10 @@ Also review the rendered pages manually for:
 - No secret, personal path, generated build output, or copyrighted content was committed.
 
 Small improvements such as typo fixes are welcome. For a major information-architecture change, open an issue first and describe the affected routes, redirects, locales, and migration plan.
+
+## Detailed guides
+
+- [Writing documentation](../writing-docs/) documents reusable MDX components.
+- [Adding documentation](../adding-documentation/) provides the complete page workflow.
+- [Translations](../translations/) explains locale policy and automated checks.
+- [Docs architecture](../docs-architecture/) records editorial and technical boundaries.

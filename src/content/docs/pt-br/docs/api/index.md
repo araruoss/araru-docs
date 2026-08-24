@@ -10,4 +10,4 @@ O Araru Server expõe endpoints JSON sob `/api` e respostas binárias ou parciai
 
 O contrato original está em [`araru-server/api/openapi.yaml`](https://github.com/araruoss/araru-server/blob/main/api/openapi.yaml). Este site aponta para essa fonte em vez de manter um segundo schema divergente.
 
-As observações atuais estão disponíveis em [Endpoints](endpoints/). Paginação e versionamento da API ainda não são contratos universais; os clientes não devem inventá-los.
+As observações atuais estão disponíveis em [Endpoints](./endpoints/). Paginação e versionamento da API ainda não são contratos universais; os clientes não devem inventá-los.

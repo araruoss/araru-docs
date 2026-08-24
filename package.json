@@ -8,12 +8,19 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check && node scripts/check-docs.js",
+    "check": "astro check && npm run check:content && npm run check:links && npm run check:translations",
+    "check:content": "node scripts/check-content.mjs && node scripts/test-content-checks.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "check:translations": "node scripts/check-translations.mjs",
+    "check:routes": "node scripts/check-built-links.mjs",
+    "check:all": "npm run check && npm run build && npm run check:routes",
+    "docs:new": "node scripts/new-doc.mjs",
     "search:index": "pagefind --site dist"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.41.7",
-    "astro": "^7.2.4"
+    "astro": "^7.2.4",
+    "mermaid": "^11.17.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

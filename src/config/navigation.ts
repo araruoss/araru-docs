@@ -48,7 +48,14 @@ export const navigation = [
     tr('Overview', 'Visão geral', 'docs/contributing'),
     tr('Services', 'Serviços', 'docs/contributing/services'),
     tr('Documentation', 'Documentação', 'docs/contributing/documentation'),
+    tr('Writing documentation', 'Escrevendo documentação', 'docs/contributing/writing-docs'),
+    tr('Adding documentation', 'Adicionando documentação', 'docs/contributing/adding-documentation'),
+    tr('Translations', 'Traduções', 'docs/contributing/translations'),
+    tr('Docs architecture', 'Arquitetura editorial', 'docs/contributing/docs-architecture'),
   ] },
   tr('Releases', 'Versões', 'docs/releases'),
-  tr('Project context', 'Contexto do projeto', 'docs/project-context'),
+  { label: 'Project context', translations: { 'pt-BR': 'Contexto do projeto' }, items: [
+    tr('Overview', 'Visão geral', 'docs/project-context'),
+    tr('Current state', 'Estado atual', 'docs/project-context/current-state'),
+  ] },
 ] as const;
