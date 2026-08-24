@@ -6,7 +6,7 @@ section: development
 status: stable
 ---
 
-Araru Server, Web, Docs e clientes futuros seguem [Versionamento Semântico](https://semver.org/) de forma independente. Um Server `2.3.0` não exige que Web ou Docs usem `2.3.0`; a compatibilidade é expressa pelos contratos documentados da API, não por números iguais.
+Araru Server, Web, Docs, Android e Desktop começam em `0.1.0` e seguem [Versionamento Semântico](https://semver.org/) de forma independente. Números iniciais iguais não acoplam seus ciclos; a compatibilidade é expressa pelos contratos documentados da API.
 
 ## Significado da versão
 
@@ -46,10 +46,10 @@ Não execute `npm version`, não edite manualmente o manifesto do Release Please
 
 ## Versões de containers
 
-Implantações de produção devem fixar imagens exatas, como `ghcr.io/araruoss/araru-server:2.4.1` e `ghcr.io/araruoss/araru-web:2.7.0`. Os aliases mutáveis `latest`, major e minor são canais convenientes de descoberta, não travas reproduzíveis de implantação.
+Implantações de produção devem fixar imagens exatas, como `ghcr.io/araruoss/araru-server:0.1.0` e `ghcr.io/araruoss/araru-web:0.1.0`. Os aliases mutáveis `latest`, major e minor são canais convenientes de descoberta, não travas reproduzíveis de implantação.
 
 As versões do Server e do Web são configuradas separadamente porque possuem ciclos independentes. Antes de atualizar, leia as duas notas de release e confirme compatibilidade da API e configuração, migrations, requisitos de backup e instruções de rollback.
 
 ## Repositórios reservados
 
-Android e Desktop ainda não contêm um produto lançado, portanto não recebem versões ou tags artificiais. Sua primeira implementação deverá adotar esta política antes do primeiro release público. O repositório de perfil da organização e a workspace local de runtime não são produtos versionados; eles referenciam artefatos com versões independentes.
+Android e Desktop ainda não contêm aplicações lançadas, mas sua automação e o baseline `0.1.0` já estão preparados. Eles só avançam quando commits elegíveis chegam às respectivas branches `main`. O repositório de perfil da organização e a workspace local de runtime não são produtos distribuíveis; eles referenciam artefatos com versões independentes.

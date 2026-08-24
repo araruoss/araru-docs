@@ -6,7 +6,7 @@ section: development
 status: stable
 ---
 
-Araru Server, Web, Docs, and future clients follow [Semantic Versioning](https://semver.org/) independently. A Server `2.3.0` does not require Web or Docs to use `2.3.0`; compatibility is expressed through documented API contracts rather than matching numbers.
+Araru Server, Web, Docs, Android, and Desktop start at `0.1.0` and follow [Semantic Versioning](https://semver.org/) independently. Matching initial numbers do not couple their lifecycles; compatibility is expressed through documented API contracts.
 
 ## Version meaning
 
@@ -46,10 +46,10 @@ Do not run `npm version`, edit the Release Please manifest manually, or create a
 
 ## Container versions
 
-Production deployments should pin exact images such as `ghcr.io/araruoss/araru-server:2.4.1` and `ghcr.io/araruoss/araru-web:2.7.0`. The mutable `latest`, major, and minor aliases are convenient discovery channels, not reproducible deployment locks.
+Production deployments should pin exact images such as `ghcr.io/araruoss/araru-server:0.1.0` and `ghcr.io/araruoss/araru-web:0.1.0`. The mutable `latest`, major, and minor aliases are convenient discovery channels, not reproducible deployment locks.
 
 Server and Web versions are configured separately because they have independent lifecycles. Before upgrading, read both release notes and confirm API/configuration compatibility, migrations, backup requirements, and rollback instructions.
 
 ## Reserved repositories
 
-Android and Desktop currently contain no released product, so they do not receive artificial package versions or tags. Their first implementation must adopt this policy before its first public release. The organization/profile repository and local runtime workspace are not versioned products; they reference independently versioned artifacts.
+Android and Desktop currently contain no released application, but their release automation and `0.1.0` baseline are already prepared. They only advance when eligible commits reach their own `main` branches. The organization/profile repository and local runtime workspace are not distributable products; they reference independently versioned artifacts.
