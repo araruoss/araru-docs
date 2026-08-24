@@ -1,83 +1,122 @@
 ---
-import config from 'virtual:starlight/user-config';
 import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
 import Search from '@astrojs/starlight/components/Search.astro';
 import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
 import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
 
-const shouldRenderSearch =
-  config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
-const locale = Astro.locals.starlightRoute.locale;
-const isPortuguese = locale === 'pt-br';
+const isPortuguese = Astro.locals.starlightRoute.locale === 'pt-br';
 const base = import.meta.env.BASE_URL;
-const localizedRoot = isPortuguese ? `${base}pt-br/` : base;
-const docsHref = `${localizedRoot}docs/`;
+const docsHref = isPortuguese ? `${base}pt-br/docs/` : `${base}docs/`;
 ---
 
-<div class="header araru-header">
-  <div class="header-brand sl-flex">
+<div class="araru-nav">
+  <div class="brand">
     <SiteTitle />
-    <a class="docs-link" href={docsHref}>Docs</a>
+    <a href={docsHref}>Docs</a>
   </div>
-  <div class="header-search sl-flex print:hidden">
-    {shouldRenderSearch && <Search />}
+
+  <div class="search print:hidden">
+    <Search />
   </div>
-  <nav class="sl-hidden md:sl-flex print:hidden header-actions" aria-label={isPortuguese ? 'Preferências e links externos' : 'Preferences and external links'}>
-    <div class="sl-flex social-icons">
-      <SocialIcons />
-    </div>
+
+  <nav class="actions sl-hidden md:sl-flex print:hidden" aria-label="GitHub and language">
+    <div class="github"><SocialIcons /></div>
     <LanguageSelect />
   </nav>
 </div>
 
 <style>
   @layer starlight.core {
-    .header {
+    :global(header.header) {
+      background: var(--sl-color-bg-nav);
+      border-bottom-color: var(--sl-color-hairline-shade);
+      box-shadow: none;
+    }
+    .araru-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--sl-nav-gap);
+      gap: .75rem;
+      width: 100%;
       height: 100%;
     }
-    .header-brand {
+    .brand {
+      display: flex;
       align-items: center;
-      gap: .65rem;
+      gap: .8rem;
       min-width: 0;
-      margin: -.25rem;
-      padding: .25rem;
-      overflow: clip;
     }
-    .docs-link {
+    .brand :global(.site-title) { flex: none; }
+    .brand :global(.site-title img) {
+      width: auto;
+      max-width: 8.25rem;
+      height: 2.1rem;
+      object-fit: contain;
+    }
+    .brand :global(.site-title span) { display: none; }
+    .brand > a {
       flex: none;
-      padding: .25rem;
-      color: var(--sl-color-gray-1);
+      color: var(--sl-color-gray-2);
       font-size: .82rem;
-      font-weight: 600;
-      letter-spacing: .01em;
+      font-weight: 650;
       text-decoration: none;
       text-underline-offset: .25em;
     }
-    .docs-link:hover { color: var(--sl-color-white); text-decoration: underline; }
-    .header-search { justify-content: center; min-width: 0; width: 100%; }
-    .header-actions, .social-icons { align-items: center; gap: .85rem; }
-    @media (min-width: 50rem) {
-      .header {
-        display: grid;
-        grid-template-columns: minmax(11rem, 1fr) minmax(15rem, 38rem) minmax(15rem, 1fr);
-      }
-      .header-search, .header-search :global(site-search) { width: 100%; }
-      .header-actions { justify-self: end; }
+    .brand > a:hover { color: var(--sl-color-white); text-decoration: underline; }
+    .search {
+      display: flex;
+      justify-content: center;
+      min-width: 0;
     }
-    @media (min-width: 50rem) and (max-width: 64rem) {
-      .header { grid-template-columns: minmax(10rem, 1fr) minmax(14rem, 24rem) minmax(14rem, 1fr); }
-      .docs-link { font-size: .75rem; }
-      .header-actions { gap: .5rem; }
+    .search :global(site-search),
+    .search :global(button[data-open-modal]) { width: 100%; }
+    .search :global(button[data-open-modal]) {
+      max-width: 36rem;
+      border-color: var(--sl-color-gray-5);
+      border-radius: .625rem;
+      background: var(--sl-color-black);
+      transition: border-color .15s ease, color .15s ease;
+    }
+    .search :global(button[data-open-modal]:hover) { border-color: var(--sl-color-gray-3); }
+    .search :global(button[data-open-modal]:focus-visible) {
+      border-color: var(--sl-color-accent);
+      outline: 2px solid var(--sl-color-accent);
+      outline-offset: 2px;
+    }
+    .actions {
+      align-items: center;
+      justify-content: flex-end;
+      gap: .75rem;
+      min-width: 0;
+    }
+    .github { display: flex; align-items: center; }
+    .github :global(a) {
+      display: grid;
+      place-items: center;
+      min-width: 2.75rem;
+      min-height: 2.75rem;
+      border-radius: .5rem;
+    }
+    .github :global(a:hover) { color: var(--sl-color-white); background: var(--sl-color-gray-6); }
+    .actions :global(select) { min-height: 2.75rem; }
+    @media (min-width: 50rem) {
+      .araru-nav {
+        display: grid;
+        grid-template-columns: minmax(10rem, 1fr) minmax(18rem, 36rem) minmax(10rem, 1fr);
+        gap: clamp(1rem, 3vw, 3rem);
+      }
     }
     @media (max-width: 49.99rem) {
-      .docs-link { display: none; }
-    }
-    @media (max-width: 30rem) {
-      .header-brand { gap: .4rem; }
+      .brand > a { display: none; }
+      .brand :global(.site-title img) { max-width: 7rem; height: 2rem; }
+      .search { margin-inline-start: auto; }
+      .search :global(button[data-open-modal]) {
+        display: grid;
+        place-items: center;
+        min-width: 2.75rem;
+        min-height: 2.75rem;
+        padding: 0;
+      }
     }
   }
 </style>
