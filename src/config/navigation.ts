@@ -10,6 +10,7 @@ export const navigation = [
   ] },
   { label: 'Concepts', translations: { 'pt-BR': 'Conceitos' }, items: [
     tr('What is Araru?', 'O que é o Araru?', 'docs/concepts/what-is-araru'),
+    tr('Content ownership and responsibility', 'Propriedade e responsabilidade do conteúdo', 'docs/concepts/content-responsibility'),
   ] },
   { label: 'Ecosystem', translations: { 'pt-BR': 'Ecossistema' }, items: [
     tr('Overview', 'Visão geral', 'docs/ecosystem'),

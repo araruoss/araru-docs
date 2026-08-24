@@ -14,6 +14,8 @@ Araru organizes and serves a digital collection on infrastructure controlled by 
 
 Self-hosting keeps files and behavioral data under your policies. Operators must still maintain HTTPS, strong credentials, backups, updates, and restricted network access.
 
+Araru is software, not a hosted content service. The Araru project does not receive, store, provide, or distribute the files in a user's library. The installation operator supplies legitimately acquired files and makes them available only through infrastructure and networks they control. See [Content ownership and responsibility](../content-responsibility/).
+
 ## Core concepts
 
 - **User:** an authenticated identity with a role and credentials.
