@@ -1,16 +1,21 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+const base = `/${(process.env.BASE_PATH || '').replace(/^\/+|\/+$/g, '')}`;
+const basePath = base === '/' ? '/' : `${base}/`;
+const fromBase = (path) => `${basePath}${path.replace(/^\//, '')}`;
+
 export default defineConfig({
   site: process.env.SITE_URL || 'https://araruoss.github.io',
+  base: basePath,
   redirects: {
-    '/pt-BR': '/pt-br',
-    '/pt-BR/docs': '/pt-br/docs',
-    '/pt-BR/docs/getting-started': '/pt-br/docs/getting-started',
-    '/pt-BR/docs/concepts/what-is-araru': '/pt-br/docs/concepts/what-is-araru',
-    '/pt-BR/docs/ecosystem': '/pt-br/docs/ecosystem',
-    '/pt-BR/docs/server': '/pt-br/docs/server',
-    '/pt-BR/docs/web': '/pt-br/docs/web',
+    '/pt-BR': fromBase('pt-br'),
+    '/pt-BR/docs': fromBase('pt-br/docs'),
+    '/pt-BR/docs/getting-started': fromBase('pt-br/docs/getting-started'),
+    '/pt-BR/docs/concepts/what-is-araru': fromBase('pt-br/docs/concepts/what-is-araru'),
+    '/pt-BR/docs/ecosystem': fromBase('pt-br/docs/ecosystem'),
+    '/pt-BR/docs/server': fromBase('pt-br/docs/server'),
+    '/pt-BR/docs/web': fromBase('pt-br/docs/web'),
   },
   integrations: [
     starlight({
@@ -20,10 +25,10 @@ export default defineConfig({
       description: 'Your digital library, under your control.',
       defaultLocale: 'root',
       locales: {
-        root: { label: 'English', lang: 'en' },
-        'pt-br': { label: 'Português (Brasil)', lang: 'pt-BR' },
+        root: { label: 'EN', lang: 'en' },
+        'pt-br': { label: 'PT-BR', lang: 'pt-BR' },
       },
-      social: [{ icon: 'github', label: 'Araru repositories', href: 'https://github.com/araruoss?tab=repositories' }],
+      social: [{ icon: 'github', label: 'Araru OSS on GitHub', href: 'https://github.com/araruoss' }],
       editLink: { baseUrl: 'https://github.com/araruoss/araru-docs/edit/main/' },
       customCss: ['./src/styles/araru.css'],
       components: {

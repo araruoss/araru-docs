@@ -24,6 +24,7 @@ npm run preview
 ```
 
 The production site is served from the domain root. Set `SITE_URL` during the build when publishing under a custom domain.
+For a GitHub Pages project subpath, also set `BASE_PATH` (for example, `/araru-docs`). Root publishing remains the default.
 
 ## Project structure
 

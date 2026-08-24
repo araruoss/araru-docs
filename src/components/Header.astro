@@ -8,26 +8,30 @@ import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
 
 const shouldRenderSearch =
   config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
-const isPortuguese = /^\/pt-(?:br|BR)(?:\/|$)/.test(Astro.url.pathname);
-const docsHref = isPortuguese ? '/pt-br/docs/' : '/docs/';
-const docsLabel = isPortuguese ? 'Documentação' : 'Docs';
+const locale = Astro.locals.starlightRoute.locale;
+const isPortuguese = locale === 'pt-br';
+const base = import.meta.env.BASE_URL;
+const localizedRoot = isPortuguese ? `${base}pt-br/` : base;
+const docsHref = `${localizedRoot}docs/`;
+const docsLabel = isPortuguese ? 'Documentação' : 'Documentation';
 ---
 
 <div class="header araru-header">
-  <div class="title-wrapper sl-flex">
+  <div class="header-brand sl-flex">
     <SiteTitle />
+    <span class="brand-context" aria-hidden="true"></span>
     <a class="docs-link" href={docsHref}>{docsLabel}</a>
   </div>
-  <div class="search-wrapper sl-flex print:hidden">
+  <div class="header-search sl-flex print:hidden">
     {shouldRenderSearch && <Search />}
   </div>
-  <div class="sl-hidden md:sl-flex print:hidden right-group">
+  <nav class="sl-hidden md:sl-flex print:hidden header-actions" aria-label={isPortuguese ? 'Preferências e links externos' : 'Preferences and external links'}>
     <div class="sl-flex social-icons">
       <SocialIcons />
     </div>
-    <ThemeSelect />
     <LanguageSelect />
-  </div>
+    <ThemeSelect />
+  </nav>
 </div>
 
 <style>
@@ -39,13 +43,20 @@ const docsLabel = isPortuguese ? 'Documentação' : 'Docs';
       gap: var(--sl-nav-gap);
       height: 100%;
     }
-    .title-wrapper {
+    .header-brand {
       align-items: center;
-      gap: .75rem;
+      gap: .65rem;
       min-width: 0;
       margin: -.25rem;
       padding: .25rem;
       overflow: clip;
+    }
+    .brand-context {
+      flex: none;
+      width: .25rem;
+      height: .25rem;
+      border-radius: 50%;
+      background: var(--araru-warm);
     }
     .docs-link {
       flex: none;
@@ -58,22 +69,32 @@ const docsLabel = isPortuguese ? 'Documentação' : 'Docs';
       text-underline-offset: .25em;
     }
     .docs-link:hover { color: var(--sl-color-white); text-decoration: underline; }
-    .search-wrapper { justify-content: center; min-width: 0; }
-    .right-group, .social-icons { align-items: center; gap: 1rem; }
+    .header-search { justify-content: center; min-width: 0; width: 100%; }
+    .header-actions, .social-icons { align-items: center; gap: .85rem; }
     .social-icons::after {
       content: '';
-      height: 2rem;
+      height: 1.5rem;
       border-inline-end: 1px solid var(--sl-color-gray-5);
     }
 
     @media (min-width: 50rem) {
-      .header { grid-template-columns: minmax(12rem, 1fr) minmax(18rem, 32rem) minmax(12rem, 1fr); display: grid; }
-      .search-wrapper, .search-wrapper :global(site-search) { width: 100%; }
-      .right-group { justify-self: end; }
+      .header {
+        display: grid;
+        grid-template-columns: minmax(11rem, 1fr) minmax(15rem, 38rem) minmax(15rem, 1fr);
+      }
+      .header-search, .header-search :global(site-search) { width: 100%; }
+      .header-actions { justify-self: end; }
+    }
+    @media (min-width: 50rem) and (max-width: 64rem) {
+      .header { grid-template-columns: minmax(10rem, 1fr) minmax(14rem, 24rem) minmax(14rem, 1fr); }
+      .docs-link { font-size: .75rem; }
+      .header-actions { gap: .5rem; }
+    }
+    @media (max-width: 49.99rem) {
+      .brand-context, .docs-link { display: none; }
     }
     @media (max-width: 30rem) {
-      .title-wrapper { gap: .45rem; }
-      .docs-link { font-size: .75rem; }
+      .header-brand { gap: .4rem; }
     }
   }
 </style>
