@@ -84,7 +84,7 @@ body:has(.araru-home-hero) main > .content-panel .sl-container { max-width: 92re
   letter-spacing: .16em;
 }
 .araru-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 2rem; }
-.araru-button, .araru-text-link {
+.araru-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -99,8 +99,6 @@ body:has(.araru-home-hero) main > .content-panel .sl-container { max-width: 92re
 .araru-button:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
 .araru-button-primary { border-color: transparent; color: #061522; background: linear-gradient(135deg, #70caff, #37a7e6); box-shadow: 0 12px 32px rgba(22, 138, 216, .25); }
 .araru-button-primary:hover { color: #061522; background: linear-gradient(135deg, #98d9ff, #55b9ef); transform: translateY(-1px); }
-.araru-text-link { color: var(--sl-color-gray-2); }
-.araru-text-link:hover { color: var(--sl-color-accent-high); }
 .araru-banner {
   position: relative;
   display: block;
