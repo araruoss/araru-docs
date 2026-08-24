@@ -1,6 +1,9 @@
 ---
 title: Contributing to documentation
 description: Write, translate, review, and validate the Araru documentation site.
+order: 100
+section: "contributing"
+status: stable
 ---
 
 The documentation is maintained in `araru-docs` with Astro and Starlight. Documentation changes follow the same review standard as code because inaccurate instructions can break installations, expose data, or misrepresent product behavior.

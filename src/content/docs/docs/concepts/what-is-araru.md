@@ -3,6 +3,9 @@ title: What is Araru?
 description: Product philosophy, core concepts, and trust boundaries.
 sidebar:
   order: 1
+order: 100
+section: "concepts"
+status: stable
 ---
 
 Araru organizes and serves a digital collection on infrastructure controlled by its owner. A central Server provides one authoritative home for storage, credentials, metadata, and reading state.

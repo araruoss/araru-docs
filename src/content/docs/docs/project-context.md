@@ -1,6 +1,9 @@
 ---
 title: Project Context for Agents
 description: Current architecture, constraints, and known limitations.
+order: 100
+section: "project-context"
+status: stable
 ---
 
 ## Current

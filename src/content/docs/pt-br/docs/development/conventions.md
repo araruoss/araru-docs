@@ -1,5 +1,9 @@
 ---
 title: "Convenções de desenvolvimento"
+description: "Documentação sobre Convenções de desenvolvimento no ecossistema Araru."
+order: 100
+section: "development"
+status: stable
 ---
 
 ## Backend

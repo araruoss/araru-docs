@@ -1,5 +1,9 @@
 ---
 title: "Contexto arquitetural para LLM"
+description: "Documentação sobre Contexto arquitetural para LLM no ecossistema Araru."
+order: 100
+section: "llm"
+status: stable
 ---
 
 Browser chama somente HTTP. Frontend mantém UI/estado efêmero; backend detém domínio, paths, credenciais e persistência. Nginx/Vite fazem proxy. Não mova regras de filesystem/metadata para o cliente.

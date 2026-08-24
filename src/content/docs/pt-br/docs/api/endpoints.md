@@ -1,5 +1,9 @@
 ---
 title: "Inventário de endpoints"
+description: "Documentação sobre Inventário de endpoints no ecossistema Araru."
+order: 100
+section: "api"
+status: stable
 ---
 
 Fonte: `server/app.js`, middleware de segurança e rotas do [`araru-server`](https://github.com/araruoss/araru-server). **Auth** indica sessão individual obrigatória após a conclusão do setup; health, status, setup e login têm as exceções descritas abaixo.

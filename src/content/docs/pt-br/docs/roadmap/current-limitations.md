@@ -1,5 +1,9 @@
 ---
 title: "Limitações atuais confirmadas"
+description: "Documentação sobre Limitações atuais confirmadas no ecossistema Araru."
+order: 100
+section: "roadmap"
+status: planned
 ---
 
 | Estado atual | Impacto | Quando vira problema | Direção possível — não decidida |

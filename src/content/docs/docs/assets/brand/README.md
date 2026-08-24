@@ -1,5 +1,9 @@
 ---
 title: "Assets de marca Araru"
+description: "Documentation for Assets de marca Araru in the Araru ecosystem."
+order: 100
+section: "assets"
+status: stable
 ---
 
 Os assets oficiais de marca são mantidos no repositório da organização:

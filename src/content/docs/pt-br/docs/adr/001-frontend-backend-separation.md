@@ -1,5 +1,9 @@
 ---
 title: "ADR-001: separar frontend e backend"
+description: "Documentação sobre ADR-001: separar frontend e backend no ecossistema Araru."
+order: 100
+section: "adr"
+status: stable
 ---
 
 Status: Accepted  

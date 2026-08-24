@@ -1,6 +1,9 @@
 ---
 title: Araru Android
 description: Status and intended boundaries of the future Android client.
+order: 100
+section: "android"
+status: planned
 ---
 
 **Status: Planned**

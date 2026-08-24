@@ -1,5 +1,9 @@
 ---
 title: "ADR-005: HTTP Range para conteúdo grande"
+description: "Documentação sobre ADR-005: HTTP Range para conteúdo grande no ecossistema Araru."
+order: 100
+section: "adr"
+status: stable
 ---
 
 Status: Accepted  

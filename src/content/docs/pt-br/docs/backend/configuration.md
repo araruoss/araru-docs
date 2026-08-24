@@ -1,5 +1,9 @@
 ---
 title: "Inicialização e configuração do backend"
+description: "Documentação sobre Inicialização e configuração do backend no ecossistema Araru."
+order: 100
+section: "backend"
+status: stable
 ---
 
 `config/loadEnv.js` carrega ambiente; `config/drive.js` normaliza valores e paths e valida combinações. `createApp()` carrega credenciais, valida ambiente e prepara a biblioteca antes de expor rotas.

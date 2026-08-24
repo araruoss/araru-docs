@@ -1,5 +1,9 @@
 ---
 title: "Matriz de cobertura real"
+description: "Documentation for Matriz de cobertura real in the Araru ecosystem."
+order: 100
+section: "testing"
+status: stable
 ---
 
 Legenda: ✓ cobertura explícita; — não confirmada pela suíte atual.

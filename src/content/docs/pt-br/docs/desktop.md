@@ -1,6 +1,9 @@
 ---
 title: Araru Desktop
 description: Estado e limites planejados do futuro cliente desktop.
+order: 100
+section: "desktop"
+status: planned
 ---
 
 **Status: planejado**

@@ -1,5 +1,9 @@
 ---
 title: "API HTTP"
+description: "Documentation for API HTTP in the Araru ecosystem."
+order: 100
+section: "api"
+status: stable
 ---
 
 Base atual: `/api`. JSON é usado para dados; conteúdo, páginas, capas e backup retornam binário. Não há OpenAPI nem versionamento `/v1` atualmente.

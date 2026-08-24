@@ -1,5 +1,9 @@
 ---
 title: "Desenvolvimento local"
+description: "Documentação sobre Desenvolvimento local no ecossistema Araru."
+order: 100
+section: "getting-started"
+status: stable
 ---
 
 Clone apenas os projetos nos quais trabalhará. Não há dependência de diretório compartilhado.

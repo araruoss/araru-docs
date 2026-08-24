@@ -1,5 +1,9 @@
 ---
 title: "Ambiente e configuração"
+description: "Documentação sobre Ambiente e configuração no ecossistema Araru."
+order: 100
+section: "getting-started"
+status: stable
 ---
 
 Os arquivos `.env.example` são a lista autorizada de variáveis. Nunca documente ou versione valores reais.

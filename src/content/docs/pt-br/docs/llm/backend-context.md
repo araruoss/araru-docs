@@ -1,5 +1,9 @@
 ---
 title: "Contexto backend para LLM"
+description: "Documentação sobre Contexto backend para LLM no ecossistema Araru."
+order: 100
+section: "llm"
+status: stable
 ---
 
 Entrypoints: `server/server.js` e `server/app.js`. Config em `config/drive.js`. Rotas → controllers → services. Middleware implementa headers, rate limit, request ID e acesso.

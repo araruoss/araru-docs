@@ -1,5 +1,9 @@
 ---
 title: "Catálogo, obras, categorias e metadados"
+description: "Documentation for Catálogo, obras, categorias e metadados in the Araru ecosystem."
+order: 100
+section: "backend"
+status: stable
 ---
 
 ## Catálogo

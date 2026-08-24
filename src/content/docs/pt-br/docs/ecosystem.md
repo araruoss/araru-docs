@@ -1,6 +1,9 @@
 ---
 title: Ecossistema
 description: Responsabilidades e maturidade dos módulos Araru.
+order: 100
+section: "ecosystem"
+status: stable
 ---
 
 O **Araru Server** é o núcleo e fonte de verdade. O **Araru Web** é o cliente oficial atual. **Android** e **Desktop** são repositórios reservados para clientes futuros. **Araru Docs** mantém esta base institucional e técnica.

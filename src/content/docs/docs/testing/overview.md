@@ -1,5 +1,9 @@
 ---
 title: "Estratégia de testes e CI"
+description: "Documentation for Estratégia de testes e CI in the Araru ecosystem."
+order: 100
+section: "testing"
+status: stable
 ---
 
 ## Suítes

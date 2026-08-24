@@ -1,5 +1,9 @@
 ---
 title: "Voz e tom"
+description: "Documentação sobre Voz e tom no ecossistema Araru."
+order: 100
+section: "brand"
+status: stable
 ---
 
 ## Voz

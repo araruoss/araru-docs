@@ -1,6 +1,9 @@
 ---
 title: Contribuindo com os serviços
 description: Desenvolva, teste e envie mudanças para Araru Server, Web e infraestrutura de runtime.
+order: 100
+section: "contributing"
+status: stable
 ---
 
 Use este guia para mudanças no `araru-server`, `araru-web` ou no runtime local. Cada repositório possui dependências, versões, CI e responsabilidades independentes; não os acople por imports do filesystem ou por `node_modules` compartilhado.

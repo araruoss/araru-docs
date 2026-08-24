@@ -1,5 +1,9 @@
 ---
 title: "Readers"
+description: "Documentação sobre Readers no ecossistema Araru."
+order: 100
+section: "readers"
+status: stable
 ---
 
 O catálogo indexa formatos reconhecidos; a abertura depende de capability em `src/readers/core.js` no `araru-web`. O Server resolve ID para fonte e nunca expõe path físico.

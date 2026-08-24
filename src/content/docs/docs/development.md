@@ -1,6 +1,9 @@
 ---
 title: Development
 description: Work with independent Araru repositories.
+order: 100
+section: "development"
+status: stable
 ---
 
 Clone only the repository you are changing. Each has its own dependencies, lockfile, tests, CI, version, and release lifecycle.

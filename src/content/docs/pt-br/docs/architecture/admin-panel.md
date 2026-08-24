@@ -1,5 +1,9 @@
 ---
 title: "Administração, usuários e perfis"
+description: "Documentação sobre Administração, usuários e perfis no ecossistema Araru."
+order: 100
+section: "architecture"
+status: stable
 ---
 
 O Admin Panel centraliza configurações da instalação em `/admin`. A rota é carregada sob demanda, possui layout próprio e navegação adaptada: sidebar no desktop e drawer com alvos de toque no mobile/tablet.

@@ -1,5 +1,9 @@
 ---
 title: "Arquitetura dos readers"
+description: "Documentação sobre Arquitetura dos readers no ecossistema Araru."
+order: 100
+section: "architecture"
+status: stable
 ---
 
 O frontend usa capabilities em `readers/core.js` e um shell comum para loading, erro, retry, dock, progresso e cleanup. Engines são carregadas sob demanda.

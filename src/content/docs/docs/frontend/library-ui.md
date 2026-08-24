@@ -1,5 +1,9 @@
 ---
 title: "Biblioteca, categorias e busca"
+description: "Documentation for Biblioteca, categorias e busca in the Araru ecosystem."
+order: 100
+section: "frontend"
+status: stable
 ---
 
 A sidebar é a navegação global. Em desktop pode recolher; em mobile vira drawer. Biblioteca abre o catálogo e expõe a árvore derivada de `categoryPath`; recentes e favoritos usam o mesmo conteúdo sem tabs duplicadas.

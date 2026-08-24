@@ -1,6 +1,9 @@
 ---
 title: Metadados
 description: Identificação, enriquecimento, capas e revisão.
+order: 100
+section: "metadata"
+status: stable
 ---
 
 O pipeline começa pelo nome original do arquivo e pelos campos incorporados, extrai e valida candidatos a ISBN, normaliza o texto e pontua as correspondências encontradas. Os provedores opcionais Google Books e Open Library enriquecem os registros por meio de requisições com cache e tempo limite.

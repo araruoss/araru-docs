@@ -1,5 +1,9 @@
 ---
 title: "Migração Biblioteca Digital → Araru"
+description: "Documentação sobre Migração Biblioteca Digital → Araru no ecossistema Araru."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Princípio: **zero data loss**. Identidade pública muda; contratos persistidos permanecem quando a troca não oferece benefício técnico.

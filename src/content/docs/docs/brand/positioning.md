@@ -1,5 +1,9 @@
 ---
 title: "Posicionamento"
+description: "Documentation for Posicionamento in the Araru ecosystem."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Araru é um **open-source self-hosted digital library server**.

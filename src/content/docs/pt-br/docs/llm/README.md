@@ -1,5 +1,9 @@
 ---
 title: "Araru — entrada para agentes de código"
+description: "Documentação sobre Araru — entrada para agentes de código no ecossistema Araru."
+order: 100
+section: "llm"
+status: stable
 ---
 
 Para qualquer mudança, leia nesta ordem:

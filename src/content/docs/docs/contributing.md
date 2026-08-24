@@ -1,6 +1,9 @@
 ---
 title: Contributing
 description: Choose how to contribute to Araru and follow the shared project workflow.
+order: 100
+section: "contributing"
+status: stable
 ---
 
 Araru is developed across independent repositories. Contributions may improve the Server and Web services, documentation, translations, tests, infrastructure, accessibility, or project design.

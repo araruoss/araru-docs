@@ -1,5 +1,9 @@
 ---
 title: "ADR-003: categorias derivadas de diretórios"
+description: "Documentação sobre ADR-003: categorias derivadas de diretórios no ecossistema Araru."
+order: 100
+section: "adr"
+status: stable
 ---
 
 Status: Accepted  

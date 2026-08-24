@@ -1,6 +1,9 @@
 ---
 title: API
 description: Contract, authentication, errors, and endpoint reference.
+order: 100
+section: "api"
+status: stable
 ---
 
 Araru Server exposes JSON endpoints under `/api` and binary/range responses for reader content. Browser authentication uses an HttpOnly session cookie; protected endpoints return `401` without a session and `403` when the role is insufficient.

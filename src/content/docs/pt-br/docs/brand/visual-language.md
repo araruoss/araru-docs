@@ -1,5 +1,9 @@
 ---
 title: "Linguagem visual"
+description: "Documentação sobre Linguagem visual no ecossistema Araru."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Minimalismo, espaço negativo, hierarquia tipográfica clara e capas como protagonistas. Marca pode ter expressão; interface deve priorizar função e leitura confortável.

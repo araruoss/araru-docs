@@ -1,5 +1,9 @@
 ---
 title: "Diretrizes de código para agentes"
+description: "Documentation for Diretrizes de código para agentes in the Araru ecosystem."
+order: 100
+section: "llm"
+status: stable
 ---
 
 Backend: mantenha route/controller/service; use logger estruturado; normalize erros; valide payload/paths; stream quando possível; use transactions; adicione migration; integre jobs longos à fila.

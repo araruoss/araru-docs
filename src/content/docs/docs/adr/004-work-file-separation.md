@@ -1,5 +1,9 @@
 ---
 title: "ADR-004: separar Work de Library File"
+description: "Documentation for ADR-004: separar Work de Library File in the Araru ecosystem."
+order: 100
+section: "adr"
+status: stable
 ---
 
 Status: Accepted  

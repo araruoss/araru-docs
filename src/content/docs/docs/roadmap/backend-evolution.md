@@ -1,5 +1,9 @@
 ---
 title: "Evolução possível do backend — FUTURO"
+description: "Documentation for Evolução possível do backend — FUTURO in the Araru ecosystem."
+order: 100
+section: "roadmap"
+status: planned
 ---
 
 ## Próximas capacidades a avaliar

@@ -1,5 +1,9 @@
 ---
 title: "Formatos de leitura"
+description: "Documentação sobre Formatos de leitura no ecossistema Araru."
+order: 100
+section: "readers"
+status: stable
 ---
 
 ## PDF

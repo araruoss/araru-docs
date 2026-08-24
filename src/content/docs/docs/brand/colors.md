@@ -1,5 +1,9 @@
 ---
 title: "Cores"
+description: "Documentation for Cores in the Araru ecosystem."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Paleta pequena, inspirada sutilmente em céu, vegetação e terra do Cerrado. Os tokens vivem em `src/index.css` no `araru-web`; componentes não devem espalhar hex codes de marca.

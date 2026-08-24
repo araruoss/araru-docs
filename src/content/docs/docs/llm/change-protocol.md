@@ -1,5 +1,9 @@
 ---
 title: "Protocolo de alteração"
+description: "Documentation for Protocolo de alteração in the Araru ecosystem."
+order: 100
+section: "llm"
+status: stable
 ---
 
 ## Antes

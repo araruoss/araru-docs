@@ -1,6 +1,9 @@
 ---
 title: Desenvolvimento
 description: Trabalhe com os repositórios independentes do Araru.
+order: 100
+section: "development"
+status: stable
 ---
 
 Clone somente o repositório que será alterado. Cada um possui dependências, lockfile, testes, CI, versão e ciclo de lançamento próprios.

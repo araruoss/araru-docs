@@ -1,5 +1,9 @@
 ---
 title: "Jobs, operação, Drive, observabilidade e segurança"
+description: "Documentation for Jobs, operação, Drive, observabilidade e segurança in the Araru ecosystem."
+order: 100
+section: "backend"
+status: stable
 ---
 
 ## Operação

@@ -3,6 +3,9 @@ title: Getting Started
 description: Run Araru and complete the first setup.
 sidebar:
   order: 1
+order: 100
+section: "getting-started"
+status: stable
 ---
 
 ## Requirements

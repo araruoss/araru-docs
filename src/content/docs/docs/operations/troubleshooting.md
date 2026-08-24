@@ -1,5 +1,9 @@
 ---
 title: "Troubleshooting"
+description: "Documentation for Troubleshooting in the Araru ecosystem."
+order: 100
+section: "operations"
+status: stable
 ---
 
 ## Backend não inicia / PostgreSQL ou Redis

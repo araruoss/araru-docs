@@ -1,5 +1,9 @@
 ---
 title: "Marca Araru"
+description: "Documentação sobre Marca Araru no ecossistema Araru."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Araru é um servidor open source e self-hosted para gerenciamento, organização e consumo do acervo digital controlado pelo próprio usuário.

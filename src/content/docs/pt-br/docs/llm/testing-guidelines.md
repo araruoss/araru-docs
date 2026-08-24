@@ -1,5 +1,9 @@
 ---
 title: "Diretrizes de testes para agentes"
+description: "Documentação sobre Diretrizes de testes para agentes no ecossistema Araru."
+order: 100
+section: "llm"
+status: stable
 ---
 
 | Mudança | Validação mínima |

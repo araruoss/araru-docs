@@ -1,5 +1,9 @@
 ---
 title: "Glossário"
+description: "Documentation for Glossário in the Araru ecosystem."
+order: 100
+section: "llm"
+status: stable
 ---
 
 - **Work**: obra canônica que agrupa arquivos.

@@ -1,6 +1,9 @@
 ---
 title: Araru Android
 description: Estado e limites planejados do futuro cliente Android.
+order: 100
+section: "android"
+status: planned
 ---
 
 **Status: planejado**

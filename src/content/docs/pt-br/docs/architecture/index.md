@@ -3,6 +3,9 @@ title: Visão geral da arquitetura
 description: Limites entre servidor e clientes e fluxo de dados.
 sidebar:
   order: 1
+order: 100
+section: "architecture"
+status: stable
 ---
 
 O Araru usa uma arquitetura servidor/cliente. O Server controla o estado persistente e o acesso ao conteúdo; os clientes oferecem suas experiências por meio da API HTTP.

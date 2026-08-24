@@ -1,5 +1,9 @@
 ---
 title: "Docker, rede e produção"
+description: "Documentation for Docker, rede e produção in the Araru ecosystem."
+order: 100
+section: "infrastructure"
+status: stable
 ---
 
 ## Compose atual

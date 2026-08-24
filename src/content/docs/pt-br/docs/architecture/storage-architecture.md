@@ -1,5 +1,9 @@
 ---
 title: "Arquitetura de storage"
+description: "Documentação sobre Arquitetura de storage no ecossistema Araru."
+order: 100
+section: "architecture"
+status: stable
 ---
 
 ## Filesystem local

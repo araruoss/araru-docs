@@ -1,5 +1,9 @@
 ---
 title: "Guias de mudança"
+description: "Documentation for Guias de mudança in the Araru ecosystem."
+order: 100
+section: "development"
+status: stable
 ---
 
 ## Nova rota

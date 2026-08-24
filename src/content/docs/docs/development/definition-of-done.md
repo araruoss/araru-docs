@@ -1,5 +1,9 @@
 ---
 title: "Definition of Done"
+description: "Documentation for Definition of Done in the Araru ecosystem."
+order: 100
+section: "development"
+status: stable
 ---
 
 Uma mudança relevante está concluída quando, conforme aplicável:

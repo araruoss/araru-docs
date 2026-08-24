@@ -1,5 +1,9 @@
 ---
 title: "Estrutura de projetos"
+description: "Documentation for Estrutura de projetos in the Araru ecosystem."
+order: 100
+section: "getting-started"
+status: stable
 ---
 
 O ecossistema é formado por repositórios independentes:

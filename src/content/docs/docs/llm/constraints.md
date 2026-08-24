@@ -1,5 +1,9 @@
 ---
 title: "Invariantes e restrições"
+description: "Documentation for Invariantes e restrições in the Araru ecosystem."
+order: 100
+section: "llm"
+status: stable
 ---
 
 - arquivos grandes não podem ser carregados integralmente em RAM sem budget explícito;

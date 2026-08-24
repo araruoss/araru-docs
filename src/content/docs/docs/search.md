@@ -1,6 +1,9 @@
 ---
 title: Search
 description: PostgreSQL Full Text Search, ranking, and filters.
+order: 100
+section: "search"
+status: stable
 ---
 
 Current search uses PostgreSQL Full Text Search. Indexed `tsvector` fields combine filename, path, category hierarchy, title, author, description, ISBN, and tags. GIN indexes support scalable lookup; normalization and `unaccent` improve matching.

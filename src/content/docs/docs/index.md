@@ -1,6 +1,9 @@
 ---
 title: Documentation
 description: Learn, run, operate, and contribute to the Araru ecosystem.
+order: 100
+section: "home"
+status: stable
 ---
 
 Araru is an open-source, self-hosted digital library ecosystem. This documentation covers the current Server and Web products, operational concepts, architecture, and contribution workflow.

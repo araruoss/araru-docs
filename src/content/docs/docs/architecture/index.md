@@ -3,6 +3,9 @@ title: Architecture Overview
 description: Server/client boundaries and data flow.
 sidebar:
   order: 1
+order: 100
+section: "architecture"
+status: stable
 ---
 
 Araru uses a Server/Client architecture. The Server owns durable state and content access; clients render experiences through the HTTP API.

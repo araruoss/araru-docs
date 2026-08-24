@@ -1,5 +1,9 @@
 ---
 title: "Rotas e estado do frontend"
+description: "Documentation for Rotas e estado do frontend in the Araru ecosystem."
+order: 100
+section: "frontend"
+status: stable
 ---
 
 | Rota | Componente | Estado relevante |

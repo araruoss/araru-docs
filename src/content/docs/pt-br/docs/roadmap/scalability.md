@@ -1,5 +1,9 @@
 ---
 title: "Escalabilidade — FUTURO"
+description: "Documentação sobre Escalabilidade — FUTURO no ecossistema Araru."
+order: 100
+section: "roadmap"
+status: planned
 ---
 
 Objetivo possível: crescer para múltiplos usuários/conexões sem comprometer streams e jobs. O sistema atual não declara essa capacidade.

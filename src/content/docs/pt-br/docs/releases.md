@@ -1,6 +1,9 @@
 ---
 title: Lançamentos
 description: Versões semânticas e canais de lançamento independentes.
+order: 100
+section: "releases"
+status: stable
 ---
 
 Server, Web, Android, Desktop e Docs possuem ciclos de vida independentes. Um Server `1.4.2` não exige que o Web use a mesma versão. As tags de lançamento usam Versionamento Semântico quando o componente está pronto para esse compromisso.

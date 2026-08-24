@@ -1,5 +1,9 @@
 ---
 title: "Clientes Desktop e Android — FUTURO"
+description: "Documentation for Clientes Desktop e Android — FUTURO in the Araru ecosystem."
+order: 100
+section: "roadmap"
+status: planned
 ---
 
 Nenhum cliente nativo existe atualmente. Web/PWA é o único cliente implementado.

@@ -1,5 +1,9 @@
 ---
 title: "Araru — contexto rápido do projeto"
+description: "Documentação sobre Araru — contexto rápido do projeto no ecossistema Araru."
+order: 100
+section: "llm"
+status: stable
 ---
 
 Araru é um ecossistema open source e self-hosted para catalogar e ler arquivos locais ou do Google Drive. Server, Web e documentação são projetos independentes e comunicam-se exclusivamente pela API HTTP.

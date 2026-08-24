@@ -1,5 +1,9 @@
 ---
 title: "Acessibilidade da marca"
+description: "Documentação sobre Acessibilidade da marca no ecossistema Araru."
+order: 100
+section: "brand"
+status: stable
 ---
 
 A identidade nunca deve reduzir legibilidade. Meta: WCAG 2.2 AA para interface e comunicação.

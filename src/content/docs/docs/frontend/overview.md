@@ -1,5 +1,9 @@
 ---
 title: "Frontend"
+description: "Documentation for Frontend in the Araru ecosystem."
+order: 100
+section: "frontend"
+status: stable
 ---
 
 SPA React iniciada em `src/main.jsx`. O entrypoint configura Router, tema, TanStack Query, error boundary, controle de acesso, toast, sincronização de leitura, telemetria local e Service Worker em produção. `App.jsx` faz lazy loading das páginas e da paleta.

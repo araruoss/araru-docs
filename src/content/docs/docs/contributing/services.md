@@ -1,6 +1,9 @@
 ---
 title: Contributing to services
 description: Develop, test, and submit changes to Araru Server, Web, and runtime infrastructure.
+order: 100
+section: "contributing"
+status: stable
 ---
 
 Use this guide for changes to `araru-server`, `araru-web`, or the local runtime. Each repository has independent dependencies, releases, CI, and ownership; do not couple them through filesystem imports or shared `node_modules`.

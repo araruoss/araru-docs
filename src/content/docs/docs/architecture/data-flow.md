@@ -1,5 +1,9 @@
 ---
 title: "Fluxos de dados"
+description: "Documentation for Fluxos de dados in the Araru ecosystem."
+order: 100
+section: "architecture"
+status: stable
 ---
 
 ## Catálogo

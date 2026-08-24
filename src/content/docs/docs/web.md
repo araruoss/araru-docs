@@ -1,6 +1,9 @@
 ---
 title: Araru Web
 description: Official browser client and PWA for Araru.
+order: 100
+section: "web"
+status: stable
 ---
 
 **Status: Stable foundation**

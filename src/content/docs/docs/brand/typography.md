@@ -1,5 +1,9 @@
 ---
 title: "Tipografia"
+description: "Documentation for Tipografia in the Araru ecosystem."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Prioridades: legibilidade, disponibilidade, performance, acentos e leitura prolongada.

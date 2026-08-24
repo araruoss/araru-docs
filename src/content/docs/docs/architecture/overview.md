@@ -1,5 +1,9 @@
 ---
 title: "Arquitetura atual"
+description: "Documentation for Arquitetura atual in the Araru ecosystem."
+order: 100
+section: "architecture"
+status: stable
 ---
 
 ## Boundaries

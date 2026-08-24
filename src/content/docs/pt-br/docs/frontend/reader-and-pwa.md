@@ -1,5 +1,9 @@
 ---
 title: "Reader, responsividade e PWA"
+description: "Documentação sobre Reader, responsividade e PWA no ecossistema Araru."
+order: 100
+section: "frontend"
+status: stable
 ---
 
 ## Reader

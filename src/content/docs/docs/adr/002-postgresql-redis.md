@@ -1,5 +1,9 @@
 ---
 title: "ADR-002: PostgreSQL como persistência e Redis como cache"
+description: "Documentation for ADR-002: PostgreSQL como persistência e Redis como cache in the Araru ecosystem."
+order: 100
+section: "adr"
+status: stable
 ---
 
 Status: Accepted  

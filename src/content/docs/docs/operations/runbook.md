@@ -1,5 +1,9 @@
 ---
 title: "Runbook operacional"
+description: "Documentation for Runbook operacional in the Araru ecosystem."
+order: 100
+section: "operations"
+status: stable
 ---
 
 ## Saúde

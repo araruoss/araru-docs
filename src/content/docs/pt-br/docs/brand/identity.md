@@ -1,5 +1,9 @@
 ---
 title: "Identidade"
+description: "Documentação sobre Identidade no ecossistema Araru."
+order: 100
+section: "brand"
+status: stable
 ---
 
 **Nome oficial:** Araru  

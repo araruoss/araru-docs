@@ -1,6 +1,9 @@
 ---
 title: Storage
 description: Implemented and planned content providers.
+order: 100
+section: "storage"
+status: stable
 ---
 
 | Provider | Status | Notes |

@@ -1,6 +1,9 @@
 ---
 title: Administration
 description: Operate users, profiles, settings, storage, jobs, and backups.
+order: 100
+section: "admin"
+status: stable
 ---
 
 The admin panel centralizes global configuration and operational tools.

@@ -1,6 +1,9 @@
 ---
 title: Ecosystem
 description: Responsibilities and maturity of every Araru module.
+order: 100
+section: "ecosystem"
+status: stable
 ---
 
 ```text

@@ -1,5 +1,9 @@
 ---
 title: "Sistema de nomes"
+description: "Documentation for Sistema de nomes in the Araru ecosystem."
+order: 100
+section: "brand"
+status: stable
 ---
 
 | Elemento | Nome |

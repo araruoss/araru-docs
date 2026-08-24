@@ -1,5 +1,9 @@
 ---
 title: "Jobs e caches"
+description: "Documentation for Jobs e caches in the Araru ecosystem."
+order: 100
+section: "architecture"
+status: stable
 ---
 
 ## Jobs

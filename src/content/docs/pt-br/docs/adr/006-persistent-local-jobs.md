@@ -1,5 +1,9 @@
 ---
 title: "ADR-006: jobs locais com histórico persistente"
+description: "Documentação sobre ADR-006: jobs locais com histórico persistente no ecossistema Araru."
+order: 100
+section: "adr"
+status: stable
 ---
 
 Status: Accepted  

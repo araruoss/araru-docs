@@ -1,5 +1,9 @@
 ---
 title: "Visão geral"
+description: "Documentation for Visão geral in the Araru ecosystem."
+order: 100
+section: "getting-started"
+status: stable
 ---
 
 O Araru cataloga arquivos, deriva a navegação das pastas, enriquece metadados e fornece leitores internos. Ele é self-hosted e atualmente orientado a uma instalação, embora suporte perfis de leitura dentro dessa instalação.

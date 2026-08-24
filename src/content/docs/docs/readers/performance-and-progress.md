@@ -1,5 +1,9 @@
 ---
 title: "Performance, Range e progresso"
+description: "Documentation for Performance, Range e progresso in the Araru ecosystem."
+order: 100
+section: "readers"
+status: stable
 ---
 
 ## Arquivos grandes

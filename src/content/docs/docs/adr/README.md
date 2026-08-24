@@ -1,5 +1,9 @@
 ---
 title: "Architecture Decision Records"
+description: "Documentation for Architecture Decision Records in the Araru ecosystem."
+order: 100
+section: "adr"
+status: stable
 ---
 
 ADRs registram decisões duradouras. Os retrospectivos abaixo são comprovados pelo código; a motivação histórica não está registrada, portanto o rationale é inferido da arquitetura atual.

@@ -1,5 +1,9 @@
 ---
 title: "Textos de produto"
+description: "Documentation for Textos de produto in the Araru ecosystem."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Usar termos claros: Biblioteca, Obra, Arquivo, Coleção, Série, Autor, Categoria, Continuar lendo, Recentemente adicionados, Favoritos, Histórico e Configurações.

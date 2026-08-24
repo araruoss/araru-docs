@@ -1,5 +1,9 @@
 ---
 title: "Contexto frontend para LLM"
+description: "Documentação sobre Contexto frontend para LLM no ecossistema Araru."
+order: 100
+section: "llm"
+status: stable
 ---
 
 Entrypoint `main.jsx`; rotas/lazy em `App.jsx`; páginas em `pages`; UI em `components`; readers em `readers`; API em `lib/api.js`.

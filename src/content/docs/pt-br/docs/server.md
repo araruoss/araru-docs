@@ -1,6 +1,9 @@
 ---
 title: Araru Server
 description: Backend central do ecossistema Araru.
+order: 100
+section: "server"
+status: stable
 ---
 
 **Status: fundação estável**

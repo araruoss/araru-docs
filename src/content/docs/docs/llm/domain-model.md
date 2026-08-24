@@ -1,5 +1,9 @@
 ---
 title: "Modelo de domínio real"
+description: "Documentation for Modelo de domínio real in the Araru ecosystem."
+order: 100
+section: "llm"
+status: stable
 ---
 
 ```mermaid

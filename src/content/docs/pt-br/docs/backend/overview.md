@@ -1,5 +1,9 @@
 ---
 title: "Backend"
+description: "Documentação sobre Backend no ecossistema Araru."
+order: 100
+section: "backend"
+status: stable
 ---
 
 `server/server.js` inicia ciclo de vida, migrations/jobs/watcher; `server/app.js` compõe Express, segurança, CORS, parsers, métricas, acesso, arquivos e rotas. Controllers convertem HTTP; services concentram domínio.

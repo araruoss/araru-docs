@@ -1,6 +1,9 @@
 ---
 title: Administração
 description: Gerencie usuários, perfis, configurações, armazenamento, tarefas e backups.
+order: 100
+section: "admin"
+status: stable
 ---
 
 O painel administrativo centraliza as configurações globais e as ferramentas operacionais.

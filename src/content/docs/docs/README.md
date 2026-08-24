@@ -1,5 +1,9 @@
 ---
 title: "Documentação do Araru"
+description: "Documentation for Documentação do Araru in the Araru ecosystem."
+order: 100
+section: "readme"
+status: stable
 ---
 
 Fonte de verdade técnica e arquitetural do projeto. O código é a autoridade final; estes documentos descrevem o estado verificado em agosto de 2026 e separam explicitamente implementação atual de direções futuras.

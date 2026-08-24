@@ -1,6 +1,9 @@
 ---
 title: Documentação
 description: Aprenda, execute, opere e contribua com o ecossistema Araru.
+order: 100
+section: "home"
+status: stable
 ---
 
 O Araru é um ecossistema open source e self-hosted para acervos digitais. Esta documentação cobre os produtos atuais Server e Web, conceitos operacionais, arquitetura e contribuição.

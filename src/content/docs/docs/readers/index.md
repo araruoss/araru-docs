@@ -3,6 +3,9 @@ title: Readers
 description: Supported formats and shared reading behavior.
 sidebar:
   order: 1
+order: 100
+section: "readers"
+status: stable
 ---
 
 | Format | Current engine |

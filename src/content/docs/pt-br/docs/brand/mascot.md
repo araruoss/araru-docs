@@ -1,5 +1,9 @@
 ---
 title: "Mascote"
+description: "Documentação sobre Mascote no ecossistema Araru."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Mascote oficial: **TBD**.

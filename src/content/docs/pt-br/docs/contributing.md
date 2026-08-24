@@ -1,6 +1,9 @@
 ---
 title: Como contribuir
 description: Escolha como contribuir com o Araru e siga o fluxo compartilhado do projeto.
+order: 100
+section: "contributing"
+status: stable
 ---
 
 O Araru é desenvolvido em repositórios independentes. As contribuições podem melhorar os serviços Server e Web, a documentação, as traduções, os testes, a infraestrutura, a acessibilidade ou o design do projeto.

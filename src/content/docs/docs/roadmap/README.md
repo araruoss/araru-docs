@@ -1,5 +1,9 @@
 ---
 title: "Roadmap técnico"
+description: "Documentation for Roadmap técnico in the Araru ecosystem."
+order: 100
+section: "roadmap"
+status: planned
 ---
 
 Tudo nesta pasta é **FUTURO / SOB AVALIAÇÃO**, salvo a descrição de limitações atuais. Não representa compromisso nem funcionalidade implementada.

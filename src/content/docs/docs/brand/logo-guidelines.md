@@ -1,5 +1,9 @@
 ---
 title: "Diretrizes de logo"
+description: "Documentation for Diretrizes de logo in the Araru ecosystem."
+order: 100
+section: "brand"
+status: stable
 ---
 
 Logo oficial: **TBD**. Até sua criação, usar wordmark textual “Araru” e o ícone neutro de livro existente apenas como ícone funcional temporário.

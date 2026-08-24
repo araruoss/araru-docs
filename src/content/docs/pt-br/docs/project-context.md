@@ -1,6 +1,9 @@
 ---
 title: Contexto do projeto para agentes
 description: Arquitetura atual, restrições e limitações conhecidas.
+order: 100
+section: "project-context"
+status: stable
 ---
 
 ## Estado atual

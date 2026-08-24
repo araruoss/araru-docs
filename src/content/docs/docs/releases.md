@@ -1,6 +1,9 @@
 ---
 title: Releases
 description: Independent semantic versions and release channels.
+order: 100
+section: "releases"
+status: stable
 ---
 
 Server, Web, Android, Desktop, and Docs have independent lifecycles. A Server `1.4.2` does not require the Web to use the same version. Release tags use Semantic Versioning when a component is ready for that commitment.

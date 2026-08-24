@@ -3,6 +3,9 @@ title: Leitores
 description: Formatos compatíveis e comportamentos compartilhados de leitura.
 sidebar:
   order: 1
+order: 100
+section: "readers"
+status: stable
 ---
 
 | Formato | Mecanismo atual |

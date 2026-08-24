@@ -1,6 +1,9 @@
 ---
 title: Armazenamento
 description: Provedores de conteúdo implementados e planejados.
+order: 100
+section: "storage"
+status: stable
 ---
 
 | Provedor | Estado | Observações |

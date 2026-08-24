@@ -1,5 +1,9 @@
 ---
 title: "PostgreSQL e Redis"
+description: "Documentation for PostgreSQL e Redis in the Araru ecosystem."
+order: 100
+section: "backend"
+status: stable
 ---
 
 PostgreSQL é a única fonte de verdade persistente do backend. Redis é usado somente para cache compartilhado e pode ser reconstruído sem perda de estado funcional.
