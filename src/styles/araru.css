@@ -49,9 +49,10 @@ header.header {
 /* Home */
 body:has(.araru-home-hero) main > .content-panel:first-child { display: none; }
 body:has(.araru-home-hero) main > .content-panel { padding-top: 0; }
+body:has(.araru-home-hero) main > .content-panel .sl-container { max-width: 92rem; }
 .araru-home-hero {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(22rem, 1.1fr);
+  grid-template-columns: minmax(24rem, .78fr) minmax(32rem, 1.35fr);
   align-items: center;
   gap: clamp(2rem, 6vw, 6rem);
   min-height: min(43rem, calc(100vh - var(--sl-nav-height)));
@@ -110,6 +111,7 @@ body:has(.araru-home-hero) main > .content-panel { padding-top: 0; }
   box-shadow: 0 2rem 6rem rgba(0, 43, 76, .35);
   text-decoration: none;
   transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  width: 100%;
 }
 .araru-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(49,169,238,.1), transparent 45%); pointer-events: none; }
 .araru-banner img { display: block; width: 100%; aspect-ratio: 1983 / 793; object-fit: cover; }
