@@ -22,10 +22,6 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
         <span data-stars-label>stars</span>
       </a>
     </div>
-    <details>
-      <summary data-repositories-label>Stars by repository</summary>
-      <div class="repository-stars" data-repository-stars></div>
-    </details>
   </section>
 
   <nav aria-label="Project">
@@ -38,35 +34,19 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
 
 <script>
   const account = 'araruoss';
-  const cacheKey = 'araru-github-stats-v1';
+  const cacheKey = 'araru-github-stats-v2';
   const cacheLifetime = 60 * 60 * 1000;
   const container = document.querySelector<HTMLElement>('[data-github-stats]');
 
-  const renderStats = (data: { followers: number; repositories: Array<{ name: string; url: string; stars: number }> }) => {
+  const renderStats = (data: { followers: number; totalStars: number }) => {
     if (!container) return;
     const portuguese = document.documentElement.lang.toLowerCase().startsWith('pt');
-    const totalStars = data.repositories.reduce((total, repository) => total + repository.stars, 0);
     const formatter = new Intl.NumberFormat(portuguese ? 'pt-BR' : 'en');
 
     container.querySelector<HTMLElement>('[data-followers]')!.textContent = formatter.format(data.followers);
-    container.querySelector<HTMLElement>('[data-total-stars]')!.textContent = formatter.format(totalStars);
+    container.querySelector<HTMLElement>('[data-total-stars]')!.textContent = formatter.format(data.totalStars);
     container.querySelector<HTMLElement>('[data-followers-label]')!.textContent = portuguese ? 'seguidores' : 'followers';
     container.querySelector<HTMLElement>('[data-stars-label]')!.textContent = 'stars';
-    container.querySelector<HTMLElement>('[data-repositories-label]')!.textContent = portuguese ? 'Stars por repositório' : 'Stars by repository';
-
-    const list = container.querySelector<HTMLElement>('[data-repository-stars]')!;
-    list.replaceChildren(...data.repositories.map((repository) => {
-      const link = document.createElement('a');
-      const name = document.createElement('span');
-      const stars = document.createElement('strong');
-      link.href = repository.url;
-      link.target = '_blank';
-      link.rel = 'noreferrer';
-      name.textContent = repository.name;
-      stars.textContent = `★ ${formatter.format(repository.stars)}`;
-      link.append(name, stars);
-      return link;
-    }));
     container.hidden = false;
   };
 
@@ -89,14 +69,9 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
       const repositoriesData = await repositoriesResponse.json();
       const data = {
         followers: Number(accountData.followers || 0),
-        repositories: repositoriesData
+        totalStars: repositoriesData
           .filter((repository: { archived?: boolean }) => !repository.archived)
-          .map((repository: { name: string; html_url: string; stargazers_count: number }) => ({
-            name: repository.name,
-            url: repository.html_url,
-            stars: Number(repository.stargazers_count || 0),
-          }))
-          .sort((a: { stars: number; name: string }, b: { stars: number; name: string }) => b.stars - a.stars || a.name.localeCompare(b.name)),
+          .reduce((total: number, repository: { stargazers_count: number }) => total + Number(repository.stargazers_count || 0), 0),
       };
       localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data }));
       renderStats(data);
@@ -144,44 +119,6 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
   .stats-summary a > span:first-child { color: var(--sl-color-accent-high); font-size: 1rem; }
   .stats-summary a strong { color: var(--sl-color-white); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
   .stats-summary a:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); transform: translateY(-2px); }
-  details { margin-top: 1rem; }
-  summary {
-    width: fit-content;
-    margin-inline: auto;
-    border-radius: .6rem;
-    padding: .45rem .7rem;
-    cursor: pointer;
-    color: var(--sl-color-gray-2);
-    font-size: .75rem;
-    font-weight: 600;
-    list-style-position: inside;
-  }
-  summary:hover { color: var(--sl-color-white); background: var(--sl-color-gray-6); }
-  .repository-stars {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: .55rem;
-    margin-top: .85rem;
-    padding: .85rem;
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 1rem;
-    background: color-mix(in srgb, var(--sl-color-gray-6) 46%, transparent);
-  }
-  .repository-stars a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: .75rem;
-    border: 1px solid transparent;
-    border-radius: .65rem;
-    padding: .55rem .7rem;
-    color: var(--sl-color-gray-2);
-    background: color-mix(in srgb, var(--sl-color-black) 55%, transparent);
-    text-decoration: none;
-  }
-  .repository-stars a:hover { border-color: var(--sl-color-gray-4); color: var(--sl-color-white); background: var(--sl-color-gray-6); }
-  .repository-stars span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .repository-stars strong { color: var(--araru-warm); font-variant-numeric: tabular-nums; }
   nav {
     display: flex;
     flex-wrap: wrap;
@@ -196,6 +133,5 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
   @media (max-width: 32rem) {
     .araru-footer { padding-inline: 0; }
     .stats-summary a { min-width: 8rem; }
-    .repository-stars { grid-template-columns: 1fr; }
   }
 </style>
