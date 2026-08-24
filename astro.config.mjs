@@ -16,8 +16,8 @@ const fromBase = (path = '') =>
   `${basePath}${path.replace(/^\/+/, '')}`;
 
 export default defineConfig({
-  site: process.env.SITE_URL || site.defaultUrl,
-  base: basePath,
+  site: "https://araruoss.github.io",
+  base: "/",
 
   redirects: {
     '/pt-BR': fromBase('pt-br'),
