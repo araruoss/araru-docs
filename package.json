@@ -1,0 +1,15 @@
+{
+  "name": "@araru/docs",
+  "version": "2.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "check": "node scripts/check-docs.js"
+  },
+  "devDependencies": { "vitepress": "^1.6.4" },
+  "engines": { "node": ">=22.5.0" }
+}

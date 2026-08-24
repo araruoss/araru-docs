@@ -1,0 +1,62 @@
+name: araru
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-araru}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Defina POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-araru}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  server:
+    image: ${ARARU_SERVER_IMAGE:-ghcr.io/araruoss/araru-server:latest}
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      DATABASE_URL: postgresql://${POSTGRES_USER:-araru}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-araru}
+      REDIS_URL: redis://redis:6379
+      FRONTEND_URL: ${PUBLIC_WEB_URL:-http://localhost:8080}
+      ALLOWED_ORIGINS: ${PUBLIC_WEB_URL:-http://localhost:8080}
+      SECURE_COOKIES: ${SECURE_COOKIES:-false}
+      COOKIE_SAME_SITE: ${COOKIE_SAME_SITE:-lax}
+      LOCAL_LIBRARY_DIR: /library
+    volumes:
+      - ${ARARU_LIBRARY_PATH:-./library}:/library:ro
+      - server-data:/app/storage
+    ports:
+      - "${ARARU_SERVER_PORT:-3001}:3001"
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  web:
+    image: ${ARARU_WEB_IMAGE:-ghcr.io/araruoss/araru-web:latest}
+    environment:
+      API_UPSTREAM: http://server:3001
+    ports:
+      - "${ARARU_WEB_PORT:-8080}:80"
+    depends_on:
+      - server
+
+volumes:
+  postgres-data:
+  redis-data:
+  server-data:
