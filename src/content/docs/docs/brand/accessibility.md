@@ -2,8 +2,6 @@
 title: "Acessibilidade da marca"
 ---
 
-# Acessibilidade da marca
-
 A identidade nunca deve reduzir legibilidade. Meta: WCAG 2.2 AA para interface e comunicação.
 
 - contraste mínimo apropriado para texto/controles;

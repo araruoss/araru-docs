@@ -2,8 +2,6 @@
 title: "Textos de produto"
 ---
 
-# Textos de produto
-
 Usar termos claros: Biblioteca, Obra, Arquivo, Coleção, Série, Autor, Categoria, Continuar lendo, Recentemente adicionados, Favoritos, Histórico e Configurações.
 
 “Araru” nomeia o produto; não substitui substantivos (“Biblioteca” continua sendo a seção). Evitar “AraruBook”, “AraruJob” e nomes temáticos.

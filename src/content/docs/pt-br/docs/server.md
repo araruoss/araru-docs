@@ -3,8 +3,6 @@ title: Araru Server
 description: Backend central do ecossistema Araru.
 ---
 
-# Araru Server
-
 **Status: fundação estável**
 
 O Server Node.js/Express é responsável por autenticação, usuários, perfis, catálogo, metadados, capas, busca, progresso, jobs, cache, backups e entrega HTTP de conteúdo.

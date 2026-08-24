@@ -2,8 +2,6 @@
 title: "Arquitetura atual"
 ---
 
-# Arquitetura atual
-
 ## Boundaries
 
 ```mermaid

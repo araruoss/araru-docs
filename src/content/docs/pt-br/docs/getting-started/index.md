@@ -3,8 +3,6 @@ title: Primeiros passos
 description: Execute o Araru e conclua a configuração inicial.
 ---
 
-# Primeiros passos
-
 Você precisa do Docker com Compose v2, uma pasta com seu acervo e espaço persistente para banco, cache e capas.
 
 ```bash

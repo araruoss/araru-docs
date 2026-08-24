@@ -2,8 +2,6 @@
 title: "Documentação do Araru"
 ---
 
-# Documentação do Araru
-
 Fonte de verdade técnica e arquitetural do projeto. O código é a autoridade final; estes documentos descrevem o estado verificado em agosto de 2026 e separam explicitamente implementação atual de direções futuras.
 
 Identidade e uso da marca: [Araru](brand/README.md).

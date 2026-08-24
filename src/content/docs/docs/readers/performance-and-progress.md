@@ -2,8 +2,6 @@
 title: "Performance, Range e progresso"
 ---
 
-# Performance, Range e progresso
-
 ## Arquivos grandes
 
 Conteúdo local usa streams e `fs.stat`; Range lê somente o intervalo solicitado e retorna `206`. O E2E/backend cria arquivos esparsos de 500 MB, 2 GB e 5 GB e valida pequenos ranges, demonstrando que o caminho testado não aloca o arquivo inteiro.

@@ -2,8 +2,6 @@
 title: "Assets de marca Araru"
 ---
 
-# Assets de marca Araru
-
 Os assets oficiais de marca são mantidos no repositório da organização:
 
 - [araruoss/araruoss — assets](https://github.com/araruoss/araruoss/tree/main/assets)

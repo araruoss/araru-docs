@@ -2,8 +2,6 @@
 title: "ADR-NNN: título"
 ---
 
-# ADR-NNN: título
-
 Status: Proposed  
 Date: YYYY-MM-DD
 

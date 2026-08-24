@@ -2,8 +2,6 @@
 title: "Araru — entrada para agentes de código"
 ---
 
-# Araru — entrada para agentes de código
-
 Para qualquer mudança, leia nesta ordem:
 
 1. [project-context](project-context.md)

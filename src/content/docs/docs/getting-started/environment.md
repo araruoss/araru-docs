@@ -2,8 +2,6 @@
 title: "Ambiente e configuração"
 ---
 
-# Ambiente e configuração
-
 Os arquivos `.env.example` são a lista autorizada de variáveis. Nunca documente ou versione valores reais.
 
 ## Raiz/Compose

@@ -2,8 +2,6 @@
 title: "PostgreSQL e Redis"
 ---
 
-# PostgreSQL e Redis
-
 PostgreSQL é a única fonte de verdade persistente do backend. Redis é usado somente para cache compartilhado e pode ser reconstruído sem perda de estado funcional.
 
 ## Inicialização

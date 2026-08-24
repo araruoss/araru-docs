@@ -2,8 +2,6 @@
 title: "Identidade"
 ---
 
-# Identidade
-
 **Nome oficial:** Araru  
 **Português:** Servidor open source e self-hosted para seu acervo digital.  
 **English:** Open-source, self-hosted digital library server.

@@ -2,8 +2,6 @@
 title: "Visão geral"
 ---
 
-# Visão geral
-
 O Araru cataloga arquivos, deriva a navegação das pastas, enriquece metadados e fornece leitores internos. Ele é self-hosted e atualmente orientado a uma instalação, embora suporte perfis de leitura dentro dessa instalação.
 
 ## Estado atual

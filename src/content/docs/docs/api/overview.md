@@ -2,8 +2,6 @@
 title: "API HTTP"
 ---
 
-# API HTTP
-
 Base atual: `/api`. JSON é usado para dados; conteúdo, páginas, capas e backup retornam binário. Não há OpenAPI nem versionamento `/v1` atualmente.
 
 ## Convenções

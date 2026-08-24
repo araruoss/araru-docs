@@ -2,8 +2,6 @@
 title: "Modelo de domínio real"
 ---
 
-# Modelo de domínio real
-
 ```mermaid
 erDiagram
   PROFILE ||--o{ READING_STATE : owns

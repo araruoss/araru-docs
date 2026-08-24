@@ -3,8 +3,6 @@ title: Storage
 description: Implemented and planned content providers.
 ---
 
-# Storage
-
 | Provider | Status | Notes |
 | --- | --- | --- |
 | Local filesystem | Stable | Read-only library mount; folders define categories. |

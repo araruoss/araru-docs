@@ -2,8 +2,6 @@
 title: "Evolução possível do backend — FUTURO"
 ---
 
-# Evolução possível do backend — FUTURO
-
 ## Próximas capacidades a avaliar
 
 - autenticação real, usuários, autorização, devices e sessões revogáveis;

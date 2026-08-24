@@ -2,8 +2,6 @@
 title: "Biblioteca, categorias e busca"
 ---
 
-# Biblioteca, categorias e busca
-
 A sidebar é a navegação global. Em desktop pode recolher; em mobile vira drawer. Biblioteca abre o catálogo e expõe a árvore derivada de `categoryPath`; recentes e favoritos usam o mesmo conteúdo sem tabs duplicadas.
 
 ## Categorias

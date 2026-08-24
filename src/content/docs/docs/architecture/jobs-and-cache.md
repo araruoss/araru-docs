@@ -2,8 +2,6 @@
 title: "Jobs e caches"
 ---
 
-# Jobs e caches
-
 ## Jobs
 
 A fila é local ao processo, com histórico em `background_jobs`. Ela ordena prioridade/data, deduplica por chave, limita concorrência, persiste tentativas e recupera registros `running` como `queued` após reinício.

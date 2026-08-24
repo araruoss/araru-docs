@@ -2,8 +2,6 @@
 title: "Invariantes e restrições"
 ---
 
-# Invariantes e restrições
-
 - arquivos grandes não podem ser carregados integralmente em RAM sem budget explícito;
 - PDF local deve preservar streaming/Range e headers;
 - frontend não acessa filesystem, bancos, paths físicos ou secrets;

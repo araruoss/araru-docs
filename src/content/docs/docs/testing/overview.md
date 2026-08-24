@@ -2,8 +2,6 @@
 title: "Estratégia de testes e CI"
 ---
 
-# Estratégia de testes e CI
-
 ## Suítes
 
 - Web (`test` no `araru-web`): storage/progresso, cache PWA, core/budget/cleanup do reader e merge de sync;

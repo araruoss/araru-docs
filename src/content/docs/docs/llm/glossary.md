@@ -2,8 +2,6 @@
 title: "Glossário"
 ---
 
-# Glossário
-
 - **Work**: obra canônica que agrupa arquivos.
 - **Library File/File**: arquivo físico indexado de uma fonte.
 - **Work File**: associação Work ↔ Library File.

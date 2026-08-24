@@ -3,8 +3,6 @@ title: Administration
 description: Operate users, profiles, settings, storage, jobs, and backups.
 ---
 
-# Administration
-
 The admin panel centralizes global configuration and operational tools.
 
 - **General/Appearance:** library name, global language, theme, timezone, and date format.

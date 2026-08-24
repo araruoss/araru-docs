@@ -2,8 +2,6 @@
 title: "Formatos de leitura"
 ---
 
-# Formatos de leitura
-
 ## PDF
 
 - descoberta: extensão `.pdf`;

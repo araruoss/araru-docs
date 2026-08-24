@@ -2,8 +2,6 @@
 title: "ADR-006: jobs locais com histórico persistente"
 ---
 
-# ADR-006: jobs locais com histórico persistente
-
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 

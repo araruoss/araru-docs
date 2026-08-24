@@ -2,8 +2,6 @@
 title: "Sistema de nomes"
 ---
 
-# Sistema de nomes
-
 | Elemento | Nome |
 |---|---|
 | Ecossistema | Araru |

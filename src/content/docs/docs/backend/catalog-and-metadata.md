@@ -2,8 +2,6 @@
 title: "Catálogo, obras, categorias e metadados"
 ---
 
-# Catálogo, obras, categorias e metadados
-
 ## Catálogo
 
 `driveService` descobre fontes; `libraryIndexService` persiste arquivos e FTS. IDs/URLs existentes são preservados. Fingerprint detecta mudança; watcher reconcilia localmente; jobs periódicos fazem manutenção. Ausência tem retenção antes de limpeza definitiva.

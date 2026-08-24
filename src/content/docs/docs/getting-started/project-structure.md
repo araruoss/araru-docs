@@ -2,8 +2,6 @@
 title: "Estrutura de projetos"
 ---
 
-# Estrutura de projetos
-
 O ecossistema é formado por repositórios independentes:
 
 ```text

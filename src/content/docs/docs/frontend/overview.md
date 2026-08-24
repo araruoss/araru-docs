@@ -2,8 +2,6 @@
 title: "Frontend"
 ---
 
-# Frontend
-
 SPA React iniciada em `src/main.jsx`. O entrypoint configura Router, tema, TanStack Query, error boundary, controle de acesso, toast, sincronização de leitura, telemetria local e Service Worker em produção. `App.jsx` faz lazy loading das páginas e da paleta.
 
 ## Estrutura

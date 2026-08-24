@@ -20,6 +20,9 @@ const failures = [];
 const links = /\[[^\]]*\]\(([^)]+)\)/g;
 for (const file of markdown) {
   const source = fs.readFileSync(file, 'utf8');
+  if (file.startsWith(`src${path.sep}content${path.sep}docs${path.sep}`) && /^---\r?\n[\s\S]*?\r?\n---\r?\n\s*#\s+/.test(source)) {
+    failures.push(`${file}: título H1 inicial duplica o título renderizado pelo Starlight`);
+  }
   for (const match of source.matchAll(links)) {
     const href = match[1].trim().replace(/^<|>$/g, '');
     if (!href || /^(https?:|mailto:|#)/.test(href)) continue;

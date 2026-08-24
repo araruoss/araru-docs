@@ -2,8 +2,6 @@
 title: "Matriz de cobertura real"
 ---
 
-# Matriz de cobertura real
-
 Legenda: ✓ cobertura explícita; — não confirmada pela suíte atual.
 
 | Recurso | Unitário | Integração | E2E | Benchmark |

@@ -2,8 +2,6 @@
 title: "Arquitetura de storage"
 ---
 
-# Arquitetura de storage
-
 ## Filesystem local
 
 `LOCAL_LIBRARY_DIR` é percorrido para descobrir formatos suportados. O ID local codifica o caminho relativo; fingerprint e timestamps detectam alterações. `categoryPath` é o diretório relativo sem o filename. Streams e Range evitam ler PDFs grandes integralmente.

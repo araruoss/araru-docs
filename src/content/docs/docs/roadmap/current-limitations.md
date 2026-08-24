@@ -2,8 +2,6 @@
 title: "Limitações atuais confirmadas"
 ---
 
-# Limitações atuais confirmadas
-
 | Estado atual | Impacto | Quando vira problema | Direção possível — não decidida |
 |---|---|---|---|
 | fila executada no processo da API | trabalho disputa CPU/memória com API | jobs pesados/alta concorrência | workers separados usando a persistência PostgreSQL |

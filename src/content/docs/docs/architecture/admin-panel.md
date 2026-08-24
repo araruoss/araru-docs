@@ -2,8 +2,6 @@
 title: "Administração, usuários e perfis"
 ---
 
-# Administração, usuários e perfis
-
 O Admin Panel centraliza configurações da instalação em `/admin`. A rota é carregada sob demanda, possui layout próprio e navegação adaptada: sidebar no desktop e drawer com alvos de toque no mobile/tablet.
 
 ## User e Profile

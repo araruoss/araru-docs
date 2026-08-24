@@ -2,8 +2,6 @@
 title: "Contexto backend para LLM"
 ---
 
-# Contexto backend para LLM
-
 Entrypoints: `server/server.js` e `server/app.js`. Config em `config/drive.js`. Rotas → controllers → services. Middleware implementa headers, rate limit, request ID e acesso.
 
 PostgreSQL/schema: `database/postgresMigrations.js`; Redis: `redisService.js`. Índice/FTS: `libraryIndexService`. Fonte/arquivo/capas: `driveService`. Páginas: `readerService`. Metadados: `metadataService` e subpasta `metadata`. Jobs/cache/integridade/backup têm services próprios.

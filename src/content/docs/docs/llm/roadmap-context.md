@@ -2,8 +2,6 @@
 title: "Contexto de roadmap"
 ---
 
-# Contexto de roadmap
-
 ## CURRENT
 
 Node/Express, React/Vite, PostgreSQL, Redis, filesystem + Drive opcional, fila persistente, Nginx/Docker, Web/PWA.

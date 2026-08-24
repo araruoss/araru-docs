@@ -2,8 +2,6 @@
 title: "Voz e tom"
 ---
 
-# Voz e tom
-
 ## Voz
 
 Simples, direta, amigável e ocasionalmente divertida. Português brasileiro natural, sem jargão desnecessário ou regionalismo forçado.

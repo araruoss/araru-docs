@@ -5,8 +5,6 @@ sidebar:
   order: 1
 ---
 
-# What is Araru?
-
 Araru organizes and serves a digital collection on infrastructure controlled by its owner. A central Server provides one authoritative home for storage, credentials, metadata, and reading state.
 
 ## Why self-hosted?

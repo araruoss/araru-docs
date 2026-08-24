@@ -2,8 +2,6 @@
 title: "Backend"
 ---
 
-# Backend
-
 `server/server.js` inicia ciclo de vida, migrations/jobs/watcher; `server/app.js` compõe Express, segurança, CORS, parsers, métricas, acesso, arquivos e rotas. Controllers convertem HTTP; services concentram domínio.
 
 ## Camadas reais

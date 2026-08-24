@@ -2,8 +2,6 @@
 title: "ADR-005: HTTP Range para conteúdo grande"
 ---
 
-# ADR-005: HTTP Range para conteúdo grande
-
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 

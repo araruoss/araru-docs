@@ -2,8 +2,6 @@
 title: "Arquitetura dos readers"
 ---
 
-# Arquitetura dos readers
-
 O frontend usa capabilities em `readers/core.js` e um shell comum para loading, erro, retry, dock, progresso e cleanup. Engines são carregadas sob demanda.
 
 | Formato | Transporte atual | Renderização |

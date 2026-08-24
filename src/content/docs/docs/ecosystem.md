@@ -3,8 +3,6 @@ title: Ecosystem
 description: Responsibilities and maturity of every Araru module.
 ---
 
-# Araru Ecosystem
-
 ```text
                      Araru Server
                           │ HTTP API

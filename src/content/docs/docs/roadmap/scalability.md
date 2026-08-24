@@ -2,8 +2,6 @@
 title: "Escalabilidade — FUTURO"
 ---
 
-# Escalabilidade — FUTURO
-
 Objetivo possível: crescer para múltiplos usuários/conexões sem comprometer streams e jobs. O sistema atual não declara essa capacidade.
 
 Antes de mudar arquitetura, medir:

@@ -2,8 +2,6 @@
 title: "ADR-004: separar Work de Library File"
 ---
 
-# ADR-004: separar Work de Library File
-
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 

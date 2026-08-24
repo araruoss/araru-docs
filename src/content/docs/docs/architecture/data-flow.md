@@ -2,8 +2,6 @@
 title: "Fluxos de dados"
 ---
 
-# Fluxos de dados
-
 ## Catálogo
 
 Filesystem/Drive → descoberta → fingerprint/ID → `library_files` → FTS → API → TanStack Query → biblioteca virtualizada.

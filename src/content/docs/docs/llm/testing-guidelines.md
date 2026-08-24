@@ -2,8 +2,6 @@
 title: "Diretrizes de testes para agentes"
 ---
 
-# Diretrizes de testes para agentes
-
 | Mudança | Validação mínima |
 |---|---|
 | componente/hook | frontend tests + build |

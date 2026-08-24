@@ -2,8 +2,6 @@
 title: "Inicialização e configuração do backend"
 ---
 
-# Inicialização e configuração do backend
-
 `config/loadEnv.js` carrega ambiente; `config/drive.js` normaliza valores e paths e valida combinações. `createApp()` carrega credenciais, valida ambiente e prepara a biblioteca antes de expor rotas.
 
 `server.js` inicia HTTP, tarefas de manutenção e watcher, e trata encerramento gracioso. Consulte o [`.env.example` do Server](https://github.com/araruoss/araru-server/blob/main/.env.example) para a lista completa.

@@ -2,8 +2,6 @@
 title: "Guias de mudança"
 ---
 
-# Guias de mudança
-
 ## Nova rota
 
 1. adicione regra em service;

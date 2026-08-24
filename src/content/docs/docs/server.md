@@ -3,8 +3,6 @@ title: Araru Server
 description: Central backend for the Araru ecosystem.
 ---
 
-# Araru Server
-
 **Status: Stable foundation**
 
 Araru Server is the Node.js/Express backend. It owns authentication, users, profiles, catalog indexing, metadata, covers, search, reading progress, durable jobs, cache policy, backups, and HTTP content delivery.

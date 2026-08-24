@@ -2,8 +2,6 @@
 title: "ADR-002: PostgreSQL como persistência e Redis como cache"
 ---
 
-# ADR-002: PostgreSQL como persistência e Redis como cache
-
 Status: Accepted  
 Date: 2026-08-23
 

@@ -2,8 +2,6 @@
 title: "Posicionamento"
 ---
 
-# Posicionamento
-
 Araru é um **open-source self-hosted digital library server**.
 
 O usuário controla seus arquivos, servidor, armazenamento, biblioteca e dados. “Your library. Your server. Your data.” é um princípio de posicionamento, não slogan oficial.

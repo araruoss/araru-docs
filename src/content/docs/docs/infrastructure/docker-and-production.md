@@ -2,8 +2,6 @@
 title: "Docker, rede e produção"
 ---
 
-# Docker, rede e produção
-
 ## Compose atual
 
 ```mermaid

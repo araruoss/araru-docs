@@ -2,8 +2,6 @@
 title: "Rotas e estado do frontend"
 ---
 
-# Rotas e estado do frontend
-
 | Rota | Componente | Estado relevante |
 |---|---|---|
 | `/` | `Biblioteca` | query, categoria, filtros, ordem, modo |

@@ -3,8 +3,6 @@ title: Project Context for Agents
 description: Current architecture, constraints, and known limitations.
 ---
 
-# Project Context for Agents
-
 ## Current
 
 - Server: Node.js/Express, PostgreSQL, Redis, local storage, optional Google Drive.

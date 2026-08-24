@@ -2,8 +2,6 @@
 title: "Migração Biblioteca Digital → Araru"
 ---
 
-# Migração Biblioteca Digital → Araru
-
 Princípio: **zero data loss**. Identidade pública muda; contratos persistidos permanecem quando a troca não oferece benefício técnico.
 
 | Item | Antigo | Novo | Migração | Breaking? |

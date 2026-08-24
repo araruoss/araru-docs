@@ -2,8 +2,6 @@
 title: "Tipografia"
 ---
 
-# Tipografia
-
 Prioridades: legibilidade, disponibilidade, performance, acentos e leitura prolongada.
 
 - Display/Heading: stack sans do sistema, peso 600–700;

@@ -2,8 +2,6 @@
 title: "Architecture Decision Records"
 ---
 
-# Architecture Decision Records
-
 ADRs registram decisões duradouras. Os retrospectivos abaixo são comprovados pelo código; a motivação histórica não está registrada, portanto o rationale é inferido da arquitetura atual.
 
 - [001 — frontend e backend separados](001-frontend-backend-separation.md)

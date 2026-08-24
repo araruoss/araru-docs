@@ -2,8 +2,6 @@
 title: "ADR-003: categorias derivadas de diretórios"
 ---
 
-# ADR-003: categorias derivadas de diretórios
-
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 

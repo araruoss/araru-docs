@@ -2,8 +2,6 @@
 title: "Reader, responsividade e PWA"
 ---
 
-# Reader, responsividade e PWA
-
 ## Reader
 
 `Leitura.jsx` seleciona capability por formato. `ReaderShell` padroniza estados de abertura, erro, retry e encerramento. A dock sobreposta permanece visível em desktop/mobile e contém navegação, página e fechar.

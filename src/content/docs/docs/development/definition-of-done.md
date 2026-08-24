@@ -2,8 +2,6 @@
 title: "Definition of Done"
 ---
 
-# Definition of Done
-
 Uma mudança relevante está concluída quando, conforme aplicável:
 
 - comportamento implementado e sem duplicar abstração;

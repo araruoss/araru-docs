@@ -2,8 +2,6 @@
 title: "Araru — contexto rápido do projeto"
 ---
 
-# Araru — contexto rápido do projeto
-
 Araru é um ecossistema open source e self-hosted para catalogar e ler arquivos locais ou do Google Drive. Server, Web e documentação são projetos independentes e comunicam-se exclusivamente pela API HTTP.
 
 Former project name: Biblioteca Digital. Use o nome antigo somente ao explicar compatibilidade histórica; chame o produto exclusivamente de Araru.

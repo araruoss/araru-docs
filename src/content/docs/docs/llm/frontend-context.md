@@ -2,8 +2,6 @@
 title: "Contexto frontend para LLM"
 ---
 
-# Contexto frontend para LLM
-
 Entrypoint `main.jsx`; rotas/lazy em `App.jsx`; páginas em `pages`; UI em `components`; readers em `readers`; API em `lib/api.js`.
 
 Estado remoto: TanStack Query. Navegação/filtros: URL. Fallback/progresso: localStorage + sync API. Scroll: sessionStorage. Offline: Cache Storage + IndexedDB. Tema: Context.

@@ -2,8 +2,6 @@
 title: "Inventário de endpoints"
 ---
 
-# Inventário de endpoints
-
 Fonte: `server/app.js`, middleware de segurança e rotas do [`araru-server`](https://github.com/araruoss/araru-server). **Auth** indica sessão individual obrigatória após a conclusão do setup; health, status, setup e login têm as exceções descritas abaixo.
 
 ## Saúde e acesso
@@ -111,7 +109,7 @@ IDs devem ser tratados como opacos e URL-encoded. O cliente não usa path físic
 | GET | `/api/operations/circuit-breakers` | estado de provedores |
 
 Todos esses endpoints passam pela proteção global quando configurada. Payloads exatos devem ser confirmados no controller antes de criar um cliente novo; não existe schema OpenAPI gerado.
-# Setup, identidade e configuração
+## Setup, identidade e configuração
 
 - `GET /api/system/status`: informa se o setup inicial é necessário;
 - `POST /api/setup`: cria configuração, administrador e perfil de forma atômica;

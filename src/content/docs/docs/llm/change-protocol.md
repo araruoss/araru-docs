@@ -2,8 +2,6 @@
 title: "Protocolo de alteração"
 ---
 
-# Protocolo de alteração
-
 ## Antes
 
 1. leia project-context, contexto da área e constraints;

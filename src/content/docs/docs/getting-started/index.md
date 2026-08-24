@@ -5,8 +5,6 @@ sidebar:
   order: 1
 ---
 
-# Getting Started
-
 ## Requirements
 
 - Docker Engine with Compose v2;

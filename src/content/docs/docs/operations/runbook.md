@@ -2,8 +2,6 @@
 title: "Runbook operacional"
 ---
 
-# Runbook operacional
-
 ## Saúde
 
 ```bash

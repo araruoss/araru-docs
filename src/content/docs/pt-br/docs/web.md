@@ -3,8 +3,6 @@ title: Araru Web
 description: Cliente oficial para navegador e PWA.
 ---
 
-# Araru Web
-
 **Status: fundação estável**
 
 O cliente React/Vite oferece setup, login, biblioteca, categorias, busca, administração, offline e leitores internos de PDF, EPUB, MOBI, CBZ e CBR.

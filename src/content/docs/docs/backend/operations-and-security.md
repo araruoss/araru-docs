@@ -2,8 +2,6 @@
 title: "Jobs, operação, Drive, observabilidade e segurança"
 ---
 
-# Jobs, operação, Drive, observabilidade e segurança
-
 ## Operação
 
 Fila persistente oferece prioridade, dedupe, retries, recuperação e cancelamento de pendentes. Manutenção limpa metadados expirados, arquivos ausentes e cache LRU. Integridade compara índice, filesystem e derivados; reparos destrutivos exigem aplicação explícita. Backup exporta tabelas permitidas e restore é transacional.

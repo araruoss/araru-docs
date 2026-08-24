@@ -2,8 +2,6 @@
 title: "Contexto arquitetural para LLM"
 ---
 
-# Contexto arquitetural para LLM
-
 Browser chama somente HTTP. Frontend mantém UI/estado efêmero; backend detém domínio, paths, credenciais e persistência. Nginx/Vite fazem proxy. Não mova regras de filesystem/metadata para o cliente.
 
 Backend: route → controller → service → PostgreSQL/Redis/storage/provider. Watcher e jobs vivem no mesmo processo. PostgreSQL é fonte de verdade; Redis e derivados são regeneráveis. Filesystem é fonte principal, Drive opcional.

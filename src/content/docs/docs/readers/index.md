@@ -5,8 +5,6 @@ sidebar:
   order: 1
 ---
 
-# Readers
-
 | Format | Current engine |
 | --- | --- |
 | PDF | PDF.js with HTTP Range and internal page rendering |

@@ -2,8 +2,6 @@
 title: "ADR-001: separar frontend e backend"
 ---
 
-# ADR-001: separar frontend e backend
-
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 

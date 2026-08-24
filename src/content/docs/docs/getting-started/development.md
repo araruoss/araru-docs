@@ -2,8 +2,6 @@
 title: "Desenvolvimento local"
 ---
 
-# Desenvolvimento local
-
 Clone apenas os projetos nos quais trabalhará. Não há dependência de diretório compartilhado.
 
 ## Server

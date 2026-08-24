@@ -2,8 +2,6 @@
 title: "Marca Araru"
 ---
 
-# Marca Araru
-
 Araru é um servidor open source e self-hosted para gerenciamento, organização e consumo do acervo digital controlado pelo próprio usuário.
 
 O nome se inspira de forma sutil nas araras e na biodiversidade brasileira, especialmente no Cerrado. Essa origem orienta marca, cores e comunicação; a interface de leitura permanece limpa e sem temática literal.

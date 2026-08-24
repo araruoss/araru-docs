@@ -3,8 +3,6 @@ title: O que é o Araru?
 description: Filosofia, conceitos centrais e limites de confiança.
 ---
 
-# O que é o Araru?
-
 O Araru organiza e disponibiliza um acervo digital na infraestrutura controlada pelo proprietário. Um Server central mantém storage, credenciais, metadados e estado de leitura em uma fonte confiável.
 
 ## Por que self-hosted?

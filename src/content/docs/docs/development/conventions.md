@@ -2,8 +2,6 @@
 title: "Convenções de desenvolvimento"
 ---
 
-# Convenções de desenvolvimento
-
 ## Backend
 
 Rotas apenas mapeiam; controllers adaptam HTTP; services contêm regras. Erros esperados recebem `statusCode`; middleware normaliza envelope. Use logger estruturado, nunca `console` ou secrets. Streams/Range devem evitar buffers integrais. Jobs longos precisam dedupe, prioridade, retry e estado observável.
