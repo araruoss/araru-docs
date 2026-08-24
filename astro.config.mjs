@@ -25,8 +25,8 @@ export default defineConfig({
       description: 'Your digital library, under your control.',
       defaultLocale: 'root',
       locales: {
-        root: { label: 'EN', lang: 'en' },
-        'pt-br': { label: 'PT-BR', lang: 'pt-BR' },
+        root: { label: '🇺🇸 EN', lang: 'en' },
+        'pt-br': { label: '🇧🇷 PT-BR', lang: 'pt-BR' },
       },
       social: [{ icon: 'github', label: 'Araru OSS on GitHub', href: 'https://github.com/araruoss' }],
       editLink: { baseUrl: 'https://github.com/araruoss/araru-docs/edit/main/' },

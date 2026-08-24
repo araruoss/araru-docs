@@ -99,6 +99,11 @@ const docsHref = isPortuguese ? `${base}pt-br/docs/` : `${base}docs/`;
     }
     .github :global(a:hover) { color: var(--sl-color-white); background: var(--sl-color-gray-6); }
     .actions :global(select) { min-height: 2.75rem; }
+    .actions :global(starlight-lang-select .label-icon) { display: none; }
+    .actions :global(starlight-lang-select select) {
+      width: 7.75rem;
+      padding-inline-start: .5rem;
+    }
     @media (min-width: 50rem) {
       .araru-nav {
         display: grid;
