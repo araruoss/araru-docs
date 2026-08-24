@@ -8,7 +8,7 @@ export const navigation = [
     tr('Overview', 'Visão geral', 'docs/getting-started/overview'),
     tr('Project structure', 'Estrutura de projetos', 'docs/getting-started/project-structure'),
   ] },
-  { label: 'Concepts', translations: { 'pt-BR': 'Conceitos' }, items: [
+  { label: 'Concepts', translations: { 'pt-BR': 'Conceitos' }, collapsed: false, items: [
     tr('What is Araru?', 'O que é o Araru?', 'docs/concepts/what-is-araru'),
     tr('Content ownership and responsibility', 'Propriedade e responsabilidade do conteúdo', 'docs/concepts/content-responsibility'),
   ] },
