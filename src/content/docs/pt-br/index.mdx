@@ -11,7 +11,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <section class="araru-home-hero">
   <a class="araru-banner" href="https://github.com/araruoss?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Explorar os repositórios do Araru no GitHub">
-    <img src="/brand/araru-banner.png" alt="Ecossistema Araru OSS" loading="eager" fetchpriority="high" />
+    <img src={`${import.meta.env.BASE_URL}brand/araru-banner.png`} alt="Ecossistema Araru OSS" loading="eager" fetchpriority="high" />
     <span>Explore o ecossistema no GitHub <span aria-hidden="true">↗</span></span>
   </a>
 </section>
@@ -29,4 +29,4 @@ O Araru organiza e disponibiliza seu acervo sem entregar arquivos, histórico de
 
 ## Comece agora
 
-Use Docker Compose para iniciar PostgreSQL, Redis, Server e Web. [Acesse o guia inicial →](/pt-br/docs/getting-started/)
+Use Docker Compose para iniciar PostgreSQL, Redis, Server e Web. [Acesse o guia inicial →](./docs/getting-started/)

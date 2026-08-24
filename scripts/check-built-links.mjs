@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve('dist');
+const configuredBase = `/${(process.env.BASE_PATH || '').replace(/^\/+|\/+$/g, '')}`;
+const basePath = configuredBase === '/' ? '' : configuredBase;
 const htmlFiles = [];
 const walk = (directory) => fs.readdirSync(directory, { withFileTypes: true }).forEach((entry) => {
   const file = path.join(directory, entry.name);
@@ -14,8 +16,14 @@ const routeFor = (file) => {
   const relative = path.relative(root, file).split(path.sep).join('/');
   return relative.endsWith('/index.html') ? `/${relative.slice(0, -10)}` : `/${relative}`;
 };
+const withoutBase = (pathname) => {
+  const decoded = decodeURIComponent(pathname);
+  if (!basePath) return decoded;
+  if (decoded === basePath) return '/';
+  return decoded.startsWith(`${basePath}/`) ? decoded.slice(basePath.length) : decoded;
+};
 const targetFor = (pathname) => {
-  const relative = decodeURIComponent(pathname).replace(/^\/+/, '');
+  const relative = withoutBase(pathname).replace(/^\/+/, '');
   const direct = path.join(root, relative);
   const candidates = [direct, path.join(direct, 'index.html'), `${direct}.html`];
   return candidates.find((candidate) => fs.existsSync(candidate) && fs.statSync(candidate).isFile());
