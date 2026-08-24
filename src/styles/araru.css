@@ -52,54 +52,12 @@ body:has(.araru-home-hero) main > .content-panel:first-child { display: none; }
 body:has(.araru-home-hero) main > .content-panel { padding-top: 0; }
 body:has(.araru-home-hero) main > .content-panel .sl-container { max-width: 92rem; }
 .araru-home-hero {
-  display: grid;
-  grid-template-columns: minmax(24rem, .78fr) minmax(32rem, 1.35fr);
-  align-items: center;
-  gap: clamp(2rem, 6vw, 6rem);
-  min-height: min(43rem, calc(100vh - var(--sl-nav-height)));
-  padding-block: clamp(4rem, 9vw, 8rem);
-}
-.araru-home-copy h1 {
-  margin: .9rem 0 1.4rem;
-  font-size: clamp(3rem, 6vw, 5.75rem);
-  line-height: .98;
-  letter-spacing: -.06em;
-  text-wrap: balance;
-}
-.araru-home-copy h1 span {
-  color: transparent;
-  background: linear-gradient(100deg, #31a9ee 5%, #79d3ff 55%, #f5a623 115%);
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-.araru-home-copy > p {
-  max-width: 39rem;
-  color: var(--sl-color-gray-2);
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  line-height: 1.7;
-}
-.araru-eyebrow {
-  color: var(--sl-color-accent-high);
-  font-size: .75rem;
-  font-weight: 750;
-  letter-spacing: .16em;
-}
-.araru-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 2rem; }
-.araru-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: .55rem;
-  min-height: 3rem;
-  border-radius: .8rem;
-  padding: .7rem 1.15rem;
-  font-weight: 700;
-  text-decoration: none;
+  min-height: min(43rem, calc(100vh - var(--sl-nav-height)));
+  padding-block: clamp(3rem, 7vw, 6rem);
 }
-.araru-button { border: 1px solid var(--sl-color-gray-5); color: var(--sl-color-white); background: color-mix(in srgb, var(--sl-color-gray-6) 65%, transparent); }
-.araru-button:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
-.araru-button-primary { border-color: transparent; color: #061522; background: linear-gradient(135deg, #70caff, #37a7e6); box-shadow: 0 12px 32px rgba(22, 138, 216, .25); }
-.araru-button-primary:hover { color: #061522; background: linear-gradient(135deg, #98d9ff, #55b9ef); transform: translateY(-1px); }
 .araru-banner {
   position: relative;
   display: block;
@@ -111,6 +69,7 @@ body:has(.araru-home-hero) main > .content-panel .sl-container { max-width: 92re
   text-decoration: none;
   transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
   width: 100%;
+  max-width: 78rem;
 }
 .araru-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(49,169,238,.1), transparent 45%); pointer-events: none; }
 .araru-banner img { display: block; width: 100%; aspect-ratio: 1983 / 793; object-fit: cover; }
@@ -122,14 +81,10 @@ body:has(.araru-home-hero) .sl-markdown-content > h2 { margin-top: clamp(4rem, 8
 .sl-markdown-content blockquote { border-inline-start-color: var(--araru-warm); }
 :focus-visible { outline: 3px solid var(--araru-warm); outline-offset: 3px; }
 @media (max-width: 60rem) {
-  .araru-home-hero { grid-template-columns: 1fr; min-height: auto; padding-block: 4rem; }
-  .araru-banner { order: -1; }
+  .araru-home-hero { min-height: auto; padding-block: 3rem; }
 }
 @media (max-width: 30rem) {
   .site-title img { max-width: 7.5rem; height: 2.3rem; }
-  .araru-home-copy h1 { font-size: 2.75rem; }
-  .araru-actions { align-items: stretch; flex-direction: column; }
-  .araru-actions > * { width: 100%; }
   .araru-banner > span { right: .65rem; bottom: .65rem; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
