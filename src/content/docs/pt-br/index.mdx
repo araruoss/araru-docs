@@ -1,26 +1,27 @@
 ---
-title: Araru
-description: Seu acervo digital, sob seu controle.
+title: Araru — Seu acervo, suas regras
+description: Um ecossistema privado e open source para organizar e ler seu acervo digital.
 template: splash
-hero:
-  tagline: Ecossistema open source e self-hosted para livros, quadrinhos, mangás, revistas e documentos.
-  image:
-    file: ../../../../public/brand/araru-banner.png
-    alt: Araru, seu acervo digital sob seu controle
-  actions:
-    - text: Começar
-      link: /pt-br/docs/getting-started/
-      icon: right-arrow
-      variant: primary
-    - text: Documentação
-      link: /pt-br/docs/
-      icon: open-book
-    - text: GitHub
-      link: https://github.com/araruoss
-      icon: external
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<section class="araru-home-hero">
+  <div class="araru-home-copy">
+    <span class="araru-eyebrow">OPEN SOURCE · SELF-HOSTED · PRIVADO</span>
+    <h1>Seu acervo digital,<br /><span>sob seu controle.</span></h1>
+    <p>Organize e leia livros, quadrinhos, mangás, revistas e documentos em um ecossistema construído ao redor do seu acervo.</p>
+    <div class="araru-actions">
+      <a class="araru-button araru-button-primary" href="/pt-br/docs/getting-started/">Começar <span aria-hidden="true">→</span></a>
+      <a class="araru-button" href="/pt-br/docs/">Ver documentação</a>
+      <a class="araru-text-link" href="https://github.com/araruoss?tab=repositories">Ver repositórios ↗</a>
+    </div>
+  </div>
+  <a class="araru-banner" href="https://github.com/araruoss?tab=repositories" aria-label="Explorar os repositórios do Araru no GitHub">
+    <img src="/brand/araru-banner.png" alt="Ecossistema Araru OSS" loading="eager" fetchpriority="high" />
+    <span>Explore o ecossistema no GitHub <span aria-hidden="true">↗</span></span>
+  </a>
+</section>
 
 ## Seu acervo. Sua infraestrutura. Suas regras.
 

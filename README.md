@@ -23,7 +23,7 @@ npm run build
 npm run preview
 ```
 
-The production site uses the `/araru-docs` base path. Astro's development server handles local links automatically.
+The production site is served from the domain root. Set `SITE_URL` during the build when publishing under a custom domain.
 
 ## Project structure
 
@@ -40,6 +40,6 @@ Keep matching slugs across locales. When a Portuguese file is absent, Starlight 
 
 ## GitHub Pages
 
-Pushes to `main` run CI and `.github/workflows/deploy.yml`. The official Astro action builds and uploads the static artifact to `https://araruoss.github.io/araru-docs/`.
+Pushes to `main` run CI and `.github/workflows/deploy.yml`. The site expects a root GitHub Pages domain (for example `araruoss.github.io`) or a custom domain because its routes start at `/`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY guidance](https://github.com/araruoss/araru-server/blob/main/SECURITY.md), and the AGPL-3.0-only [LICENSE](LICENSE).
