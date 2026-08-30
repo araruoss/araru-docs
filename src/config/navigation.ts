@@ -44,8 +44,12 @@ export const navigation = [
   ] },
   tr('Metadata', 'Metadados', 'docs/metadata'),
   tr('Search', 'Busca', 'docs/search'),
-  tr('Development', 'Desenvolvimento', 'docs/development'),
-  tr('Semantic versioning', 'Versionamento semântico', 'docs/development/semantic-versioning'),
+  { label: 'Development', translations: { 'pt-BR': 'Desenvolvimento' }, items: [
+    tr('Development overview', 'Visão geral do desenvolvimento', 'docs/development'),
+    tr('Runtime', 'Runtime', 'docs/development/runtime'),
+    tr('Development workflow', 'Fluxo de desenvolvimento', 'docs/development/workflow'),
+    tr('Semantic versioning', 'Versionamento semântico', 'docs/development/semantic-versioning'),
+  ] },
   { label: 'Contributing', translations: { 'pt-BR': 'Contribuindo' }, collapsed: false, items: [
     tr('Overview', 'Visão geral', 'docs/contributing'),
     tr('Services', 'Serviços', 'docs/contributing/services'),

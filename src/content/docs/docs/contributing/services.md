@@ -18,7 +18,7 @@ Choose the repository that owns the behavior:
 | --- | --- |
 | HTTP API, authentication, catalog, metadata, jobs, PostgreSQL, Redis | `araru-server` |
 | Library interface, reader UI, PWA, accessibility, client-side state | `araru-web` |
-| Local orchestration and service composition | runtime repository |
+| Local orchestration and service composition | `araruoss/runtime` |
 | Public contracts and operational guides | `araru-docs` together with the owning service |
 
 ## Prepare the environment
