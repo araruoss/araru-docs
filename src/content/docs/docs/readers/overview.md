@@ -18,4 +18,4 @@ Fluxo comum:
 6. progresso é persistido;
 7. cleanup libera recursos ao trocar/fechar.
 
-Endpoints estão em [API/content](../../api/endpoints/#conteúdo-e-reader). Detalhes por formato em [formatos](../formats/).
+Endpoints estão em [API/content](../../api/endpoints/#library-and-reading). Detalhes por formato em [formatos](../formats/).

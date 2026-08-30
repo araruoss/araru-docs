@@ -8,7 +8,7 @@ status: stable
 
 ## Backend não inicia / PostgreSQL ou Redis
 
-Confirme `DATABASE_URL`, `REDIS_URL`, DNS/portas, credenciais e healthchecks. Use `docker compose ps`, `docker compose logs backend postgres redis` e `/api/health/details`. Redis pode ser temporariamente desativado com `REDIS_ENABLED=false`; PostgreSQL é obrigatório.
+Confirme `DATABASE_URL`, `REDIS_URL`, DNS/portas, credenciais e healthchecks. Use `docker compose ps`, `docker compose logs server postgres redis` e `/health/details`. Redis pode ser temporariamente desativado com `REDIS_ENABLED=false`; PostgreSQL é obrigatório.
 
 ## CORS ou cookies
 

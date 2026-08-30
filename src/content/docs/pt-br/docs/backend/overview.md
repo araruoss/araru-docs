@@ -28,7 +28,7 @@ Principais serviços: `driveService`, `libraryIndexService`, `readerService`, `m
 - `profiles` representa contextos de leitura, não credenciais;
 - `user_profiles` implementa a associação muitos-para-muitos;
 - `user_sessions` mantém sessões HttpOnly e o perfil ativo no servidor;
-- `POST /api/setup` executa a criação inicial em uma transação e retorna `409` depois da conclusão;
+- `POST /api/v1/setup` executa a criação inicial em uma transação e retorna `409` depois da conclusão;
 - ações administrativas são autorizadas no backend, incluindo a proteção do último administrador ativo.
 
 O Redis continua reservado a cache e dados reconstruíveis. Usuários, sessões, associações, preferências e configurações permanecem no PostgreSQL.

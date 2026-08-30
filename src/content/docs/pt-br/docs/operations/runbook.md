@@ -9,13 +9,13 @@ status: stable
 ## Saúde
 
 ```bash
-curl http://localhost:3001/api/health
-curl http://localhost:3001/api/health/details
+curl http://localhost:3001/health
+curl http://localhost:3001/health/details
 docker compose ps
 docker compose logs --tail=200 backend frontend
 ```
 
-Use details para catálogo, fila, watcher, manutenção, runtime e Drive. Endpoints `/api/operations/*` oferecem jobs, métricas, cache, capas, integridade e circuit breakers.
+Use details para catálogo, fila, watcher, manutenção, runtime e Drive. Endpoints `/api/v1/admin/*` oferecem jobs, métricas, cache, capas, integridade e circuit breakers.
 
 ## Catálogo e cache
 
@@ -27,8 +27,8 @@ Use details para catálogo, fila, watcher, manutenção, runtime e Drive. Endpoi
 
 ## Backup
 
-1. baixe `/api/backup`;
-2. verifique em `/api/backup/verify`;
+1. baixe `/api/v1/admin/backup`;
+2. verifique em `/api/v1/admin/backup/verify`;
 3. armazene fora do host;
 4. para restore, use confirmação exigida e janela de manutenção;
 5. valide health/catalog/reading state.

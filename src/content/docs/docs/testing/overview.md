@@ -12,6 +12,8 @@ status: stable
 - Server (`test` no `araru-server`): unidades e integrações Express/PostgreSQL/filesystem em banco isolado `araru_test`;
 - E2E (`test/e2e-touchscreen.js`): build, serviços temporários e browser via `playwright-core`;
 - benchmarks: catálogo configurável e cenário de 1.000 registros;
+- API benchmark configurável para health, system, works, operations/jobs e métricas p50/p95/p99;
+- contrato automatizado entre rotas `/api/v1` e OpenAPI;
 - performance frontend: tamanho de main, reader e CSS.
 
 ```bash
@@ -20,6 +22,7 @@ npm run test:backend
 npm run test:e2e
 npm run benchmark:catalog:1k
 npm run benchmark:catalog
+npm run benchmark:api
 npm run check:performance
 ```
 

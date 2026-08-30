@@ -10,7 +10,7 @@ A sidebar é a navegação global. Em desktop pode recolher; em mobile vira draw
 
 ## Categorias
 
-- nós vêm de `/api/categorias/arvore`;
+- nós vêm da API v1 de bibliotecas e works;
 - somente o ramo atual expande por padrão;
 - chevrons existem apenas com filhos;
 - linha inteira navega e contagens são discretas;

@@ -15,7 +15,7 @@ Princípio: **zero data loss**. Identidade pública muda; contratos persistidos 
 | workspaces | `@biblioteca/*` | `@araru/server`, `@araru/web` | scripts/Docker/E2E atualizados | dev only |
 | imagens/containers/rede Compose | `biblioteca-*` | `araru-server:local`, `araru-web:local`, projeto `araru` | recriar containers; bind mounts iguais | não para dados |
 | PostgreSQL/schema/tabelas | nomes internos estáveis | preservados | nenhuma | não |
-| API `/api/livros` | atual | preservada | nenhuma | não |
+| API `/api/v1/works` | atual | oficial | nenhuma | não |
 | localStorage/eventos | `biblioteca:*` | preservados | compatibilidade direta | não |
 | IndexedDB/offline cache | `biblioteca-digital-*` | preservados | evita perder downloads | não |
 | Service Worker caches | `biblioteca-digital-*` | preservados | evita invalidação em massa | não |

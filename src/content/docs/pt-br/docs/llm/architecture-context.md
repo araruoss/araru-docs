@@ -8,7 +8,9 @@ status: stable
 
 Browser chama somente HTTP. Frontend mantém UI/estado efêmero; backend detém domínio, paths, credenciais e persistência. Nginx/Vite fazem proxy. Não mova regras de filesystem/metadata para o cliente.
 
-Backend: route → controller → service → PostgreSQL/Redis/storage/provider. Watcher e jobs vivem no mesmo processo. PostgreSQL é fonte de verdade; Redis e derivados são regeneráveis. Filesystem é fonte principal, Drive opcional.
+Backend: route → controller → service → PostgreSQL/Redis/storage/provider. Watcher e jobs vivem no mesmo processo. PostgreSQL é fonte de verdade; Redis e derivados são regeneráveis. Filesystem, Drive e R2 são providers; o domínio não deve depender de SDK, bucket ou path físico.
+
+Arquivos grandes devem usar stream/Range. R2 deve preferir entrega assinada quando não houver processamento no Server. Secrets e URLs assinadas nunca devem ir para logs ou frontend além da resposta temporária autorizada.
 
 Reader: Library File → capability → endpoint de conteúdo/página → engine frontend → progresso `/reading-state` → cleanup. PDF exige Range; archives podem exigir extração limitada.
 
