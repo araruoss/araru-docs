@@ -8,7 +8,7 @@ status: stable
 
 ## Jobs
 
-A fila é local ao processo, com histórico em `background_jobs`. Ela ordena prioridade/data, deduplica por chave, limita concorrência, persiste tentativas e recupera registros `running` como `queued` após reinício.
+A fila mantém histórico e claims em `background_jobs`. Cada worker adquire jobs por claim condicionado a status/lease, registra `worker_id`, `lease_until` e `heartbeat_at`, ordena prioridade/data, deduplica por chave e persiste tentativas. O agendamento e algumas caches continuam locais ao processo.
 
 ```mermaid
 stateDiagram-v2
@@ -22,7 +22,7 @@ stateDiagram-v2
   cancelled --> queued: retry manual
 ```
 
-Job em execução não é cancelável pelo mecanismo atual; apenas pendentes podem ser cancelados.
+Jobs em execução dependem de timeout/lease; cancelamento cooperativo de processos externos ainda deve ser tratado pelo handler específico.
 
 ## Caches
 

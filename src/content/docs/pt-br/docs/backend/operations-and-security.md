@@ -16,7 +16,7 @@ API key atende operações públicas configuradas; OAuth usa login/callback/logo
 
 ## Observabilidade
 
-Logs JSON incluem timestamp, nível, evento e request ID; redaction remove segredos. `/api/health` é superficial; `/api/health/details` inclui runtime, índice, watcher, jobs, fila, Drive e sync. Endpoints operacionais expõem métricas, reader metrics, cache, integridade e circuit breakers.
+Logs JSON incluem timestamp, nível, evento e request ID; redaction remove segredos. `/health` é superficial; `/health/details` inclui runtime, índice, watcher, jobs, fila, Drive e sync. A administração v1 expõe métricas, cache, integridade e circuit breakers.
 
 ## Segurança atual
 
@@ -28,6 +28,6 @@ Logs JSON incluem timestamp, nível, evento e request ID; redaction remove segre
 - respostas privadas recebem `no-store`;
 - erros 5xx escondem detalhe em produção.
 
-Configurações globais, users, escrita de profiles, backup, metadados e `/operations` exigem `requireAdmin`. `/api/admin/overview` agrega estado não secreto e `/api/admin/audit` entrega auditoria ao administrador. Criação/alteração/exclusão de user, reset de senha, mudanças de profile e settings são persistidos em `admin_audit_log`, com remoção defensiva de detalhes sensíveis.
+Configurações globais, users, escrita de profiles, backup, metadados e `/api/v1/admin` exigem `requireAdmin`. `/api/v1/admin/overview` agrega estado não secreto e `/api/v1/admin/audit` entrega auditoria ao administrador. Criação/alteração/exclusão de user, reset de senha, mudanças de profile e settings são persistidos em `admin_audit_log`, com remoção defensiva de detalhes sensíveis.
 
 Profiles não são contas. Users são identidades autenticadas e profiles separam contextos de leitura; a associação muitos-para-muitos controla quais profiles cada user pode selecionar.

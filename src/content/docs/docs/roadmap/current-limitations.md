@@ -15,7 +15,7 @@ status: planned
 | perfis não são contas | sem identidade/autorização por usuário | acesso público multiusuário | auth, users, sessions e ACL |
 | filesystem e Drive acoplados | provider novo exige mudanças de serviço | S3/R2/múltiplas regiões | `StorageProvider` |
 | um backend | sem escala horizontal segura declarada | throughput/HA | stateless API + DB/cache compartilhados |
-| API sem versão/OpenAPI | clientes dependem de contrato manual | Desktop/Android independentes | `/v1`, schemas e OpenAPI |
+| API v1 é o contrato oficial | clientes antigos precisam ser substituídos | Desktop/Android independentes | novos clientes usam `/api/v1`, schemas e OpenAPI |
 | offline centrado no navegador | quota e portabilidade limitadas | múltiplos devices | sync/download protocol estável |
 | archives podem exigir buffer/ferramentas | custo variável por arquivo | HQs enormes/malformadas | extração isolada e streaming especializado |
 

@@ -6,15 +6,16 @@ section: "api"
 status: stable
 ---
 
-Base atual: `/api`. JSON é usado para dados; conteúdo, páginas, capas e backup retornam binário. Não há OpenAPI nem versionamento `/v1` atualmente.
+Official base: `/api/v1`. JSON is used for data; content, pages, covers, and backups return binary data. The OpenAPI contract is in `araru-server/api/openapi.yaml`. Product endpoints are versioned exclusively under `/api/v1`; operational probes are `/health`, `/live`, and `/ready`.
 
 ## Convenções
 
-- sucesso geralmente retorna objeto ou `{ data }` conforme controller; não existe envelope único obrigatório;
-- erros normalizados retornam `{ message, code, details? }`;
+- product endpoints use the versioned v1 contract;
+- v1 collection endpoints return `{ items, pagination }` where applicable;
+- v1 errors return `{ error: { code, message, requestId } }`;
 - `details` aparece somente em desenvolvimento para falhas internas;
 - request ID é criado pelo middleware e aparece nos logs;
-- não há paginação global no catálogo atual;
+- v1 limits `pageSize` to 100 and does not require clients to load the entire catalog;
 - cookies e fetch usam credenciais; cross-origin exige CORS exato.
 
 ## Autenticação
@@ -27,4 +28,4 @@ PDF/EPUB local aceitam `Range` quando servidos como arquivo. Respostas podem inc
 
 Status relevantes: 400 validação, 401 acesso, 403 origem/operação, 404 recurso, 409 conflito, 413 payload, 416 Range, 422 conteúdo, 429 limite e 500 falha interna.
 
-Consulte o [inventário](../endpoints/). OpenAPI é apenas uma melhoria futura.
+See the [inventory](../endpoints/) and the [OpenAPI contract](https://github.com/araruoss/araru-server/blob/main/api/openapi.yaml). Incompatible changes require a new API version.

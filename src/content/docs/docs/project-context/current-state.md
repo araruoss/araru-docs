@@ -24,6 +24,6 @@ The Server owns the API and authorization. Clients never connect to PostgreSQL o
 
 ## Incomplete or planned
 
-Android and Desktop clients, Cloudflare R2, audiobooks, and a plugin ecosystem remain planned. MOBI support has format limitations. API pagination and versioning are not yet universal contracts. Planned items must not be presented as released.
+Android and Desktop clients, audiobooks, and a plugin ecosystem remain planned. Cloudflare R2, API v1, pagination, storage capabilities, and worker leases are implemented in the current Server working tree; MOBI support has format limitations. Planned items must not be presented as released.
 
 See [architecture context](../../llm/architecture-context/), [coding constraints](../../llm/constraints/), [technical decisions](../../adr/readme/), and the [roadmap](../../roadmap/readme/).

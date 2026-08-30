@@ -62,7 +62,7 @@ Execute os scripts definidos pelo repositório. No mínimo, valide lint, testes 
 
 Para uma mudança de schema, inclua migration, atualização de repositórios e serviços, observações de rollback ou recuperação e testes de integração em uma instalação PostgreSQL limpa. Não adicione compatibilidade com SQLite.
 
-Para uma mudança da API, atualize o OpenAPI em `araru-server/api/openapi.yaml`, preserve compatibilidade quando possível, documente erros e autorização e atualize todos os clientes afetados. Mudanças incompatíveis exigem caminho explícito de migração e nota de versão.
+Para uma mudança da API, atualize o OpenAPI em `araru-server/api/openapi.yaml`, documente erros e autorização e atualize todos os clientes afetados. Mudanças incompatíveis exigem nova versão e nota de versão.
 
 ## Checklist do pull request
 

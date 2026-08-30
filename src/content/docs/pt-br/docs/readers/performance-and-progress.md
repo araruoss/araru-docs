@@ -24,6 +24,6 @@ Cliente envia `Range: bytes=start-end`; backend valida limites, responde `Conten
 
 ## Progresso
 
-Estado contém ID, posição/página, total, percentual, timestamps e conclusão. Frontend grava fallback local e sincroniza `/api/reading-state`. Merge escolhe atualização mais recente por livro/perfil. Histórico mostra capa, último acesso e retomada.
+Estado contém ID, posição/página, total, percentual, timestamps e conclusão. Frontend grava fallback local e sincroniza `/api/v1/works/:id/reading-state`. Merge escolhe atualização mais recente por livro/perfil. Histórico mostra capa, último acesso e retomada.
 
 Readers novos devem implementar posição estável, total quando conhecido e cleanup idempotente.
