@@ -9,7 +9,7 @@ status: stable
 Você precisa do Docker com Compose v2, uma pasta com seu acervo e espaço persistente para banco, cache e capas.
 
 ```bash
-cd ~/Documents/projects/araruoss/runtime
+cd path/to/araruoss/runtime
 make setup
 # Defina uma POSTGRES_PASSWORD forte em .env
 make up

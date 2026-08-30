@@ -17,7 +17,7 @@ status: stable
 ## Quick start
 
 ```bash
-cd ~/Documents/projects/araruoss/runtime
+cd path/to/araruoss/runtime
 make setup
 # Set a strong POSTGRES_PASSWORD in .env
 make up
