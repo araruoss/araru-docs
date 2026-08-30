@@ -1,12 +1,12 @@
 ---
-title: "Desenvolvimento local"
-description: "Documentation for Desenvolvimento local in the Araru ecosystem."
+title: "Local Development"
+description: "Documentation for local development in the Araru ecosystem."
 order: 100
 section: "getting-started"
 status: stable
 ---
 
-Clone apenas os projetos nos quais trabalhará. Não há dependência de diretório compartilhado.
+Clone only the projects you will work on. There is no shared-directory dependency.
 
 ## Server
 
@@ -22,7 +22,7 @@ npm run dev
 
 ## Web
 
-Em outro terminal:
+In another terminal:
 
 ```bash
 git clone git@github.com:araruoss/araru-web.git
@@ -32,6 +32,6 @@ npm ci
 npm run dev
 ```
 
-Por padrão, o Vite encaminha `/api` para `http://localhost:3001`. Para outro host, altere `VITE_API_URL`.
+By default, Vite proxies `/api` to `http://localhost:3001`. For another host, change `VITE_API_URL`.
 
-Para a instalação completa por imagens publicadas, use o [Compose oficial](https://github.com/araruoss/araru-docs/blob/main/examples/docker-compose.yml).
+For a complete installation using published images, use the [official Compose file](https://github.com/araruoss/araru-docs/blob/main/examples/docker-compose.yml).

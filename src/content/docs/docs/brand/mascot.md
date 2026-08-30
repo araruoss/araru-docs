@@ -1,13 +1,13 @@
 ---
-title: "Mascote"
-description: "Documentation for Mascote in the Araru ecosystem."
+title: "Mascot"
+description: "Documentation for the Araru mascot in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Mascote oficial: **TBD**.
+Official mascot: **TBD**.
 
-Conceito: arara brasileira expressiva, geométrica e contemporânea, relacionada ao símbolo sem precisar ser o logo. Uso possível em onboarding, empty states, erros não críticos, documentação, GitHub, releases, About e comunidade.
+Concept: an expressive, geometric, contemporary Brazilian macaw related to the symbol without needing to be the logo. Possible use includes onboarding, empty states, non-critical errors, documentation, GitHub, releases, About, and community.
 
-Não usar constantemente, especialmente dentro do reader. Evitar realismo, clipart e personalidade infantil. Ilustrações precisam de alt text ou tratamento decorativo apropriado.
+Do not use it constantly, especially inside the reader. Avoid realism, clip art, and childish personality. Illustrations need alt text or appropriate decorative treatment.

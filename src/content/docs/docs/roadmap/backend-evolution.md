@@ -1,32 +1,32 @@
 ---
-title: "Evolução possível do backend — FUTURO"
-description: "Documentation for Evolução possível do backend — FUTURO in the Araru ecosystem."
+title: "Possible Backend Evolution — FUTURE"
+description: "Documentation for possible future backend evolution in the Araru ecosystem."
 order: 100
 section: "roadmap"
 status: planned
 ---
 
-## Próximas capacidades a avaliar
+## Near-term capabilities to evaluate
 
-- autenticação real, usuários, autorização, devices e sessões revogáveis;
-- versionamento de API, schemas e OpenAPI;
-- abstração de storage preservando ID/fingerprint/Range;
-- testes de carga e SLOs antes de alegações de escala.
+- real authentication, users, authorization, devices, and revocable sessions;
+- API versioning, schemas, and OpenAPI;
+- storage abstraction preserving ID/fingerprint/Range;
+- load tests and SLOs before making scalability claims.
 
-## Evolução posterior possível
+## Possible later evolution
 
-- PostgreSQL para estado compartilhado;
-- Redis para rate limit, cache/coordenador e eventualmente filas;
-- S3/Cloudflare R2 para objetos;
-- workers separados para capas, metadata e archives;
-- observabilidade distribuída e escala horizontal.
+- PostgreSQL for shared state;
+- Redis for rate limiting, cache/coordinator, and possibly queues;
+- S3/Cloudflare R2 for objects;
+- separate workers for covers, metadata, and archives;
+- distributed observability and horizontal scaling.
 
-## Não decidido
+## Undecided
 
-- permanecer em Node.js ou introduzir Go em componentes específicos;
-- migrations PostgreSQL incrementais após a fundação atual;
-- Redis/broker/provedor de objetos;
-- tenancy e modelo de autorização;
-- ordem e cronograma.
+- whether to remain on Node.js or introduce Go in specific components;
+- incremental PostgreSQL migrations after the current foundation;
+- Redis/broker/object provider;
+- tenancy and authorization model;
+- order and schedule.
 
-Qualquer adoção exige ADR, migração, compatibilidade e benchmark. Nenhuma tecnologia acima existe no estado atual.
+Any adoption requires an ADR, migration, compatibility, and a benchmark. None of the technologies above exists in the current state.

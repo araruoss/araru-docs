@@ -1,18 +1,18 @@
 ---
-title: "Roadmap técnico"
-description: "Documentation for Roadmap técnico in the Araru ecosystem."
+title: "Technical Roadmap"
+description: "Documentation for the Araru technical roadmap."
 order: 100
 section: "roadmap"
 status: planned
 ---
 
-Tudo nesta pasta é **FUTURO / SOB AVALIAÇÃO**, salvo a descrição de limitações atuais. Não representa compromisso nem funcionalidade implementada.
+Everything in this folder is **FUTURE / UNDER EVALUATION**, except the description of current limitations. It represents neither a commitment nor implemented functionality.
 
-Este roadmap trata da evolução do Araru e não transforma o reposicionamento como servidor de biblioteca em suporte já implementado para novos formatos/clientes.
+This roadmap covers Araru's evolution and does not turn its positioning as a library server into implemented support for new formats/clients.
 
-- [Limitações atuais](../current-limitations/)
-- [Evolução do backend](../backend-evolution/)
-- [Escalabilidade](../scalability/)
-- [Clientes Desktop e Android](../clients/)
+- [Current limitations](../current-limitations/)
+- [Backend evolution](../backend-evolution/)
+- [Scalability](../scalability/)
+- [Desktop and Android clients](../clients/)
 
-Prioridade, tecnologia e cronograma não estão decididos no repositório atual.
+Priority, technology, and schedule are not decided in the current repository.

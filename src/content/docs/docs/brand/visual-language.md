@@ -1,13 +1,13 @@
 ---
-title: "Linguagem visual"
-description: "Documentation for Linguagem visual in the Araru ecosystem."
+title: "Visual Language"
+description: "Documentation for Araru visual language in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Minimalismo, espaço negativo, hierarquia tipográfica clara e capas como protagonistas. Marca pode ter expressão; interface deve priorizar função e leitura confortável.
+Minimalism, negative space, clear typographic hierarchy, and covers as protagonists. The brand may be expressive; the interface should prioritize function and comfortable reading.
 
-Light e Dark têm igual importância em desktop, tablet e mobile. Cor de marca aparece em identidade, foco e pequenos acentos, não como preenchimento constante.
+Light and Dark have equal importance on desktop, tablet, and mobile. Brand color appears in identity, focus, and small accents, not as constant fill.
 
-Evitar estética corporativa/SaaS, cyberpunk, gamer, infantil, arco-íris e imitação de produtos de leitura existentes. Formas podem sugerir asa, perfil ou bico de modo geométrico e abstrato, quando houver logo definitivo.
+Avoid corporate/SaaS, cyberpunk, gamer, childish, rainbow, and imitation-of-existing-reading-product aesthetics. Forms may suggest a wing, profile, or beak in a geometric and abstract way once a final logo exists.

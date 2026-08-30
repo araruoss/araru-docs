@@ -1,20 +1,22 @@
 ---
-title: "Estratégia de testes e CI"
-description: "Documentation for Estratégia de testes e CI in the Araru ecosystem."
+title: "Testing Strategy and CI"
+description: "Documentation for Testing Strategy and CI in the Araru ecosystem."
 order: 100
 section: "testing"
 status: stable
 ---
 
-## Suítes
+## Suites
 
-- Web (`test` no `araru-web`): storage/progresso, cache PWA, core/budget/cleanup do reader e merge de sync;
-- Server (`test` no `araru-server`): unidades e integrações Express/PostgreSQL/filesystem em banco isolado `araru_test`;
-- E2E (`test/e2e-touchscreen.js`): build, serviços temporários e browser via `playwright-core`;
-- benchmarks: catálogo configurável e cenário de 1.000 registros;
-- API benchmark configurável para health, system, works, operations/jobs e métricas p50/p95/p99;
-- contrato automatizado entre rotas `/api/v1` e OpenAPI;
-- performance frontend: tamanho de main, reader e CSS.
+- Web (`test` in `araru-web`): storage/progress, PWA cache, core/budget/cleanup of reader and sync merge;
+- Server (`test` in `araru-server`): unit and integration tests for Express/PostgreSQL/filesystem in isolated `araru_test` database;
+- E2E (`test/e2e-touchscreen.js`): build, temporary services, browser via `playwright-core`;
+- benchmarks: configurable catalog and 1,000 record scenario;
+- configurable API benchmark for health, system, works, operations/jobs, and p50/p95/p99 metrics;
+- automated contract between `/api/v1` routes and OpenAPI;
+- frontend performance: size of main, reader, and CSS.
+
+
 
 ```bash
 npm run test:frontend
@@ -26,8 +28,10 @@ npm run benchmark:api
 npm run check:performance
 ```
 
-## CI atual
 
-`.github/workflows/ci.yml` dispara em push e pull request, usa Node 22 e executa `npm ci`, testes, E2E, dois benchmarks, lint e budget. Não publica artifacts/deploy e não executa matriz de versões.
 
-O teste E2E cobre proxy/cross-origin, Range/CORS, PDF/EPUB/MOBI/CBZ/CBR, touchscreen, PWA e offline seletivo. Testes backend usam arquivos esparsos para 500 MB, 2 GB e 5 GB sem transferi-los integralmente. `TEST_DATABASE_URL` pode apontar para um PostgreSQL externo, mas o nome do banco deve terminar em `_test`.
+## Current CI
+
+`.github/workflows/ci.yml` triggers on push and pull request, uses Node 22, runs `npm ci`, tests, E2E, two benchmarks, linting, and budget. It does not publish artifacts/deploy and does not run version matrix.
+
+The E2E test covers proxy/cross-origin, Range/CORS, PDF/EPUB/MOBI/CBZ/CBR, touchscreen, PWA, and selective offline functionality. Backend tests use sparse files for 500 MB, 2 GB, and 5 GB without fully transferring them. `TEST_DATABASE_URL` can point to an external PostgreSQL database, but the database name must end with `_test`.

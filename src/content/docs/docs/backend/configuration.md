@@ -1,26 +1,26 @@
 ---
-title: "Inicialização e configuração do backend"
-description: "Documentation for Inicialização e configuração do backend in the Araru ecosystem."
+title: "Backend Initialization and Configuration"
+description: "Documentation for Backend Initialization and Configuration in the Araru ecosystem."
 order: 100
 section: "backend"
 status: stable
 ---
 
-`config/loadEnv.js` carrega ambiente; `config/drive.js` normaliza valores e paths e valida combinações. `createApp()` carrega credenciais, valida ambiente e prepara a biblioteca antes de expor rotas.
+`config/loadEnv.js` loads the environment; `config/drive.js` normalizes values and paths and validates combinations. `createApp()` loads credentials, validates the environment, and prepares the library before exposing routes.
 
-`server.js` inicia HTTP, tarefas de manutenção e watcher, e trata encerramento gracioso. Consulte o [`.env.example` do Server](https://github.com/araruoss/araru-server/blob/main/.env.example) para a lista completa.
+`server.js` starts HTTP, maintenance tasks, and a watcher, and handles graceful shutdowns. Refer to the [Server `.env.example`](https://github.com/araruoss/araru-server/blob/main/.env.example) for the full list.
 
-## Pontos críticos
+## Critical Points
 
-- `DATABASE_URL` é obrigatório e deve apontar para PostgreSQL;
-- `REDIS_URL` é obrigatório quando `REDIS_ENABLED=true`; Redis é cache, não fonte de verdade;
-- no Compose, `DOCKER_DATABASE_URL` e `DOCKER_REDIS_URL` substituem os serviços internos; mantenha-as vazias para usar `postgres` e `redis` da rede Docker;
-- `LOCAL_LIBRARY_DIR` e o cache precisam das permissões adequadas;
-- biblioteca pode ser somente leitura;
-- Drive pode ser desabilitado sem impedir catálogo local;
-- `TRUST_PROXY` deve refletir a topologia;
-- o rate limit é desativado por padrão; habilite com `RATE_LIMIT_ENABLED=true` e ajuste `RATE_LIMIT_WINDOW_MS` e `API_RATE_LIMIT_PER_MINUTE` conforme a exposição da API;
-- CORS usa origem exata ou same-host informado pelo proxy;
-- secrets e tokens nunca devem aparecer em logs/documentação.
+- `DATABASE_URL` is required and must point to PostgreSQL;
+- `REDIS_URL` is required when `REDIS_ENABLED=true`; Redis is a cache, not a source of truth;
+- in Compose, `DOCKER_DATABASE_URL` and `DOCKER_REDIS_URL` replace internal services; keep them empty to use `postgres` and `redis` from the Docker network;
+- `LOCAL_LIBRARY_DIR` and the cache need appropriate permissions;
+- the library can be read-only;
+- Drive can be disabled without preventing local catalog access;
+- `TRUST_PROXY` should reflect the topology;
+- rate limiting is disabled by default; enable it with `RATE_LIMIT_ENABLED=true` and adjust `RATE_LIMIT_WINDOW_MS` and `API_RATE_LIMIT_PER_MINUTE` as needed for API exposure;
+- CORS uses either an exact origin or the same-host provided by the proxy;
+- secrets and tokens should never appear in logs/documentation.
 
-O runtime suportado é Node.js 22+. A inicialização falha cedo se PostgreSQL não estiver configurado ou acessível.
+The supported runtime is Node.js 22+. Initialization fails early if PostgreSQL is not configured or accessible.

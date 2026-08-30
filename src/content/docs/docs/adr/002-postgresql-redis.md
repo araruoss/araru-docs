@@ -1,6 +1,6 @@
 ---
-title: "ADR-002: PostgreSQL como persistência e Redis como cache"
-description: "Documentation for ADR-002: PostgreSQL como persistência e Redis como cache in the Araru ecosystem."
+title: "ADR-002: PostgreSQL as persistence and Redis as cache"
+description: "Documentation for ADR-002: PostgreSQL as persistence and Redis as cache in the Araru ecosystem."
 order: 100
 section: "adr"
 status: stable
@@ -9,14 +9,14 @@ status: stable
 Status: Accepted  
 Date: 2026-08-23
 
-## Context
+Context
 
-Catálogo, autenticação, progresso, metadados, jobs e operação precisam de concorrência segura, consultas estruturadas, busca textual e suporte a serviços externos.
+Catalog, authentication, progress, metadata, jobs, and operation need secure concurrency, structured queries, text search, and external service support.
 
-## Decision
+Decision
 
-PostgreSQL é a única fonte de verdade do backend. Redis armazena apenas caches com TTL. Arquivos originais continuam no filesystem ou Google Drive, e derivados permanecem regeneráveis.
+PostgreSQL is the backend's only source of truth. Redis stores only caches with TTL. Original files remain in the filesystem or Google Drive, and derivatives remain regenerable.
 
-## Consequences
+Consequences
 
-A aplicação exige `DATABASE_URL`, cria schema e índices na inicialização e suporta PostgreSQL externo. Redis pode ser local ou externo e sua indisponibilidade não deve provocar perda de dados persistentes.
+The application requires `DATABASE_URL`, creates schema and indexes on startup, and supports external PostgreSQL. Redis can be local or external and its unavailability should not cause persistent data loss.

@@ -6,15 +6,15 @@ section: "development"
 status: stable
 ---
 
-Uma mudança relevante está concluída quando, conforme aplicável:
+A material change is completed when, as applicable:
 
-- comportamento implementado e sem duplicar abstração;
-- contratos/IDs/boundaries preservados;
-- erros, loading, cleanup, mobile e acessibilidade tratados;
-- teste unitário/integrado/E2E correspondente atualizado;
-- migration nova, nunca migration antiga editada;
-- documentação da área e inventário API atualizados;
-- contexto LLM/invariantes atualizado se mudou arquitetura;
-- ADR criado para decisão significativa;
-- lint, testes, build, performance e docs check aprovados;
-- Docker validado quando alterou ambiente, proxy, PWA ou integração.
+- behavior implemented and without duplicating abstraction;
+- contracts/IDs/boundaries preserved;
+- errors, loading, cleanup, mobile and accessibility treated;
+- unit/integrated/corresponding E2E test updated;
+- new migration, never old migration edited;
+- updated API area documentation and inventory;
+- updated LLM/invariant context if moved architecture;
+- ADR created for significant decision;
+-lint, tests, build, performance and check docs approved;
+- Docker validated when changed environment, proxy, PWA or integration.

@@ -1,36 +1,36 @@
 ---
-title: "PostgreSQL e Redis"
-description: "Documentation for PostgreSQL e Redis in the Araru ecosystem."
+title: "PostgreSQL and Redis"
+description: "Documentation for PostgreSQL and Redis in the Araru ecosystem."
 order: 100
 section: "backend"
 status: stable
 ---
 
-PostgreSQL é a única fonte de verdade persistente do backend. Redis é usado somente para cache compartilhado e pode ser reconstruído sem perda de estado funcional.
+PostgreSQL is the backend's only persistent source of truth. Redis is used only for shared cache and can be rebuilt without loss of functional state.
 
-## Inicialização
+Boot
 
-`server/database/postgresMigrations.js` aplica a fundação idempotente antes da criação da aplicação. Ela cria a extensão `unaccent`, tabelas, índices B-tree/GIN, trigger de busca e registros iniciais. `schema_migrations` registra a fundação instalada.
+`server/database/postgresMigrations.js` applies idempotent foundation before application creation. It creates the `unaccent` extension, tables, B-tree/GIN indexes, search trigger, and initial records. `schema_migrations` registers the installed foundation.
 
-As conexões são configuradas por `DATABASE_URL`; pool, SSL e timeouts usam `DATABASE_POOL_MAX`, `DATABASE_SSL`, `DATABASE_IDLE_TIMEOUT_MS` e `DATABASE_CONNECTION_TIMEOUT_MS`.
+Connections are configured by `DATABASE_URL`; pool, SSL and timeouts use `DATABASE_POOL_MAX`, `DATABASE_SSL`, `DATABASE_IDLE_TIMEOUT_MS` and `DATABASE_CONNECTION_TIMEOUT_MS`.
 
-## Domínios persistidos
+## Persistent domains
 
-- `users`, `profiles` e `reading_state`: autenticação, perfis e progresso;
-- `library_files`, `livros`, `categorias`, `works` e `work_files`: catálogo, metadados e obra canônica;
-- `background_jobs`: fila, tentativas, recuperação e histórico;
-- `secure_credentials` e `source_sync_state`: OAuth criptografado e cursor do Drive;
-- `saved_views`, `book_preferences`, `series`, `work_series` e `feature_flags`: recursos de produto;
-- `cache_entries`, `offline_items`, `integrity_reports`, `reader_metrics`, `duplicate_decisions` e `backup_history`: operação e auditoria.
+- `users`, `profiles` and `reading_state`: authentication, profiles and progress;
+- `library_files`, `livros`, `categorias`, `works` and `work_files`: catalog, metadata and canonical work;
+- `background_jobs`: queue, attempts, recovery and history;
+- `secure_credentials` and `source_sync_state`: Encrypted OAuth and Drive cursor;
+- `saved_views`, `book_preferences`, `series`, `work_series` and `feature_flags`: product features;
+- `cache_entries`, `offline_items`, `integrity_reports`, `reader_metrics`,`duplicate_decisions` and `backup_history`: operation and audit.
 
-## Busca
+All credentials registered in Segura will be displayed.
 
-`library_files.search_vector` é um `tsvector` indexado por GIN. Trigger e atualizações de metadados aplicam `unaccent` e pesos para título/autores, identificadores/tags e contexto. As consultas usam `websearch_to_tsquery('simple', unaccent(...))`.
+`library_files.search_vector` is a gin-indexed `tsvector`. Trigger and metadata updates apply `unaccent` and weights to title/authors, identifiers/tags, and context. Queries use `websearch_to_tsquery('simple', unaccent(...))`.
 
-## Redis
+Redis
 
-`REDIS_URL`, `REDIS_ENABLED` e `REDIS_KEY_PREFIX` controlam a conexão. O cache de APIs de metadados usa TTL positivo e negativo. Ausência temporária de Redis degrada cache, mas não altera a autoridade do PostgreSQL.
+`REDIS_URL`, `REDIS_ENABLED` and `REDIS_KEY_PREFIX` control the connection. Metadata API cache uses positive and negative TTL. Temporary absence of Redis degrades cache, but does not change the authority of PostgreSQL.
 
-## Backup e testes
+## Backup and testing
 
-O backup lógico é JSON compactado com gzip, checksum e restore transacional para tabelas permitidas; credenciais e usuários não entram no payload padrão. `npm test --workspace @araru/server` cria/reinicializa apenas um banco cujo nome termina em `_test`.
+Logical backup is JSON compressed with gzip, checksum, and transactional restore for allowed tables; credentials and users do not enter the default payload. `npm test --workspace @araru/server` creates/reboots only one database whose name ends in `_test`.

@@ -1,6 +1,6 @@
 ---
-title: "ADR-003: categorias derivadas de diretórios"
-description: "Documentation for ADR-003: categorias derivadas de diretórios in the Araru ecosystem."
+title: "ADR-003: Directory derived categories"
+description: "Documentation for ADR-003: Categories derived from directories in the Araru ecosystem."
 order: 100
 section: "adr"
 status: stable
@@ -9,18 +9,18 @@ status: stable
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 
-## Context
+Context
 
-A árvore e filtros usam `categoryPath`. Rationale inferred from current architecture.
+The tree and filters use `categoryPath`. Rationale inferred from current architecture.
 
-## Decision
+Decision
 
-Diretórios são a taxonomia hierárquica; tags não criam categorias.
+Directories are the hierarchical taxonomy; tags do not create categories.
 
-## Alternatives
+Alternatives
 
-Tags livres ou categorias manuais como fonte primária.
+Free tags or manual categories as primary font.
 
-## Consequences
+Consequences
 
-Organização previsível e compatível com filesystem; mover arquivo altera categoria.
+Predictable and filesystem compliant organization; move file changes category.

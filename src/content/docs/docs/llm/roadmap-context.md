@@ -1,25 +1,25 @@
 ---
-title: "Contexto de roadmap"
-description: "Documentation for Contexto de roadmap in the Araru ecosystem."
+title: "Roadmap context"
+description: "Documentation for Context of roadmap in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-## CURRENT
+    CURRENT
 
-Node/Express, React/Vite, PostgreSQL, Redis, filesystem + Drive opcional, fila persistente, Nginx/Docker, Web/PWA.
+Node/Express, React/Vite, PostgreSQL, Redis, optional filesystem + Drive, persistent queue, nginx/Docker, Web/PWA.
 
-## NEXT — candidatos, não compromisso
+## NEXT — candidates, no commitment
 
-Versionar/documentar API, auth real multi-device, baseline de carga e abstração de storage.
+Version/document API, real multi-device auth, load baseline and storage abstraction.
 
-## LATER — possibilidades
+## LATER — possibilities
 
-PostgreSQL, Redis/broker, S3/R2, workers separados, observabilidade distribuída, escala horizontal, Desktop/Android.
+PostgreSQL, Redis/broker, S3/R2, separate workers, distributed observability, horizontal scaling, Desktop/Android.
 
 ## NOT DECIDED
 
-Go versus Node, tecnologias dos clientes, estratégia de migração, providers, tenancy, prioridade e cronograma.
+Go versus Node, customer technologies, migration strategy, providers, tenancy, priority, and timeline.
 
-Nunca implemente NEXT/LATER apenas porque aparece aqui; exige solicitação, desenho e ADR.
+Never implement NEXT/LATER just because it appears here; it requires request, drawing and ADR.

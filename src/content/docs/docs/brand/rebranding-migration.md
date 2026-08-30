@@ -1,30 +1,30 @@
 ---
-title: "Migração Biblioteca Digital → Araru"
-description: "Documentation for Migração Biblioteca Digital → Araru in the Araru ecosystem."
+title: "Migrating Biblioteca Digital → Araru"
+description: "Documentation for Migrating Biblioteca Digital → Araru in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Princípio: **zero data loss**. Identidade pública muda; contratos persistidos permanecem quando a troca não oferece benefício técnico.
+Principle: **zero data loss**. Public identity changes; persisted contracts remain when the exchange offers no technical benefit.
 
-| Item | Antigo | Novo | Migração | Breaking? |
+| Item | Old | New | Migration | Breaking? |
 |---|---|---|---|---:|
-| produto/UI/PWA | Biblioteca Digital | Araru | atualização de assets/textos | não |
-| package raiz | `biblioteca-digital` | `araru` | package-lock atualizado | dev only |
-| workspaces | `@biblioteca/*` | `@araru/server`, `@araru/web` | scripts/Docker/E2E atualizados | dev only |
-| imagens/containers/rede Compose | `biblioteca-*` | `araru-server:local`, `araru-web:local`, projeto `araru` | recriar containers; bind mounts iguais | não para dados |
-| PostgreSQL/schema/tabelas | nomes internos estáveis | preservados | nenhuma | não |
-| API `/api/v1/works` | atual | oficial | nenhuma | não |
-| localStorage/eventos | `biblioteca:*` | preservados | compatibilidade direta | não |
-| IndexedDB/offline cache | `biblioteca-digital-*` | preservados | evita perder downloads | não |
-| Service Worker caches | `biblioteca-digital-*` | preservados | evita invalidação em massa | não |
-| cookies | `biblioteca_access`, `biblioteca_profile` | preservados | mantém sessões/perfil | não |
-| backup format | `biblioteca-digital-backup` | preservado | Araru continua importando backups antigos | não |
-| metadata schema | `biblioteca-digital-metadata` | preservado | import/export compatível | não |
-| nomes de download | `biblioteca-*` | `araru-*` | apenas filename novo | não |
-| diretório/repositório Git | `biblioteca-digital` | futuro `araru` | manual; atualizar remote/registry | potencial operacional |
+| product/UI/PWA | Biblioteca Digital | Araru | asset/text update | no |
+| root package | `biblioteca-digital` | `araru` | package-lock updated | dev only |
+| workspaces | `@biblioteca/*` | `@araru/server`, `@araru/web` | scripts/Docker/E2E updated | dev only |
+| images/containers/network Compose | `biblioteca-*` | `araru-server:local`, `araru-web:local`, project `araru` | recreate containers; bind mounts same | no for data |
+| PostgreSQL/schema/tables | stable internal names | preserved | none | no |
+| API `/api/v1/works` | current | official | none | no |
+| localStorage/events | `biblioteca:*` | preserved | direct compatibility | no |
+| IndexedDB/offline cache | `biblioteca-digital-*` | preserved | avoids losing downloads | no |
+| Service Worker caches | `biblioteca-digital-*` | preserved | avoids mass invalidation | no |
+| cookies | `biblioteca_access`, `biblioteca_profile` | preserved | maintains sessions/profile | no |
+| backup format | `biblioteca-digital-backup` | preserved | Araru continues importing old backups | no |
+| metadata schema | `biblioteca-digital-metadata` | preserved | import/export compatible | no |
+| download names | `biblioteca-*` | `araru-*` | only new filename | no |
+| git directory/repository | `biblioteca-digital` | future `araru` | manual; update remote/registry | potential operational |
 
-Identificadores legados devem ser tratados como namespaces de compatibilidade, não texto visual. Removê-los futuramente exige leitura antiga + escrita nova, validação e testes de migração.
+Legacy identifiers should be treated as compatibility namespaces, not visual text. Removing them in the future requires reading old + writing new, validation, and migration tests.
 
-Para renomear o repositório no GitHub futuramente: renomeie nas configurações, atualize `git remote set-url origin <URL>`, registry/badges/releases e consumidores. URL final e registry são **TBD**.
+To rename the repository on GitHub in the future: rename in settings, update `git remote set-url origin <URL>`, registry/badges/releases and consumers. Final URL and registry are **TBD**.

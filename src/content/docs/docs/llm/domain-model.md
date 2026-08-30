@@ -1,10 +1,12 @@
 ---
-title: "Modelo de domínio real"
-description: "Documentation for Modelo de domínio real in the Araru ecosystem."
+title: "Real Domain Model"
+description: "Documentation for Real Domain Model in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
+
+
 
 ```mermaid
 erDiagram
@@ -18,17 +20,19 @@ erDiagram
   LIBRARY_FILE ||--o{ CACHE_ENTRY : derives
 ```
 
-- LibraryFile: ID, source/sourceId, relativePath, fingerprint, status, categoryPath, metadata/capa.
-- Work: obra canônica identificada por ISBN/título normalizado; não substitui arquivo.
-- WorkFile: associação com primary/format.
-- Series/WorkSeries: agrupamento e sequência/volume.
-- Profile: perfil local selecionável; não é account.
-- ReadingState: favoritos, histórico, progresso e estatísticas por perfil/livro.
-- SavedView/BookPreference: personalização por perfil.
-- BackgroundJob: payload, dedupe, prioridade, status, tentativas e timestamps.
-- CacheEntry: derivado em disco, tamanho, fingerprint, versão e LRU.
-- DuplicateDecision: decisão persistida sobre candidato.
-- Metadata Candidate: estrutura de runtime/persistência de campos com origem/confiança, não tabela canônica isolada.
-- BackupHistory/IntegrityReport/ReaderMetric/FeatureFlag: suporte operacional/produto.
 
-Consulte [PostgreSQL e Redis](../../backend/postgresql-and-redis/) para tabelas reais.
+
+- LibraryFile: ID, source/sourceId, relativePath, fingerprint, status, categoryPath, metadata/capa.
+- Work: canonical work identified by ISBN/title normalized; does not replace file.
+- WorkFile: association with primary/format.
+- Series/WorkSeries: grouping and sequence/volume.
+- Profile: selectable local profile; not an account.
+- ReadingState: favorites, history, progress, and statistics per profile/book.
+- SavedView/BookPreference: personalization per profile.
+- BackgroundJob: payload, dedupe, priority, status, attempts, and timestamps.
+- CacheEntry: derived on disk, size, fingerprint, version, and LRU.
+- DuplicateDecision: persisted decision about candidate.
+- Metadata Candidate: runtime/persistence structure of fields with origin/confidence, not isolated canonical table.
+- BackupHistory/IntegrityReport/ReaderMetric/FeatureFlag: operational/product support.
+
+Refer to [PostgreSQL and Redis](../../backend/postgresql-and-redis/) for real tables.

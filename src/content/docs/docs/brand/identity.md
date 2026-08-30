@@ -1,6 +1,6 @@
 ---
-title: "Identidade"
-description: "Documentation for Identidade in the Araru ecosystem."
+title: "Identity"
+description: "Documentation for Araru brand identity in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
@@ -10,16 +10,16 @@ status: stable
 **Português:** Servidor open source e self-hosted para seu acervo digital.  
 **English:** Open-source, self-hosted digital library server.
 
-Araru ajuda pessoas a catalogar, pesquisar, preservar e consumir livros, ebooks, HQs, mangás, revistas e documentos próprios. O servidor administra acervo/dados; Web é o cliente atual e Desktop/Mobile são direções futuras.
+Araru helps people catalog, search, preserve, and consume their own books, ebooks, comics, manga, magazines, and documents. The server manages the library/data; Web is the current client, while Desktop/Mobile are future directions.
 
-## Personalidade
+## Personality
 
-Clara, acolhedora, brasileira, confiável e tecnicamente competente. Pode ser divertida em onboarding/comunidade, mas é sóbria em leitura, erros críticos e segurança.
+Clear, welcoming, Brazilian, trustworthy, and technically capable. It may be playful in onboarding/community contexts, but remains sober in reading, critical errors, and security.
 
-## Origem
+## Origin
 
-O nome evoca a arara e a biodiversidade brasileira/Cerrado. A referência é inspiração, não tema obrigatório. Não usar penas, aves ou múltiplas cores em cada elemento da UI.
+The name evokes the macaw and Brazilian biodiversity/Cerrado. The reference is inspiration, not a mandatory theme. Do not use feathers, birds, or multiple colors in every UI element.
 
-## Não é
+## What it is not
 
-Loja, marketplace, distribuidor, serviço de pirataria, compartilhamento público ou cópia visual de Kindle/Jellyfin/Plex. O usuário controla o conteúdo disponibilizado.
+A store, marketplace, distributor, piracy service, public-sharing service, or visual copy of Kindle/Jellyfin/Plex. The user controls the content made available.

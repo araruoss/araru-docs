@@ -1,24 +1,24 @@
 ---
-title: "Glossário"
-description: "Documentation for Glossário in the Araru ecosystem."
+title: "Glossary"
+description: "Documentation for Glossary in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-- **Work**: obra canônica que agrupa arquivos.
-- **Library File/File**: arquivo físico indexado de uma fonte.
-- **Work File**: associação Work ↔ Library File.
-- **Profile**: contexto local de preferências/progresso, não conta.
-- **Series**: agrupamento ordenado de Works.
-- **Reader**: engine/frontend que renderiza um formato.
-- **Derived File**: recurso regenerável, como capa.
-- **Fingerprint**: assinatura usada para detectar mudança/invalidação.
-- **categoryPath**: diretórios que formam categoria hierárquica.
-- **Cover**: imagem de apresentação interna, externa ou gerada.
-- **Metadata Candidate**: valor sugerido com origem/confiança.
-- **Job**: trabalho assíncrono com estado persistido.
-- **Saved View**: filtros/visualização nomeados por perfil.
-- **Reading State**: favoritos, histórico, posição e estatísticas.
-- **Source**: filesystem local ou Google Drive.
-- **Offline Item**: livro explicitamente armazenado no navegador.
+- **Work**: canonical work that groups files.
+- **Library File/File**: Physical file indexed from a source.
+- **Work File**: Work ↔ Library File association.
+- **Profile**: Local context of preferences/progress, does not count.
+- **Series**: ordered grouping of Works.
+- **Reader**: engine/frontend that renders a format.
+- **Derived File**: Regenerable feature, such as cover.
+- **Fingerprint**: signature usedto detect change/invalidation.
+- **categoryPath**: directories that form a hierarchical category.
+- **Cover**: internal, external or generated presentation image.
+- **Metadata Candidate**: suggested value with origin/confidence.
+- **Job**: Asynchronous job with persisted state.
+- **Saved View**: filters/view named by profile.
+- **Reading State**: favorites, history, position, and stats.
+-**source**: local filesystem or Google Drive.
+- **Offline Item**: Book explicitly stored in the browser.

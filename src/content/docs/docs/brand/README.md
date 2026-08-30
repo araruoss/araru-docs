@@ -1,37 +1,37 @@
 ---
-title: "Marca Araru"
-description: "Documentation for Marca Araru in the Araru ecosystem."
+title: "Araru Brand"
+description: "Documentation for the Araru brand in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Araru é um servidor open source e self-hosted para gerenciamento, organização e consumo do acervo digital controlado pelo próprio usuário.
+Araru is an open-source, self-hosted server for managing, organizing, and consuming a user's digital library.
 
-O nome se inspira de forma sutil nas araras e na biodiversidade brasileira, especialmente no Cerrado. Essa origem orienta marca, cores e comunicação; a interface de leitura permanece limpa e sem temática literal.
+The name is subtly inspired by macaws and Brazilian biodiversity, especially the Cerrado. This origin guides the brand, colors, and communication; the reading interface remains clean and avoids a literal theme.
 
-## Princípios
+## Principles
 
-- simples, amigável e acessível;
-- brasileiro sem caricatura;
-- moderno e tecnológico sem aparência corporativa;
-- open source e comunitário;
-- capas e conteúdo como protagonistas;
-- controle do usuário sobre arquivos, servidor e dados.
+- simple, friendly, and accessible;
+- Brazilian without caricature;
+- modern and technical without a corporate appearance;
+- open source and community-driven;
+- covers and content as protagonists;
+- user control over files, server, and data.
 
-## Índice
+## Index
 
-- [Identidade](../identity/)
-- [Posicionamento](../positioning/)
-- [Voz e tom](../voice-and-tone/)
-- [Linguagem visual](../visual-language/)
-- [Cores](../colors/)
-- [Tipografia](../typography/)
+- [Identity](../identity/)
+- [Positioning](../positioning/)
+- [Voice and tone](../voice-and-tone/)
+- [Visual language](../visual-language/)
+- [Colors](../colors/)
+- [Typography](../typography/)
 - [Logo](../logo-guidelines/)
 - [Mascote](../mascot/)
-- [Nomenclatura](../naming/)
-- [Textos de produto](../product-copy/)
-- [Acessibilidade](../accessibility/)
-- [Migração do rebranding](../rebranding-migration/)
+- [Naming](../naming/)
+- [Product copy](../product-copy/)
+- [Accessibility](../accessibility/)
+- [Rebranding migration](../rebranding-migration/)
 
-Logo, mascote e tagline oficiais: **TBD / TO BE DEFINED**.
+Official logo, mascot, and tagline: **TBD / TO BE DEFINED**.

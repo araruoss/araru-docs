@@ -1,54 +1,54 @@
 ---
-title: "Formatos de leitura"
-description: "Documentation for Formatos de leitura in the Araru ecosystem."
+title: "Reading formats"
+description: "Documentation for Read formats in the Araru ecosystem."
 order: 100
 section: "readers"
 status: stable
 ---
 
-## PDF
+PDF
 
-- descoberta: extensão `.pdf`;
-- backend: `/conteudo` com HEAD/GET e Range para arquivo local;
-- frontend: PDF.js legacy e worker empacotado pelo Vite como `.js`;
-- páginas: canvas dimensionado à viewport; cache atual/vizinhas;
-- capa: interna/provider ou primeira página via Poppler/pipeline;
-- progresso: página, total e percentual;
-- cleanup: cancela render tasks, limpa canvas/cache e destrói documento;
-- limitação: PDFs corrompidos/protegidos podem falhar; fontes externas dependem da origem.
+- discovery: extension `.pdf`;
+- backend: `/conteudo` with HEAD/get and range for local file;
+- frontend: PDF.js legacy and worker packaged by Vite as `.js`;
+- pages: canvas sized to viewport; current/neighboring cache;
+- cover: internal/provider or first page via Poppler/pipeline;
+- progress: page, total and percentage;
+- cleanup: cancels render tasks, clears canvas/cache and destroys document;
+-limitation: Corrupted/protected PDFs may fail; external sources depend on the source.
 
-## EPUB
+ePUB
 
-- descoberta: `.epub`;
-- backend: entrega o arquivo, inclusive Range quando arquivo local;
-- frontend: `epubParser.js` usa JSZip para container, OPF, spine e recursos; não usa a biblioteca `epubjs`;
-- capa: metadata/manifest ou fallback gerado;
-- progresso: unidade paginada/posição do conteúdo normalizado;
-- cleanup: remove URLs/DOM temporários;
-- limitação: EPUBs com recursos/DRM não padronizados podem não renderizar integralmente.
+- discovery: `.epub`;
+- backend: delivers the file, including Range when local file;
+- frontend: `epubParser.js` uses JSZip for container, OPF, spine and resources; does not use `epubjs` library;
+- CAPA: metadata/manifest or fallback generated;
+- progress: paginated unit/position of normalized content;
+- cleanup: removes temporary URLs/DOM;
+- limitation: EPUBs with non-standard features/DRM may not renderfully.
 
-## MOBI
+MOBI
 
-- descoberta: `.mobi`;
-- backend: reader service/parser disponibiliza conteúdo, páginas e `/recursos/mobi/:recindex`;
-- frontend: `mobiParser.js` normaliza payload e referências;
-- capa: registro interno quando extraível, depois fallbacks;
-- progresso: página/total;
-- limitação: variantes proprietárias/DRM e MOBI malformado.
+- discovery: `.mobi`;
+- backend: reader service/parser provides content, pages and `/recursos/mobi/:recindex`;
+- frontend: `mobiParser.js` normalizes payload and references;
+- CAPA: internal record when extractable, then fallbacks;
+- progress: page/total;
+- limitation: proprietary variants/DRM and malformed MOBI.
 
-## CBZ
+Cbz
 
-- descoberta: `.cbz`;
-- backend: JSZip cria índice ordenado e serve `/paginas/:page`;
-- frontend: `comicClient.js` busca imagens sob demanda e mantém Object URLs próximas;
-- capa: primeira imagem;
-- progresso: índice da imagem;
-- cleanup: revoga Object URLs.
+- discovery: `.cbz`;
+- backend: JSZip creates ordered index and serves `/paginas/:page`;
+- frontend: `comicClient.js` fetches images on demand and keeps Object URLs nearby;
+- cover: first image;
+- progress: image index;
+- cleanup: revokes Object URLs.
 
-## CBR
+cbr
 
-- descoberta: `.cbr`;
-- backend: UnRAR e fallback 7-Zip para índice/página;
-- frontend: mesmo reader de comics;
-- capa: primeira imagem;
-- limitação: requer ferramentas/arquivo compatíveis; arquivos protegidos ou variantes RAR não suportadas falham.
+- discovery: `.cbr`;
+- backend: UnRAR and 7-Zip fallback for index/page;
+- frontend: same comics reader;
+- cover: first image;
+- limitation: requires compatible tools/file; protected files or unsupported RAR variants fail.

@@ -1,19 +1,19 @@
 ---
-title: "Contexto arquitetural para LLM"
-description: "Documentation for Contexto arquitetural para LLM in the Araru ecosystem."
+title: "Architectural context for LLM"
+description: "Documentation for Architectural context for LLM in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-Browser chama somente HTTP. Frontend mantém UI/estado efêmero; backend detém domínio, paths, credenciais e persistência. Nginx/Vite fazem proxy. Não mova regras de filesystem/metadata para o cliente.
+The browser only calls HTTP. The frontend maintains ephemeral UI/state; the backend holds domain, paths, credentials, and persistence. Nginx/Vite act as proxies. Do not move filesystem/metadata rules to the client.
 
-Backend: route → controller → service → PostgreSQL/Redis/storage/provider. Watcher e jobs vivem no mesmo processo. PostgreSQL é fonte de verdade; Redis e derivados são regeneráveis. Filesystem é fonte principal, Drive opcional.
+Backend: route → controller → service → PostgreSQL/Redis/storage/provider. Watcher and jobs live in the same process. PostgreSQL is the source of truth; Redis and derivatives are regenerable. Filesystem is the primary source, Drive is optional.
 
-Reader: Library File → capability → endpoint de conteúdo/página → engine frontend → progresso `/reading-state` → cleanup. PDF exige Range; archives podem exigir extração limitada.
+Reader: Library File → capability → content/page endpoint → frontend engine → progress `/reading-state` → cleanup. PDF requires Range; archives may require limited extraction.
 
-Work é obra canônica; Library File é arquivo físico. Categoria é `categoryPath`. IDs existentes são contratos.
+Work is canonical; Library File is a physical file. Category is `categoryPath`. Existing IDs are contracts.
 
-Administração é um domínio explícito: frontend modular em `features/admin`, APIs reutilizadas e autorização server-side por `requireAdmin`. Nunca confunda `users` (autenticação) com `profiles` (contexto de consumo), nem persista configuração administrativa exclusivamente no Redis. Consulte `docs/architecture/admin-panel.md` antes de alterar setup, header, roles, profiles ou settings.
+Administration is an explicit domain: modular frontend in `features/admin`, reusable APIs, and server-side authorization via `requireAdmin`. Never confuse `users` (authentication) with `profiles` (consumption context), nor persist administrative configuration exclusively in Redis. Consult `docs/architecture/admin-panel.md` before changing setup, header, roles, profiles, or settings.
 
-Detalhes: [arquitetura](../../architecture/overview/), [data flow](../../architecture/data-flow/), [ADRs](../../adr/readme/).
+Details: [architecture](../../architecture/overview/), [data flow](../../architecture/data-flow/), [ADRs](../../adr/readme/).

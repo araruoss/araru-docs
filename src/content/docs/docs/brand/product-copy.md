@@ -1,15 +1,15 @@
 ---
-title: "Textos de produto"
-description: "Documentation for Textos de produto in the Araru ecosystem."
+title: "Product Copy"
+description: "Documentation for Araru product copy in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Usar termos claros: Biblioteca, Obra, Arquivo, Coleção, Série, Autor, Categoria, Continuar lendo, Recentemente adicionados, Favoritos, Histórico e Configurações.
+Use clear terms: Library, Work, File, Collection, Series, Author, Category, Continue reading, Recently added, Favorites, History, and Settings.
 
-“Araru” nomeia o produto; não substitui substantivos (“Biblioteca” continua sendo a seção). Evitar “AraruBook”, “AraruJob” e nomes temáticos.
+“Araru” names the product; it does not replace nouns (“Library” remains the section name). Avoid “AraruBook”, “AraruJob”, and themed names.
 
-Descrição curta: “Servidor open source e self-hosted para seu acervo digital.”
+Short description: “Open-source, self-hosted server for your digital library.”
 
-Empty/error copy deve dizer o que ocorreu e próxima ação. Segurança e operações usam linguagem objetiva. Tagline e texto de About completos: **TBD**.
+Empty/error copy should say what happened and what to do next. Security and operations use objective language. Full tagline and About copy: **TBD**.

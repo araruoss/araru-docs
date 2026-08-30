@@ -1,24 +1,24 @@
 ---
-title: "Sistema de nomes"
-description: "Documentation for Sistema de nomes in the Araru ecosystem."
+title: "Name System"
+description: "Documentation for Name System in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-| Elemento | Nome |
+| Element | Name |
 |---|---|
-| Ecossistema | Araru |
+| Ecosystem | Araru |
 | Server | `araru-server` |
 | Web | `araru-web` |
-| Documentação | `araru-docs` |
-| Servidor | Araru Server / `@araru/server` |
+| Documentation | `araru-docs` |
+| Server | Araru Server / `@araru/server` |
 | Web | Araru Web / `@araru/web` |
-| Desktop futuro | Araru Desktop |
-| Mobile futuro | Araru Mobile |
-| Cloud futuro | Araru Cloud |
-| CLI futuro | Araru CLI |
+| Future Desktop | Araru Desktop |
+| Future Mobile | Araru Mobile |
+| Future Cloud | Araru Cloud |
+| Future CLI | Araru CLI |
 
-Não prefixar conceitos técnicos sem benefício: Work, File, Reader, Job, Profile, Cache e StorageProvider permanecem genéricos.
+Do not prefix technical concepts without benefit: Work, File, Reader, Job, Profile, Cache and StorageProvider remain generic.
 
-Repositório futuro preferido: `araru`. Renomear o diretório/local remoto é ação manual e não necessária para o código funcionar.
+Preferred future repository: `araru`. Renaming the remote directory/local path is a manual action and not necessary for the code to work.

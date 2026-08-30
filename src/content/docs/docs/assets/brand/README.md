@@ -1,22 +1,22 @@
 ---
-title: "Assets de marca Araru"
-description: "Documentation for Assets de marca Araru in the Araru ecosystem."
+title: "Araru Brand Assets"
+description: "Documentation for Araru brand assets in the Araru ecosystem."
 order: 100
 section: "assets"
 status: stable
 ---
 
-Os assets oficiais de marca são mantidos no repositório da organização:
+Official brand assets are maintained in the organization repository:
 
 - [araruoss/araruoss — assets](https://github.com/araruoss/araruoss/tree/main/assets)
 
-O Web mantém somente os derivados necessários em runtime, como favicon, ícones PWA e mascote otimizado. Evite duplicar os arquivos-fonte da marca neste repositório.
+The Web repository keeps only runtime derivatives such as the favicon, PWA icons, and optimized mascot. Avoid duplicating brand source files in this repository.
 
-Organização recomendada no repositório da marca:
+Recommended organization in the brand repository:
 
 ```text
-logo/     variações de logo
-icons/    favicon e app icons
-mascot/   mascote e estados ilustrados
-social/   cards e imagens de divulgação
+logo/     logo variations
+icons/    favicon and app icons
+mascot/   mascot and illustrated states
+social/   cards and promotional images
 ```

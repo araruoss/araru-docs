@@ -1,6 +1,6 @@
 ---
-title: "ADR-004: separar Work de Library File"
-description: "Documentation for ADR-004: separar Work de Library File in the Araru ecosystem."
+title: "ADR-004: Separate Work from Library File"
+description: "Documentation for ADR-004: Separate Work from Library File in the Araru ecosystem."
 order: 100
 section: "adr"
 status: stable
@@ -11,16 +11,16 @@ Date: 2026-08-23 (retrospective)
 
 ## Context
 
-`works` e `work_files` coexistem com IDs históricos de arquivos. Rationale inferred from current architecture.
+`works` and `work_files` coexist with historical file IDs. Rationale inferred from current architecture.
 
 ## Decision
 
-Obra canônica agrupa arquivos físicos/formatos sem substituir IDs e URLs existentes.
+The canonical work groups physical files/formats without replacing existing IDs and URLs.
 
 ## Alternatives
 
-Cada arquivo ser uma obra; migrar IDs antigos.
+Each file as a work; migrate old IDs.
 
 ## Consequences
 
-Suporta múltiplos formatos e séries; exige distinguir `workId` de `fileId` em novos recursos.
+Supports multiple formats and series; requires distinguishing `workId` from `fileId` in new resources.

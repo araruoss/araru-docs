@@ -1,20 +1,20 @@
 ---
-title: "Catálogo, obras, categorias e metadados"
-description: "Documentation for Catálogo, obras, categorias e metadados in the Araru ecosystem."
+title: "Catalog, works, categories and metadata"
+description: "Documentation for Catalog, works, categories and metadata in the Araru ecosystem."
 order: 100
 section: "backend"
 status: stable
 ---
 
-## Catálogo
+PRODUCTS
 
-`driveService` descobre fontes; `libraryIndexService` persiste arquivos e FTS. IDs/URLs existentes são preservados. Fingerprint detecta mudança; watcher reconcilia localmente; jobs periódicos fazem manutenção. Ausência tem retenção antes de limpeza definitiva.
+`driveService` discovers sources; `libraryIndexService` persists files and FTS. Existing IDs/URLs are preserved. Fingerprint detects change; watcher reconciles locally; periodic jobs perform maintenance. Absence has retention before definitive cleaning.
 
-`Work` é canônico; `LibraryFile` é físico. `work_files` permite formatos/duplicatas sem mudar IDs antigos.
+`Work` is canonical; `LibraryFile` is physical. `work_files` allows formats/duplicates without changing old IDs.
 
-Categorias são exclusivamente o path da pasta. Overrides manuais não criam árvore paralela.
+Categories are exclusively the path of the folder. Manual overrides do not create parallel tree.
 
-## Pipeline de metadados
+## Metadata pipeline
 
 ```mermaid
 flowchart LR
@@ -33,8 +33,8 @@ flowchart LR
   R --> DB
 ```
 
-Providers usam cache positivo/negativo, timeout, retry e circuit breaker. Matching considera ISBN, título/subtítulo e autores. Campos manuais são protegidos. Thresholds são configuráveis.
+Providers use positive/negative cache, timeout, retry, and circuit breaker. Matching considers ISBN, title/subtitle and authors. Manual fields are protected. Thresholds are configurable.
 
-## Capas
+## Covers
 
-Prioridade depende do formato e dados disponíveis: capa interna/primeira imagem, provider, primeira página. O derivado registra origem, dimensões, proporção, qualidade, fingerprint e versão. Mudança de arquivo/pipeline invalida; operação lista/regenera problemas.
+Priority depends on the format and data available: inner cover/first image, provider, first page. The derivative records origin, dimensions, proportion, quality, fingerprint and version. File/pipeline change invalid; list/regenerate operation issues.

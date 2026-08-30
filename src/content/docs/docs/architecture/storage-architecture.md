@@ -1,23 +1,23 @@
 ---
-title: "Arquitetura de storage"
-description: "Documentation for Arquitetura de storage in the Araru ecosystem."
+title: "Storage Architecture"
+description: "Documentation for storage architecture in the Araru ecosystem."
 order: 100
 section: "architecture"
 status: stable
 ---
 
-## Filesystem local
+## Local filesystem
 
-`LOCAL_LIBRARY_DIR` é percorrido para descobrir formatos suportados. O ID local codifica o caminho relativo; fingerprint e timestamps detectam alterações. `categoryPath` é o diretório relativo sem o filename. Streams e Range evitam ler PDFs grandes integralmente.
+`LOCAL_LIBRARY_DIR` is traversed to discover supported formats. The local ID encodes the relative path; fingerprints and timestamps detect changes. `categoryPath` is the relative directory without the filename. Streams and Range avoid reading large PDFs in full.
 
 ## Google Drive
 
-É uma fonte opcional. A configuração aceita pasta única ou `drive-folders.json`, API key e OAuth. Credenciais OAuth são criptografadas no PostgreSQL; `source_sync_state` guarda cursor incremental. Falhas não devem apagar itens apenas por ausência transitória; o catálogo usa status/retenção.
+It is an optional source. Configuration accepts a single folder or `drive-folders.json`, an API key, and OAuth. OAuth credentials are encrypted in PostgreSQL; `source_sync_state` stores an incremental cursor. Failures must not delete items solely because of transient absence; the catalog uses status/retention.
 
-## Derivados
+## Derived files
 
-`COVER_CACHE_DIR` guarda capas regeneráveis. `cache_entries` registra path, tamanho, fingerprint, versão e último acesso. Integridade e LRU removem órfãos/excesso. Cache nunca é fonte de verdade.
+`COVER_CACHE_DIR` stores regenerable covers. `cache_entries` records path, size, fingerprint, version, and last access. Integrity checks and LRU remove orphans/excess. Cache is never the source of truth.
 
-## Direção futura — não implementada
+## Future direction — not implemented
 
-Uma interface `StorageProvider` e objetos S3/R2 podem reduzir acoplamento e facilitar escala. Não existem atualmente; filesystem e Drive são implementados diretamente nos serviços atuais.
+An interface such as `StorageProvider` and S3/R2 objects could reduce coupling and ease scaling. They do not exist currently; the filesystem and Drive are implemented directly in the current services.

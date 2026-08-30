@@ -1,24 +1,24 @@
 ---
-title: "Invariantes e restrições"
-description: "Documentation for Invariantes e restrições in the Araru ecosystem."
+title: "Invariants and constraints"
+description: "Documentation for Invariants and constraints in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-- arquivos grandes não podem ser carregados integralmente em RAM sem budget explícito;
-- PDF local deve preservar streaming/Range e headers;
-- frontend não acessa filesystem, bancos, paths físicos ou secrets;
-- migrations aplicadas são imutáveis e verificadas por checksum;
-- IDs e URLs existentes devem ser preservados;
-- categorias vêm de diretórios/`categoryPath`, não tags;
-- Work e Library File são conceitos distintos;
-- cache nunca é fonte de verdade; derivados devem ser regeneráveis;
-- falha transitória do Drive não deve remover arquivos imediatamente;
-- campos manuais de metadata não devem ser sobrescritos automaticamente;
-- readers devem implementar cleanup idempotente e progresso estável;
-- mudanças de PWA exigem versionamento/testes de cache;
-- operações destrutivas devem começar em dry-run/verificação;
-- perfis não devem ser tratados como autenticação multiusuário;
-- backend não serve a SPA; frontend usa proxy/API;
-- roadmap não pode ser descrito como implementação atual.
+- large files cannot be fully loaded into RAM without explicit budget;
+- Local PDF must preserve streaming/Range and headers;
+- frontend does not access filesystems, banks, physical paths or secrets;
+- applied migrations are immutable and checked by checksum;
+- Existing IDs and URLs must be preserved;
+- categories come from directories/`categoryPath`, not tags;
+- Work and Library File are conceptsdistinct;
+- cache is never a source of truth; derivatives must be regenerable;
+- transient failure of the Drive should not remove files immediately;
+- manual metadata fields should not be automatically overwritten;
+- readers should implement idempotent cleanup and stable progress;
+- PWA changes require versioning/cache testing;
+- destructive operations must start in dry-run/check;
+- profilesshould not be treated as multi-user authentication;
+- backend does not serve spa; frontend uses proxy/API;
+- roadmap cannot be described as current implementation.

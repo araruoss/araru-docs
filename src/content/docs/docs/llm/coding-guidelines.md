@@ -1,13 +1,13 @@
 ---
-title: "Diretrizes de código para agentes"
-description: "Documentation for Diretrizes de código para agentes in the Araru ecosystem."
+title: "Code guidelines for agents"
+description: "Documentation for Code guidelines for agents in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-Backend: mantenha route/controller/service; use logger estruturado; normalize erros; valide payload/paths; stream quando possível; use transactions; adicione migration; integre jobs longos à fila.
+Backend: maintain route/controller/service; use structured logger; normalize errors; validate payload/paths; stream when possible; use transactions; add migration; integrate long jobs to queue.
 
-Frontend: use API client/TanStack Query; URL para navegação; evite duplicar estado global; trate loading/error/empty; preserve touch/mobile/foco; faça cleanup em effects/readers; lazy load áreas pesadas.
+Frontend: use API client/TanStack Query; URL for navigation; avoid duplicating global state; handle loading/error/empty; preserve touch/mobile/focus; perform cleanup in effects/readers; lazy load heavy areas.
 
-Antes de criar abstração, procure implementação existente com `rg`. Faça a menor mudança coerente. Não reformate arquivos não relacionados nem altere dados em `storage`.
+Before creating abstraction, look for existing implementation with `rg`. Make the smallest coherent change. Do not reformat unrelated files or alter data in `storage`.

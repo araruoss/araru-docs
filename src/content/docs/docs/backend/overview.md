@@ -1,34 +1,34 @@
 ---
 title: "Backend"
-description: "Documentation for Backend in the Araru ecosystem."
+description: "Documentation for the Araru backend in the Araru ecosystem."
 order: 100
 section: "backend"
 status: stable
 ---
 
-`server/server.js` inicia ciclo de vida, migrations/jobs/watcher; `server/app.js` compõe Express, segurança, CORS, parsers, métricas, acesso, arquivos e rotas. Controllers convertem HTTP; services concentram domínio.
+`server/server.js` starts the lifecycle, migrations, jobs, and watcher; `server/app.js` composes Express, security, CORS, parsers, metrics, access, files, and routes. Controllers translate HTTP; services hold domain logic.
 
-## Camadas reais
+## Actual layers
 
-- `config`: ambiente e Google;
-- `routes`: mapeamento HTTP;
-- `controllers`: validação/adaptação e status;
-- `services`: catálogo, storage, readers, metadados, produto e operação;
-- `middleware`: headers, request ID, rate limit e sessão;
-- `migrations`: schema incremental imutável.
+- `config`: environment and Google;
+- `routes`: HTTP mapping;
+- `controllers`: validation/adaptation and status;
+- `services`: catalog, storage, readers, metadata, product, and operations;
+- `middleware`: headers, request ID, rate limit, and sessions;
+- `migrations`: immutable incremental schema.
 
-O backend não entrega a SPA. `/sw.js` é somente um worker de migração para remover instalações antigas na porta da API.
+The backend does not serve the SPA. `/sw.js` is only a migration worker for removing old installations from the API port.
 
-Principais serviços: `driveService`, `libraryIndexService`, `readerService`, `metadataService`, `readingStateService`, `workService`, `profileService`, `jobQueueService`, `cacheService`, `integrityService`, `backupService` e observabilidade.
+Main services include `driveService`, `libraryIndexService`, `readerService`, `metadataService`, `readingStateService`, `workService`, `profileService`, `jobQueueService`, `cacheService`, `integrityService`, `backupService`, and observability.
 
-## Identidade e configuração inicial
+## Identity and initial setup
 
-- `system_settings` é a fonte de verdade do estado de setup e das configurações gerais;
-- `users` guarda contas individuais e hashes `scrypt`; senhas nunca são persistidas em texto;
-- `profiles` representa contextos de leitura, não credenciais;
-- `user_profiles` implementa a associação muitos-para-muitos;
-- `user_sessions` mantém sessões HttpOnly e o perfil ativo no servidor;
-- `POST /api/v1/setup` executa a criação inicial em uma transação e retorna `409` depois da conclusão;
-- ações administrativas são autorizadas no backend, incluindo a proteção do último administrador ativo.
+- `system_settings` is the source of truth for setup state and general settings;
+- `users` stores individual accounts and `scrypt` hashes; passwords are never persisted as plaintext;
+- `profiles` represent reading contexts, not credentials;
+- `user_profiles` implements the many-to-many association;
+- `user_sessions` keeps HttpOnly sessions and the active profile on the server;
+- `POST /api/v1/setup` performs initial creation in a transaction and returns `409` after completion;
+- administrative actions are authorized in the backend, including protection of the last active administrator.
 
-O Redis continua reservado a cache e dados reconstruíveis. Usuários, sessões, associações, preferências e configurações permanecem no PostgreSQL.
+Redis remains reserved for cache and rebuildable data. Users, sessions, associations, preferences, and settings remain in PostgreSQL.
