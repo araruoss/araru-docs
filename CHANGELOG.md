@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/araruoss/araruoss.github.io/compare/v0.2.1...v0.3.0) (2026-08-30)
+
+
+### Features
+
+* **docs:** document merged product capabilities ([8a65626](https://github.com/araruoss/araruoss.github.io/commit/8a65626250a8df801cc570264251258a3de3939b))
+
 ## [0.2.1](https://github.com/araruoss/araruoss.github.io/compare/v0.2.0...v0.2.1) (2026-08-24)
 
 
