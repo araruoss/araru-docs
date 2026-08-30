@@ -1,43 +1,50 @@
 ---
-title: "Administração, usuários e perfis"
-description: "Documentation for Administração, usuários e perfis in the Araru ecosystem."
+title: "Administration, users, and profiles"
+description: "How the Araru administration context separates users, profiles, permissions, and installation settings."
 order: 100
 section: "architecture"
 status: stable
 ---
 
-O Admin Panel centraliza configurações da instalação em `/admin`. A rota é carregada sob demanda, possui layout próprio e navegação adaptada: sidebar no desktop e drawer com alvos de toque no mobile/tablet.
+The Admin Panel centralizes installation settings at `/admin`. The route is loaded on demand and uses its own responsive context: a sidebar on desktop and a drawer with touch-sized targets on mobile and tablet.
 
-## User e Profile
+## User and Profile
 
-- **User** é a conta autenticada, com senha derivada por `scrypt`, role, status e sessões.
-- **Profile** é o contexto de leitura. Histórico, progresso, favoritos e preferências pertencem ao profile ativo.
-- `user_profiles` representa a relação muitos-para-muitos. A sessão guarda o profile ativo.
-- Configurações globais pertencem à instalação em `system_settings`, nunca ao profile ou Redis.
+- **User** is the authenticated account, with an `scrypt`-derived password, role, status, and sessions.
+- **Profile** is a reading context. History, progress, favorites, and preferences belong to the active profile.
+- `user_profiles` represents the many-to-many relationship. The session stores the active profile.
+- Global settings belong to the installation in `system_settings`, never to a profile or Redis.
 
-O setup cria atomicamente no PostgreSQL o primeiro user como administrador, seu profile padrão e a associação. O backend impede excluir, desativar ou rebaixar o último administrador ativo.
+Setup atomically creates the first administrator, its default profile, and their association in PostgreSQL. The backend prevents deleting, disabling, or demoting the last active administrator.
 
-## Seções funcionais
+## Functional sections
 
-- Visão geral: saúde, quantidades, catálogo, jobs e versão;
-- Geral e Aparência: identidade, região, idioma e tema globais;
-- Usuários: criação, role, status, redefinição de senha e exclusão segura;
-- Perfis: criação, associação com users e exclusão segura;
-- Bibliotecas e Armazenamento: catálogo, scan e saúde dos providers;
-- Metadados: revisão, duplicatas, importação e exportação;
-- Tarefas: fila, retry/cancel, integridade, capas e cache;
-- Backup: exportação, verificação e restauração confirmada;
-- Segurança: auditoria administrativa;
-- Sistema: PostgreSQL, Redis, watcher, ambiente e uptime.
+- Overview: health, counts, catalog, jobs, and version;
+- General and Appearance: global identity, region, language, and theme;
+- Users: creation, role, status, password reset, and safe deletion;
+- Roles and permissions: product-area permission groups and protected system roles;
+- Profiles: creation, user association, and safe deletion;
+- Libraries and Storage: catalog, scans, provider configuration, and provider health;
+- Metadata: review, duplicates, import, and export;
+- Jobs: queue, retry/cancel, integrity, covers, and cache operations;
+- Backup: export, verification, and confirmed restore;
+- Security: authentication policy, sessions, rate limits, cookies, reader policy, and administrative audit;
+- System: PostgreSQL, Redis, watcher, environment, and uptime.
 
-Preferências individuais do leitor, visualizações salvas e downloads offline permanecem na área pessoal da biblioteca.
+Individual reader preferences, saved views, and offline downloads remain in the personal library area.
 
-## Autorização e auditoria
+## Authorization and audit
 
-O guard do frontend é apenas UX. O backend aplica `requireAdmin` em configurações globais, gestão de users/profiles, backup, metadados e operações. Um ID enviado pelo cliente nunca substitui autorização.
+The frontend guard is a UX boundary only. The backend applies `requireAdmin` to global settings, user/profile management, backup, metadata, and operations. An ID supplied by the client never replaces authorization.
 
-`admin_audit_log` registra ator, ação, tipo/alvo e timestamp sem senhas, hashes, tokens ou secrets. PostgreSQL é fonte de verdade; Redis continua reservado a cache e estado efêmero.
+`admin_audit_log` records the actor, action, target type/identifier, and timestamp without passwords, hashes, tokens, or secrets. PostgreSQL is the source of truth; Redis remains reserved for cache and ephemeral state.
 
-## Precedência visual
+## Tabs, pagination, and operational states
 
-Quando aplicável: preferência do usuário, preferência do profile, padrão do servidor e sistema operacional. O idioma público do servidor também é aplicado antes do login.
+Sibling administrative views use URL-backed tabs where deep linking is useful. Searchable collections use `{ items, pagination }` and expose the current page, total, and previous/next controls. Jobs use the states `queued`, `running`, `completed`, `failed`, and `cancelled`; long-running accepted actions provide a path to Jobs.
+
+All administrative surfaces define loading, empty, error, unauthorized, disabled, saving, saved, and destructive-confirmation states. Dialogs remain bounded and scrollable when forms are long, while their primary action stays available.
+
+## Visual precedence
+
+Where applicable: user preference, profile preference, server default, and operating system. The server's public language is also applied before login.
