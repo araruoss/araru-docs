@@ -1,35 +1,35 @@
 ---
-title: "Araru — contexto rápido do projeto"
-description: "Documentation for Araru — contexto rápido do projeto in the Araru ecosystem."
+title: "Araru — quick project context"
+description: "Documentation for Araru — quick project context in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-Araru é um ecossistema open source e self-hosted para catalogar e ler arquivos locais ou do Google Drive. Server, Web e documentação são projetos independentes e comunicam-se exclusivamente pela API HTTP.
+Araru is an open source and self-hosted ecosystem for cataloging and reading local or Google Drive files. The server, web, and documentation are independent projects that communicate exclusively via the HTTP API.
 
-Former project name: Biblioteca Digital. Use o nome antigo somente ao explicar compatibilidade histórica; chame o produto exclusivamente de Araru.
+Former project name: Biblioteca Digital. Use the old name only to explain historical compatibility; refer to the product exclusively as Araru.
 
-## Atual
+## Current
 
 - frontend: React 18, Vite 8, Router, TanStack Query/Virtual, Tailwind, PDF.js, JSZip;
-- backend: Node 22+, Express, `pg`, `ioredis`, Google APIs, Chokidar, parsers/extratores;
-- dados: PostgreSQL persistente, Redis para cache, livros no filesystem e capas derivadas em disco;
-- formatos: PDF, EPUB, MOBI, CBZ, CBR;
-- deploy: frontend Nginx `8080`, API `3001`, proxy same-origin;
-- testes: 8 frontend + 41 backend, E2E integrado, benchmarks e budget.
+- backend: Node 22+, Express, `pg`, `ioredis`, Google APIs, Chokidar, parsers/extractors;
+- data: Persistent PostgreSQL, Redis for cache, books on filesystem and derived covers on disk;
+- formats: PDF, EPUB, MOBI, CBZ, CBR;
+- deployment: frontend Nginx `8080`, API `3001`, same-origin proxy;
+- tests: 8 frontend + 41 backend, integrated E2E testing, benchmarks and budget.
 
-## Funcionalidades
+## Features
 
-Catálogo/FTS, categorias por diretórios, favoritos/recentes, histórico com retomada, perfis, preferências, séries/works, leitores internos, progresso, PWA/offline, metadados/capas, duplicidades, backup, jobs, integridade e operação.
+Catalog/FTS, categories by directories, favorites/recent, history with resumption, profiles, preferences, series/works, internal readers, progress, PWA/offline, metadata/covers, duplicates, backup, jobs, integrity and operation.
 
-## Entradas
+## Inputs
 
-- Web: repositório [`araru-web`](https://github.com/araruoss/araru-web), entrada em `src/main.jsx` e rotas em `src/App.jsx`;
-- Server: repositório [`araru-server`](https://github.com/araruoss/araru-server), entrada em `server/server.js` e rotas em `server/routes`;
-- schema: `server/migrations` no `araru-server`;
-- Docker: `docker-compose.yml` e Dockerfiles.
+- Web: repository [`araru-web`](https://github.com/araruoss/araru-web), entry in `src/main.jsx` and routes in `src/App.jsx`;
+- Server: repository [`araru-server`](https://github.com/araruoss/araru-server), entry in `server/server.js` and routes in `server/routes`;
+- schema: `server/migrations` in `araru-server`;
+- Docker: `docker-compose.yml` and Dockerfiles.
 
-## Não implementado
+## Not Implemented
 
-Multiusuário real, PostgreSQL, Redis, S3/R2, workers externos, escala horizontal, OpenAPI e clientes nativos.
+Real multi-user, PostgreSQL, Redis, S3/R2, external workers, horizontal scaling, OpenAPI and native clients.

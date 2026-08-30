@@ -1,26 +1,26 @@
 ---
-title: "Biblioteca, categorias e busca"
-description: "Documentation for Biblioteca, categorias e busca in the Araru ecosystem."
+title: "Library, Categories, and Search"
+description: "Documentation for the library, categories, and search in the Araru ecosystem."
 order: 100
 section: "frontend"
 status: stable
 ---
 
-A sidebar é a navegação global. Em desktop pode recolher; em mobile vira drawer. Biblioteca abre o catálogo e expõe a árvore derivada de `categoryPath`; recentes e favoritos usam o mesmo conteúdo sem tabs duplicadas.
+The sidebar is global navigation. On desktop it can collapse; on mobile it becomes a drawer. Library opens the catalog and exposes the tree derived from `categoryPath`; recent items and favorites use the same content without duplicated tabs.
 
-## Categorias
+## Categories
 
-- nós vêm da API v1 de bibliotecas e works;
-- somente o ramo atual expande por padrão;
-- chevrons existem apenas com filhos;
-- linha inteira navega e contagens são discretas;
-- seleção persiste na URL e mantém back/forward;
-- no drawer, categorias intermediárias mantêm o painel aberto; folha final pode fechá-lo.
+- nodes come from the v1 library and works API;
+- only the current branch expands by default;
+- chevrons exist only for nodes with children;
+- the full row navigates and counts are subtle;
+- selection persists in the URL and preserves back/forward;
+- in the drawer, intermediate categories keep the panel open; the final leaf may close it.
 
-## Catálogo
+## Catalog
 
-`Biblioteca.jsx` combina catálogo, busca, filtros, subpastas, ordenação e modos grade/lista. `VirtualBookGrid` reduz elementos montados. Cards fazem lazy loading de capas, mostram fallback e antecipam dados relevantes ao abrir.
+`Biblioteca.jsx` combines catalog, search, filters, subfolders, sorting, and grid/list modes. `VirtualBookGrid` reduces mounted elements. Cards lazy-load covers, show a fallback, and prefetch relevant data on open.
 
-Busca do header altera `q`; a paleta de comandos oferece navegação/ações. A busca backend possui FTS, mas o frontend também compõe estados de apresentação e filtros do catálogo carregado.
+Header search changes `q`; the command palette provides navigation/actions. Backend search has FTS, while the frontend also composes presentation state and filters for the loaded catalog.
 
-Painéis laterais concentram perfis, preferências, views, metadados, duplicidades, offline, backup/importação e operação.
+Side panels contain profiles, preferences, views, metadata, duplicates, offline, backup/import, and operations.

@@ -6,42 +6,42 @@ section: "operations"
 status: stable
 ---
 
-## Backend não inicia / PostgreSQL ou Redis
+## Backend does not start / PostgreSQL or Redis
 
-Confirme `DATABASE_URL`, `REDIS_URL`, DNS/portas, credenciais e healthchecks. Use `docker compose ps`, `docker compose logs server postgres redis` e `/health/details`. Redis pode ser temporariamente desativado com `REDIS_ENABLED=false`; PostgreSQL é obrigatório.
+Confirm `DATABASE_URL`, `REDIS_URL`, DNS/ports, credentials and healthchecks. Use `docker compose ps`, `docker compose logs server postgres redis` and `/health/details`. Redis can be temporarily disabled with `REDIS_ENABLED=false`; PostgreSQL is required.
 
-## CORS ou cookies
+## CORS or cookies
 
-Use origem completa em `ALLOWED_ORIGINS`; confirme protocolo/porta, `TRUST_PROXY`, `Secure` e `SameSite`. No Compose acesse `8080`, não `3001`.
+Use full origin in `ALLOWED_ORIGINS`; confirm protocol/port, `TRUST_PROXY`, `Secure` and `SameSite`. On Compose go to `8080`, not `3001`.
 
-## Senha inicial do administrador não aparece
+## Admin initial password does not appear
 
-A senha só é gerada quando o PostgreSQL ainda não possui usuários. Enquanto a troca obrigatória estiver pendente, ela é repetida no log `auth.admin.bootstrap_pending` e mantida com permissão restrita em `storage/.araru-admin-bootstrap.json`. `make admin-password` apenas consulta esse estado e nunca rotaciona uma senha já configurada. Para uma rotação administrativa explícita, use `make admin-password-force`.
+Password is only generated when PostgreSQL has no users yet. While the mandatory exchange is pending, it is repeated in the `auth.admin.bootstrap_pending` log and kept with restricted permission in `storage/.araru-admin-bootstrap.json`. `make admin-password` only queries this state and never rotates an already configured password. For an explicit administrative rotation, use `make admin-password-force`.
 
-## PDF não abre / worker MIME
+## PDF does not open / worker MIME
 
-Reconstrua frontend, confirme worker `.js` com `application/javascript`, feche SW antigo e valide CSP. O Nginx atual contém regra de MIME e o bundle instancia o Worker diretamente.
+Rebuild frontend, confirm worker `.js` with `application/javascript`, close old SW and validate CSP. The current nginx contains MIME rule and the bundle instantiates Worker directly.
 
-## Range não funciona
+## Range not working
 
-Verifique 206, `Content-Range`, `Accept-Ranges`, CORS exposed headers e se o proxy não bufferiza. Teste com `curl -H 'Range: bytes=0-1023'` no endpoint de conteúdo.
+Verify 206, `Content-Range`, `Accept-Ranges`, CORS exposed headers and that the proxy does not buffer. Test with `curl -H 'Range: bytes=0-1023'` on the content endpoint.
 
-## EPUB/MOBI/HQ falha
+## EPUB/MOBI/HQ fail
 
-Confirme extensão e arquivo não protegido/corrompido. MOBI pode exigir recursos internos válidos; CBZ exige ZIP; CBR depende de UnRAR/7z. Use logs com request ID e endpoint de páginas.
+Confirm extension and unprotected/corrupted file. MOBI may require valid internal resources; CBZ requires zip; CBR relies on UnRAR/7z. Use logs with request ID and page endpoint.
 
-## Capa não gera
+## Cover does not generate
 
-Confira Poppler/7z, memória, espaço, permissões do cache, versão/fingerprint e painel de capas problemáticas. Execute regeneração; derivados podem ser apagados e recriados.
+Check out Poppler/7z, memory, space, cache permissions, version/fingerprint, and problem covers dashboard. Perform regeneration; derivatives can be erased and recreated.
 
 ## Drive OAuth
 
-Confirme credenciais, redirect exato, HTTPS/cookies e Drive habilitado. API key pública não exige OAuth. Consulte sync/circuit breaker em health details.
+Confirm credentials, exact redirect, HTTPS/cookies and Drive enabled. Public key API does not require OAuth. See sync/circuit breaker in health details.
 
-## Job preso
+## Job stuck
 
-Consulte `/operations/jobs`. Reinício recupera `running` para `queued`; jobs em execução não aceitam cancelamento atual. Retry manual só vale para failed/cancelled.
+See `/operations/jobs`. Restart recovers `running` to `queued`; running jobs do not accept current cancellation. Manual retry is only valid for failed/cancelled.
 
-## Memória com arquivo grande
+## Large file memory
 
-Não baixe conteúdo inteiro no cliente/backend. Confirme Range e budgets. Archives podem exigir mais memória; reduza concorrência e valide formato. Os testes esparsos cobrem o caminho PDF Range, não toda combinação real.
+Do not download entire content on the client/backend. Confirm Range and budgets. Archives may require more memory; reduce concurrency and validate format. The sparse tests cover the PDF Range path, not every real combination.

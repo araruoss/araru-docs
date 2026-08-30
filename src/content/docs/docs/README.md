@@ -1,81 +1,81 @@
 ---
-title: "Documentação do Araru"
-description: "Documentation for Documentação do Araru in the Araru ecosystem."
+title: "Araru Documentation"
+description: "Technical and architectural documentation for the Araru ecosystem."
 order: 100
 section: "readme"
 status: stable
 ---
 
-Fonte de verdade técnica e arquitetural do projeto. O código é a autoridade final; estes documentos descrevem o estado verificado em agosto de 2026 e separam explicitamente implementação atual de direções futuras.
+The project's technical and architectural source of truth. Code is the final authority; these documents describe the state verified in August 2026 and explicitly separate current implementation from future directions.
 
-Identidade e uso da marca: [Araru](../brand/readme/).
+Brand identity and usage: [Araru](../brand/readme/).
 
-## Começar
+## Getting started
 
-- [Visão geral](../getting-started/overview/)
-- [Desenvolvimento local](../getting-started/development/)
-- [Variáveis de ambiente](../getting-started/environment/)
-- [Estrutura do projeto](../getting-started/project-structure/)
+- [Overview](../getting-started/overview/)
+- [Local development](../getting-started/development/)
+- [Environment variables](../getting-started/environment/)
+- [Project structure](../getting-started/project-structure/)
 
-## Arquitetura atual
+## Current architecture
 
-- [Sistema e boundaries](../architecture/overview/)
-- [Fluxos de dados](../architecture/data-flow/)
+- [System boundaries](../architecture/overview/)
+- [Data flows](../architecture/data-flow/)
 - [Storage](../architecture/storage-architecture/)
 - [Readers](../architecture/reader-architecture/)
-- [Jobs e caches](../architecture/jobs-and-cache/)
-- [Administração, usuários e perfis](../architecture/admin-panel/)
-- [Decisões arquiteturais](../architecture/decisions/)
+- [Jobs and caches](../architecture/jobs-and-cache/)
+- [Administration, users, and profiles](../architecture/admin-panel/)
+- [Architectural decisions](../architecture/decisions/)
 
-## Implementação
+## Implementation
 
-- [Frontend](../frontend/overview/): [rotas e estado](../frontend/routing-and-state/), [biblioteca](../frontend/library-ui/), [reader e PWA](../frontend/reader-and-pwa/)
-- [Backend](../backend/overview/): [configuração](../backend/configuration/), [PostgreSQL e Redis](../backend/postgresql-and-redis/), [catálogo e metadados](../backend/catalog-and-metadata/), [operação e segurança](../backend/operations-and-security/)
-- [API](../api/overview/): [inventário de endpoints](../api/endpoints/)
-- [Readers](../readers/overview/): [formatos](../readers/formats/), [performance e progresso](../readers/performance-and-progress/)
-- [Infraestrutura](../infrastructure/docker-and-production/)
+- [Frontend](../frontend/overview/): [routing and state](../frontend/routing-and-state/), [library](../frontend/library-ui/), [reader and PWA](../frontend/reader-and-pwa/)
+- [Backend](../backend/overview/): [configuration](../backend/configuration/), [PostgreSQL and Redis](../backend/postgresql-and-redis/), [catalog and metadata](../backend/catalog-and-metadata/), [operations and security](../backend/operations-and-security/)
+- [API](../api/overview/): [endpoint inventory](../api/endpoints/)
+- [Readers](../readers/overview/): [formats](../readers/formats/), [performance and progress](../readers/performance-and-progress/)
+- [Infrastructure](../infrastructure/docker-and-production/)
 
-## Qualidade e operação
+## Quality and operations
 
-- [Estratégia de testes](../testing/overview/)
-- [Matriz de cobertura](../testing/test-matrix/)
+- [Testing strategy](../testing/overview/)
+- [Coverage matrix](../testing/test-matrix/)
 - [Runbook](../operations/runbook/)
 - [Troubleshooting](../operations/troubleshooting/)
-- [Convenções](../development/conventions/)
-- [Guias de mudança](../development/change-guides/)
+- [Conventions](../development/conventions/)
+- [Change guides](../development/change-guides/)
 - [Definition of Done](../development/definition-of-done/)
 
-## Evolução
+## Evolution
 
 - [ADRs](../adr/readme/)
-- [Limitações atuais](../roadmap/current-limitations/)
-- [Evolução do backend](../roadmap/backend-evolution/)
-- [Escalabilidade](../roadmap/scalability/)
-- [Clientes futuros](../roadmap/clients/)
+- [Current limitations](../roadmap/current-limitations/)
+- [Backend evolution](../roadmap/backend-evolution/)
+- [Scalability](../roadmap/scalability/)
+- [Future clients](../roadmap/clients/)
 
-## Contexto para agentes
+## Context for agents
 
-Agentes de código devem começar em [docs/llm/README.md](../llm/readme/). Esse conjunto resume arquitetura, domínio, invariantes, testes e protocolo de alteração sem misturar roadmap com implementação.
+Code agents should start at [docs/llm/README.md](../llm/readme/). This set summarizes architecture, domain, invariants, tests, and the change protocol without mixing the roadmap with implementation.
 
-## Arquitetura resumida
+## Architecture at a glance
 
 ```mermaid
 flowchart LR
   U[Browser/PWA] -->|HTTP| F[React + Nginx/Vite]
-  F -->|/api e /arquivos| B[Node.js + Express]
+  F -->|/api and /arquivos| B[Node.js + Express]
   B --> DB[(PostgreSQL)]
   B --> R[(Redis)]
   B --> FS[Filesystem local]
-  B --> CC[Cache de capas]
+  B --> CC[Cover cache]
   B -. opcional .-> GD[Google Drive]
   B -. enriquecimento .-> MP[Google Books / Open Library]
 ```
 
-Estado atual: repositórios independentes para Web React, Server Express/PostgreSQL, Redis para cache e documentação. O Compose oficial publica a interface em `8080` e a API em `3001` por padrão.
+Current state: independent repositories for the React Web client, Express/PostgreSQL Server, Redis cache, and documentation. The official Compose setup publishes the interface on `8080` and the API on `3001` by default.
 
 ```bash
 npm install
 npm run dev
-# ou
+# or
 docker compose up -d --build --wait
 ```

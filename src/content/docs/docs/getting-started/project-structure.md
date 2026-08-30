@@ -1,22 +1,22 @@
 ---
-title: "Estrutura de projetos"
-description: "Documentation for Estrutura de projetos in the Araru ecosystem."
+title: "Project Structure"
+description: "Documentation for project structure in the Araru ecosystem."
 order: 100
 section: "getting-started"
 status: stable
 ---
 
-O ecossistema é formado por repositórios independentes:
+The ecosystem consists of independent repositories:
 
 ```text
-araru-server   API, domínio, migrations, jobs e testes do servidor
-araru-web      SPA/PWA, leitores e testes do cliente oficial
-araru-docs     documentação e exemplo oficial de implantação
-araru-android  reservado ao cliente Android
-araru-desktop  reservado ao cliente desktop
+araru-server   API, domain, migrations, jobs, and server tests
+araru-web      SPA/PWA, readers, and official client tests
+araru-docs     documentation and official deployment example
+araru-android  reserved for the Android client
+araru-desktop  reserved for the desktop client
 ```
 
-Cada projeto possui dependências, lockfile, CI, releases e configuração próprios. Web e futuros clientes acessam dados somente pela API do Server; não acessam PostgreSQL, Redis, filesystem, Drive ou segredos diretamente.
+Each project has its own dependencies, lockfile, CI, releases, and configuration. Web and future clients access data only through the Server API; they do not access PostgreSQL, Redis, the filesystem, Drive, or secrets directly.
 
 - [Araru Server](https://github.com/araruoss/araru-server)
 - [Araru Web](https://github.com/araruoss/araru-web)

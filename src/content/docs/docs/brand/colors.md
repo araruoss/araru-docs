@@ -1,23 +1,23 @@
 ---
-title: "Cores"
-description: "Documentation for Cores in the Araru ecosystem."
+title: "Colors"
+description: "Documentation for Araru brand colors in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Paleta pequena, inspirada sutilmente em céu, vegetação e terra do Cerrado. Os tokens vivem em `src/index.css` no `araru-web`; componentes não devem espalhar hex codes de marca.
+A small palette subtly inspired by the sky, vegetation, and soil of the Cerrado. Tokens live in `src/index.css` in `araru-web`; components should not scatter brand hex codes.
 
-| Semântica | Light | Dark | Uso |
+| Semantics | Light | Dark | Usage |
 |---|---|---|---|
-| primary | `#176B87` | `#49A4C3` | marca, foco e ação principal |
+| primary | `#176B87` | `#49A4C3` | brand, focus, and primary action |
 | secondary | `#446B4F` | `#79A886` | apoio/sucesso orgânico |
 | accent | `#BD5B3F` | `#E27B5C` | destaque raro/terra |
-| background | `#F3F1EB` | `#111419` | página |
-| surface | `#FAF9F5` translúcido | `#121418` translúcido | painéis |
-| text | `#14181C` | `#F5F7FA` | conteúdo principal |
+| background | `#F3F1EB` | `#111419` | page |
+| surface | `#FAF9F5` translucent | `#121418` translucent | panels |
+| text | `#14181C` | `#F5F7FA` | primary content |
 | muted | `#66717D` | `#95A0AB` | apoio |
 
-Border deriva de texto/superfície com baixa opacidade. Success, warning e error continuam semânticos e devem cumprir contraste; consolidação de tokens específicos é **TBD**.
+Border derives from text/surface with low opacity. Success, warning, and error remain semantic and must meet contrast requirements; consolidation of specific tokens is **TBD**.
 
-Valide WCAG 2.2 AA no par real de foreground/background, inclusive hover, foco e disabled.
+Validate WCAG 2.2 AA on the actual foreground/background pair, including hover, focus, and disabled states.

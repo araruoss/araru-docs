@@ -1,12 +1,14 @@
 ---
-title: "Arquitetura atual"
-description: "Documentation for Arquitetura atual in the Araru ecosystem."
+title: "Current Architecture"
+description: "Documentation for Current Architecture in the Araru ecosystem."
 order: 100
 section: "architecture"
 status: stable
 ---
 
 ## Boundaries
+
+
 
 ```mermaid
 flowchart TB
@@ -38,16 +40,18 @@ flowchart TB
   J --> D
 ```
 
-O frontend apresenta e mantém estado efêmero. O backend detém regras, paths, credenciais, indexação e persistência. A comunicação é HTTP/JSON, exceto streams/binários de conteúdo, páginas, capas e backups.
 
-O frontend não deve acessar filesystem, bancos, paths físicos ou conter secrets. O backend não deve depender do build da SPA. Em desenvolvimento existe proxy Vite; no Compose o Nginx do frontend cria uma origem única.
 
-## Processos atuais
+The frontend presents and maintains ephemeral state. The backend holds rules, paths, credentials, indexing, and persistence. Communication is HTTP/JSON, except for content streams/binaries, pages, covers, and backups.
 
-- um processo Node executa API, watcher, fila e manutenção;
-- um processo Nginx entrega o frontend e faz proxy;
-- PostgreSQL é a fonte de verdade do estado persistente;
-- Redis mantém caches compartilhados e nunca substitui o PostgreSQL;
-- caches são auxiliares e regeneráveis.
+The frontend should not access the filesystem, databases, physical paths, or contain secrets. The backend should not depend on the build of the SPA. In development, there is a Vite proxy; in Compose, the frontend Nginx creates a single origin.
 
-Consulte [limitações](../../roadmap/current-limitations/) antes de propor escala horizontal ou multiusuário.
+## Current Processes
+
+- A Node process runs the API, watcher, queue, and maintenance;
+- An Nginx process delivers the frontend and acts as a proxy;
+- PostgreSQL is the source of truth for persistent state;
+- Redis maintains shared caches and never substitutes PostgreSQL;
+- Caches are auxiliary and regenerable.
+
+Refer to [limitations](../../roadmap/current-limitations/) before proposing horizontal scaling or multi-user support.

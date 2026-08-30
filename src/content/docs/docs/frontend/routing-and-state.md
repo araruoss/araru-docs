@@ -1,27 +1,27 @@
 ---
-title: "Rotas e estado do frontend"
-description: "Documentation for Rotas e estado do frontend in the Araru ecosystem."
+title: "Frontend Routing and State"
+description: "Documentation for frontend routing and state in the Araru ecosystem."
 order: 100
 section: "frontend"
 status: stable
 ---
 
-| Rota | Componente | Estado relevante |
+| Route | Component | Relevant state |
 |---|---|---|
-| `/` | `Biblioteca` | query, categoria, filtros, ordem, modo |
-| `/livro/:id` | `Leitura` | arquivo, página/posição e retorno |
-| `/historico` | `Historico` | progresso e último acesso |
-| `/continuar` | redirect | compatibilidade para `/historico` |
-| `/estatisticas` | `Estatisticas` | agregados de leitura |
-| `/series/:id` | `Serie` | obra/série e sequência |
+| `/` | `Biblioteca` | query, category, filters, order, mode |
+| `/livro/:id` | `Leitura` | file, page/position, and return path |
+| `/historico` | `Historico` | progress and last access |
+| `/continuar` | redirect | compatibility with `/historico` |
+| `/estatisticas` | `Estatisticas` | reading aggregates |
+| `/series/:id` | `Serie` | work/series and sequence |
 
-## Fontes de estado
+## State sources
 
-- servidor: catálogo, árvore, perfis, reading state, preferências e operação;
-- URL: `categoria`, `q`, `secao`, `ordem`, `modo`, `subpastas` e filtros;
-- localStorage: favoritos/recentes e fallback de progresso por perfil;
-- sessionStorage: scroll por rota/query;
-- Context: tema;
-- IndexedDB/Cache Storage: inventário e bytes offline.
+- server: catalog, tree, profiles, reading state, preferences, and operations;
+- URL: `categoria`, `q`, `secao`, `ordem`, `modo`, `subpastas`, and filters;
+- localStorage: favorites/recent items and per-profile progress fallback;
+- sessionStorage: scroll by route/query;
+- Context: theme;
+- IndexedDB/Cache Storage: offline inventory and bytes.
 
-`readingSync.js` mescla por timestamp e evita perder a posição mais recente. Mutations invalidam queries relacionadas.
+`readingSync.js` merges by timestamp and avoids losing the most recent position. Mutations invalidate related queries.

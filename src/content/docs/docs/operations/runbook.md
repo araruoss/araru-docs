@@ -1,12 +1,12 @@
 ---
-title: "Runbook operacional"
-description: "Documentation for Runbook operacional in the Araru ecosystem."
+title: "Operations Runbook"
+description: "Documentation for the Araru operations runbook."
 order: 100
 section: "operations"
 status: stable
 ---
 
-## Saúde
+## Health
 
 ```bash
 curl http://localhost:3001/health
@@ -15,24 +15,24 @@ docker compose ps
 docker compose logs --tail=200 backend frontend
 ```
 
-Use details para catálogo, fila, watcher, manutenção, runtime e Drive. Endpoints `/api/v1/admin/*` oferecem jobs, métricas, cache, capas, integridade e circuit breakers.
+Use details for catalog, queue, watcher, maintenance, runtime, and Drive. `/api/v1/admin/*` endpoints provide jobs, metrics, cache, covers, integrity, and circuit breakers.
 
-## Catálogo e cache
+## Catalog and cache
 
-- atualização normal: watcher e reconciliação;
-- cache cleanup: consulte primeiro; POST é dry-run, `?apply=true` efetiva;
-- integridade: rode scan antes de reparar;
-- capas: liste problemas e regenere seleção;
-- job: cancele apenas pendente; retry somente failed/cancelled.
+- normal refresh: watcher and reconciliation;
+- cache cleanup: inspect first; POST is a dry run, `?apply=true` applies it;
+- integrity: run a scan before repairing;
+- covers: list problems and regenerate selectively;
+- job: cancel only pending jobs; retry only failed/cancelled jobs.
 
 ## Backup
 
-1. baixe `/api/v1/admin/backup`;
-2. verifique em `/api/v1/admin/backup/verify`;
-3. armazene fora do host;
-4. para restore, use confirmação exigida e janela de manutenção;
-5. valide health/catalog/reading state.
+1. download `/api/v1/admin/backup`;
+2. verify it at `/api/v1/admin/backup/verify`;
+3. store it off-host;
+4. for restore, use the required confirmation and a maintenance window;
+5. validate health/catalog/reading state.
 
-## Logs e métricas
+## Logs and metrics
 
-Logs são JSON e devem ser pesquisados por `event`/`requestId`. Métricas são locais ao processo e reiniciam com ele; reader metrics persistem no PostgreSQL. Redis mantém apenas caches descartáveis.
+Logs are JSON and should be searched by `event`/`requestId`. Metrics are process-local and reset with it; reader metrics persist in PostgreSQL. Redis keeps only disposable caches.

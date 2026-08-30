@@ -1,6 +1,6 @@
 ---
-title: "Jobs e caches"
-description: "Documentation for Jobs e caches in the Araru ecosystem."
+title: "Jobs and Caches"
+description: "Documentation for Jobs and Caches in the Araru ecosystem."
 order: 100
 section: "architecture"
 status: stable
@@ -8,7 +8,7 @@ status: stable
 
 ## Jobs
 
-A fila mantém histórico e claims em `background_jobs`. Cada worker adquire jobs por claim condicionado a status/lease, registra `worker_id`, `lease_until` e `heartbeat_at`, ordena prioridade/data, deduplica por chave e persiste tentativas. O agendamento e algumas caches continuam locais ao processo.
+The queue maintains history and claims in `background_jobs`. Each worker acquires jobs by claiming them conditionally on status/lease, registers `worker_id`, `lease_until` and `heartbeat_at`, orders by priority/date, deduplicates by key, and persists attempts. Scheduling and some caches remain local to the process.
 
 ```mermaid
 stateDiagram-v2
@@ -16,25 +16,25 @@ stateDiagram-v2
   queued --> running
   queued --> cancelled
   running --> completed
-  running --> queued: retry automático
+  running --> queued: automatic retry
   running --> failed: tentativas esgotadas
   failed --> queued: retry manual
   cancelled --> queued: retry manual
 ```
 
-Jobs em execução dependem de timeout/lease; cancelamento cooperativo de processos externos ainda deve ser tratado pelo handler específico.
+Jobs in execution depend on timeout/lease; cooperative cancellation of external processes should still be handled by the specific handler.
 
 ## Caches
 
-| Cache | Local | Política/limite | Invalidação |
+| Cache | Local | Policy/Limit | Invalidation |
 |---|---|---|---|
-| catálogo/capas em memória | backend `Map` | `CACHE_TTL` | refresh, login/logout, restore |
-| metadata API | Redis | 60 dias positivo/3 negativo por padrão | TTL, refresh e manutenção |
-| capas derivadas | disco + `cache_entries` | `CACHE_MAX_GB`, LRU | fingerprint, versão, cleanup |
-| índices de comics | memória do reader service | fingerprint | mudança/reinício |
-| TanStack Query | navegador | stale 60s, gc 15min | mutations/refetch |
-| PWA shell/catalog/capas/assets | Cache Storage | versões e até 100/200/80 entradas | versão do SW |
-| offline books | Cache Storage + IndexedDB | explícito/quota do navegador | remoção do usuário |
-| páginas PDF/comic | memória do reader | atual e vizinhas | navegação/cleanup |
+| catalog/covers in memory | backend `Map` | `CACHE_TTL` | refresh, login/logout, restore |
+| metadata API | Redis | 60 days positive/3 negative by default | TTL, refresh and maintenance |
+| derived covers | disk + `cache_entries` | `CACHE_MAX_GB`, LRU | fingerprint, version, cleanup |
+| comic indices | reader service memory | fingerprint | change/restart |
+| TanStack Query | browser | stale 60s, gc 15min | mutations/refetch |
+| PWA shell/catalog/covers/assets | Cache Storage | versions and up to 100/200/80 entries | SW version |
+| offline books | Cache Storage + IndexedDB | explicit/quota of the browser | user removal |
+| PDF/comic pages | reader memory | current and neighbors | navigation/cleanup |
 
-Nenhum cache substitui PostgreSQL ou arquivo fonte.
+No cache replaces PostgreSQL or source files.

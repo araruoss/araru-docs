@@ -6,26 +6,26 @@ section: "frontend"
 status: stable
 ---
 
-SPA React iniciada em `src/main.jsx`. O entrypoint configura Router, tema, TanStack Query, error boundary, controle de acesso, toast, sincronização de leitura, telemetria local e Service Worker em produção. `App.jsx` faz lazy loading das páginas e da paleta.
+React SPA started in `src/main.jsx`. The entrypoint configures the Router, theme, TanStack Query, error boundary, access control, toast, reading synchronization, local telemetry, and the production Service Worker. `App.jsx` lazy-loads pages and the command palette.
 
-## Estrutura
+## Structure
 
-- `pages`: Setup, Biblioteca, Histórico, Estatísticas, Administração, Série e Leitura;
-- `components`: navegação, cards, filtros, modais e painéis operacionais;
-- `readers`: contrato, PDF.js, parsers EPUB/MOBI e comic client;
-- `hooks`: catálogo e feature flags;
-- `lib`: API, offline e telemetria;
-- `utils`: armazenamento local e merge de progresso;
+- `pages`: Setup, Library, History, Statistics, Administration, Series, and Reading;
+- `components`: navigation, cards, filters, modals, and operational panels;
+- `readers`: contract, PDF.js, EPUB/MOBI parsers, and comic client;
+- `hooks`: catalog and feature flags;
+- `lib`: API, offline, and telemetry;
+- `utils`: local storage and progress merge;
 - `context`: theme and localization with catalogs in `src/locales` and fallback to `en`.
 
-Estado remoto usa TanStack Query; URL mantém navegação; local/session storage mantém fallback e posição visual; IndexedDB/Cache Storage sustentam offline.
+Remote state uses TanStack Query; the URL maintains navigation; local/session storage maintains the fallback and visual position; IndexedDB/Cache Storage support offline behavior.
 
-O cliente HTTP em `lib/api.js` normaliza `VITE_API_URL`, envia credenciais e oferece helpers de URL/fetch. Nenhum secret é incorporado ao build.
+The HTTP client in `lib/api.js` normalizes `VITE_API_URL`, sends credentials, and provides URL/fetch helpers. No secret is bundled into the build.
 
-## Setup e administração
+## Setup and administration
 
-`AccessGate` consulta `/api/v1/system/status`; o setup nunca é decidido por `localStorage`. Instalações vazias exibem um wizard responsivo de sete etapas. Após a conclusão, o fluxo segue para login.
+`AccessGate` queries `/api/v1/system/status`; setup is never decided by `localStorage`. Empty installations show a responsive seven-step wizard. After completion, the flow continues to login.
 
-O status público também entrega apenas as preferências não sensíveis `language`, `theme` e `libraryName`. Assim, idioma e tema são aplicados antes da tela de login. Os catálogos suportados ficam em `src/locales/pt-BR.js` e `src/locales/en.js`; `en` é o idioma padrão e o fallback. Ao salvar configurações globais, o frontend recarrega a aplicação para reaplicar o contexto em todas as rotas.
+The public status also returns only the non-sensitive preferences `language`, `theme`, and `libraryName`. This applies language and theme before the login screen. Supported catalogs are in `src/locales/pt-BR.js` and `src/locales/en.js`; `en` is the default and fallback language. When global settings are saved, the frontend reloads the application to reapply the context on every route.
 
-`/admin/*` usa o módulo `src/features/admin`, separado em navegação, layout, primitivas e páginas. Cada seção carrega apenas seu estado. Desktop usa sidebar; mobile/tablet usa drawer com alvos de toque. Tema e idioma globais ficam em Aparência. O header mostra user e profile ativo, permite trocar apenas entre profiles associados, mostra Administração somente para admin e encerra a sessão pelo backend.
+`/admin/*` uses the `src/features/admin` module, separated into navigation, layout, primitives, and pages. Each section loads only its own state. Desktop uses a sidebar; mobile/tablet uses a drawer with touch targets. Global theme and language live in Appearance. The header shows the active user and profile, allows switching only among associated profiles, shows Administration only to admins, and ends the session through the backend.

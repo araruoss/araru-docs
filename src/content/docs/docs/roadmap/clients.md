@@ -1,13 +1,13 @@
 ---
-title: "Clientes Desktop e Android — FUTURO"
-description: "Documentation for Clientes Desktop e Android — FUTURO in the Araru ecosystem."
+title: "Desktop and Android Clients — FUTURE"
+description: "Documentation for Desktop and Android Clients — FUTURE in the Araru ecosystem."
 order: 100
 section: "roadmap"
 status: planned
 ---
 
-Nenhum cliente nativo existe atualmente. Web/PWA é o único cliente implementado.
+No native clients currently exist. Web/PWA is the only client implemented.
 
-Desktop e Android devem consumir o mesmo backend, sem filesystem ou banco direto. Para isso serão necessários contratos estáveis, versionamento, autenticação multi-device, sync idempotente, compatibilidade retroativa, downloads retomáveis, Range, gestão offline e telemetria com privacidade.
+Desktop and Android should consume the same backend, without filesystem or direct bank. This will require stable contracts, versioning, multi-device authentication, idempotent sync, backward compatibility, resumable downloads, Range, offline management and telemetry with privacy.
 
-Tecnologias de UI/empacotamento não estão decididas. A escolha deve ocorrer após estabilizar API e modelo de identidade, com ADR próprio.
+UI/packaging technologies are not decided. The choice must occur after stabilizing API and identity model, with its own ADR.

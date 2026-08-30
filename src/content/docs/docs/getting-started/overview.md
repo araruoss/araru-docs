@@ -1,30 +1,30 @@
 ---
-title: "Visão geral"
-description: "Documentation for Visão geral in the Araru ecosystem."
+title: "Overview"
+description: "Overview of Araru in the Araru ecosystem."
 order: 100
 section: "getting-started"
 status: stable
 ---
 
-O Araru cataloga arquivos, deriva a navegação das pastas, enriquece metadados e fornece leitores internos. Ele é self-hosted e atualmente orientado a uma instalação, embora suporte perfis de leitura dentro dessa instalação.
+Araru catalogs files, derives folder navigation, enriches metadata, and provides built-in readers. It is self-hosted and currently installation-oriented, although it supports reading profiles within that installation.
 
-## Estado atual
+CURRENT STATE
 
-- frontend React/Vite, servido por Nginx em produção;
+- React/Vite frontend, served by Nginx in production;
 - backend Node.js/Express;
-- PostgreSQL como fonte persistente de estado e índice;
-- Redis para cache compartilhado com TTL;
-- filesystem local como fonte principal; Google Drive opcional;
-- PDF, EPUB, MOBI, CBZ e CBR no leitor interno;
-- PWA e download offline explícito;
-- jobs e manutenção executados no processo do backend.
+- PostgreSQL as persistent source of state and index;
+- Redis for shared cache with TTL;
+- local filesystem as main source; Google Drive optional;
+- PDF, EPUB, MOBI, CBZ and CBR in the internal reader;
+- PWA and explicit offline download;
+- jobs and maintenance performed in the backend process.
 
-## Conceitos centrais
+## Core concepts
 
-- **Library File**: arquivo físico indexado, com ID e fingerprint.
-- **Work**: obra canônica que pode agrupar mais de um arquivo/formato.
-- **categoryPath**: sequência de diretórios que define a categoria.
-- **Profile**: contexto local que isola progresso e preferências; não é uma conta autenticada.
-- **Derived File**: capa ou outro recurso regenerável.
+- **Library File**: indexed physical file with an ID and fingerprint.
+- **Work**: canonical work that can group more than one file/format.
+- **categoryPath**: string of directories that defines the category.
+- **Profile**: local context that isolates progress and preferences; not an authenticated account.
+- **Derived File**: cover or other regenerable feature.
 
-Detalhes estão no [glossário](../../llm/glossary/) e no [modelo de domínio](../../llm/domain-model/).
+Details are in the [glossary](../../llm/glossary/) and [domain model](../../llm/domain-model/).

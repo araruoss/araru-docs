@@ -1,16 +1,16 @@
 ---
-title: "Fluxos de dados"
-description: "Documentation for Fluxos de dados in the Araru ecosystem."
+title: "Data Flows"
+description: "Documentation for data flows in the Araru ecosystem."
 order: 100
 section: "architecture"
 status: stable
 ---
 
-## Catálogo
+## Catalog
 
 Filesystem/Drive → descoberta → fingerprint/ID → `library_files` → FTS → API → TanStack Query → biblioteca virtualizada.
 
-## Leitura
+## Reading
 
 ```mermaid
 sequenceDiagram
@@ -20,19 +20,19 @@ sequenceDiagram
   participant Store as Filesystem/Drive
   participant DB as PostgreSQL
   participant Cache as Redis
-  User->>Web: abre Library File
-  Web->>API: GET livro/capabilities
-  Web->>API: GET conteúdo ou páginas
+  User->>Web: opens Library File
+  Web->>API: GET book/capabilities
+  Web->>API: GET content or pages
   API->>Store: stream/range/extract resource
   Store-->>API: bytes
-  API-->>Web: 200/206 ou página
-  Web-->>User: renderização
+  API-->>Web: 200/206 or page
+  Web-->>User: rendering
   Web->>API: PUT /reading-state
-  API->>DB: upsert por perfil/livro
+  API->>DB: upsert by profile/book
 ```
 
-PDF usa Range no conteúdo original. EPUB é obtido como conteúdo e interpretado pelo parser frontend. MOBI e comics podem usar páginas/recursos derivados pelo backend. O progresso é mesclado localmente e remotamente pela posição mais recente.
+PDF uses Range on the original content. EPUB is fetched as content and interpreted by the frontend parser. MOBI and comics may use pages/resources derived by the backend. Progress is merged locally and remotely using the most recent position.
 
-## Metadados
+## Metadata
 
-Filename e conteúdo interno → normalização/ISBN → candidatos externos → score/confiança → campos sugeridos ou aplicados → PostgreSQL → revisão manual. Respostas externas são armazenadas temporariamente no Redis; campos manuais não são sobrescritos.
+Filename and internal content → normalization/ISBN → external candidates → score/confidence → suggested or applied fields → PostgreSQL → manual review. External responses are stored temporarily in Redis; manual fields are not overwritten.

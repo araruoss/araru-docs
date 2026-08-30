@@ -1,6 +1,6 @@
 ---
-title: "Reader, responsividade e PWA"
-description: "Documentation for Reader, responsividade e PWA in the Araru ecosystem."
+title: "Reader, Responsiveness, and PWA"
+description: "Documentation for the reader, responsiveness, and PWA in the Araru ecosystem."
 order: 100
 section: "frontend"
 status: stable
@@ -8,18 +8,18 @@ status: stable
 
 ## Reader
 
-`Leitura.jsx` seleciona capability por formato. `ReaderShell` padroniza estados de abertura, erro, retry e encerramento. A dock sobreposta permanece visível em desktop/mobile e contém navegação, página e fechar.
+`Leitura.jsx` selects a capability by format. `ReaderShell` standardizes opening, error, retry, and closing states. The overlaid dock remains visible on desktop/mobile and contains navigation, page controls, and close.
 
-PDF.js recebe um Worker criado pelo bundle Vite, evitando dependência de MIME `.mjs`. EPUB/MOBI são normalizados para páginas/conteúdo; comics requisitam imagens sob demanda. Cleanup cancela tarefas, destrói documentos, limpa canvases e revoga Object URLs.
+PDF.js receives a Worker created by the Vite bundle, avoiding a `.mjs` MIME dependency. EPUB/MOBI are normalized into pages/content; comics request images on demand. Cleanup cancels tasks, destroys documents, clears canvases, and revokes Object URLs.
 
-Toque, clique e teclado são suportados. A página inteira é ajustada à viewport; a animação de virada foi removida.
+Touch, click, and keyboard are supported. The full page is fitted to the viewport; the page-turn animation was removed.
 
 ## PWA
 
-`public/sw.js` usa caches versionados. Navegações e catálogo são network-first; capas/assets usam stale-while-revalidate com limites. Payloads de livros são excluídos do cache automático. `offlineLibrary.js` baixa conteúdo somente sob ação explícita e registra metadados no IndexedDB.
+`public/sw.js` uses versioned caches. Navigation and catalog are network-first; covers/assets use stale-while-revalidate with limits. Book payloads are excluded from automatic caching. `offlineLibrary.js` downloads content only after explicit action and records metadata in IndexedDB.
 
-O shell tem manifest, ícone e fallback offline. Ao alterar políticas, incremente `CACHE_VERSION` e rode testes PWA/E2E.
+The shell has a manifest, icon, and offline fallback. When policies change, increment `CACHE_VERSION` and run PWA/E2E tests.
 
 ## Erros
 
-`AppErrorBoundary` trata falhas globais. Queries exibem loading/erro/retry; readers mostram erro específico sem tela vazia; toasts comunicam operações. O código cancela trabalho assíncrono ao desmontar quando aplicável.
+`AppErrorBoundary` handles global failures. Queries show loading/error/retry; readers show a specific error instead of a blank screen; toasts communicate operations. Code cancels asynchronous work on unmount where applicable.

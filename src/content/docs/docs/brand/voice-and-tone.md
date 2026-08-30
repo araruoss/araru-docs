@@ -1,21 +1,21 @@
 ---
-title: "Voz e tom"
-description: "Documentation for Voz e tom in the Araru ecosystem."
+title: "Voice and Tone"
+description: "Documentation for Araru voice and tone in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-## Voz
+## Voice
 
-Simples, direta, amigável e ocasionalmente divertida. Português brasileiro natural, sem jargão desnecessário ou regionalismo forçado.
+Simple, direct, friendly, and occasionally playful. Natural Brazilian Portuguese, without unnecessary jargon or forced regionalism.
 
-## Por contexto
+## By context
 
-- biblioteca/onboarding: acolhedor e breve;
-- empty states: útil, com personalidade discreta;
-- reader: mínimo e sem distração;
-- erros críticos/segurança/API: preciso, neutro e acionável;
-- releases/comunidade: pode usar referências brasileiras/goianas sutis.
+- library/onboarding: welcoming and brief;
+- empty states: useful, with restrained personality;
+- reader: minimal and distraction-free;
+- critical errors/security/API: precise, neutral, and actionable;
+- releases/community: may use subtle Brazilian/Goian references.
 
-Evitar linguagem promocional exagerada, tom de “AI startup”, culpa ao usuário, piadas em falhas e termos criativos no lugar de conceitos claros.
+Avoid exaggerated promotional language, an “AI startup” tone, blaming users, jokes during failures, and creative terms in place of clear concepts.

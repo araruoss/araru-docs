@@ -1,6 +1,6 @@
 ---
-title: "ADR-001: separar frontend e backend"
-description: "Documentation for ADR-001: separar frontend e backend in the Araru ecosystem."
+title: "ADR-001: separate frontend and backend"
+description: "Documentation for ADR-001: separate frontend and backend in the Araru ecosystem."
 order: 100
 section: "adr"
 status: stable
@@ -9,18 +9,18 @@ status: stable
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 
-## Context
+Context
 
-O código possui workspaces, Dockerfiles e processos independentes. Rationale inferred from current architecture.
+The code has workspaces, Dockerfiles, and independent processes. Rationale inferred from current architecture.
 
-## Decision
+Decision
 
-Frontend é SPA/servidor estático; backend é API e não serve `dist`. Proxy integra `/api` e `/arquivos`.
+Frontend is spa/static server; backend is API and does not serve `dist`. Proxy integrates `/api` and `/arquivos`.
 
-## Alternatives
+Alternatives
 
-Express servir a SPA; deploy apenas cross-origin.
+Express serve the spa; deploy cross-origin only.
 
-## Consequences
+Consequences
 
-Builds e escala independentes; CORS/proxy precisam ser configurados; frontend não acessa estado interno.
+Builds and independent scaling; CORS/proxy need to be configured; frontend does not access internal state.

@@ -1,22 +1,22 @@
 ---
-title: "Limitações atuais confirmadas"
-description: "Documentation for Limitações atuais confirmadas in the Araru ecosystem."
+title: "Current limitations confirmed"
+description: "Documentation for Current limitations confirmed in the Araru ecosystem."
 order: 100
 section: "roadmap"
 status: planned
 ---
 
-| Estado atual | Impacto | Quando vira problema | Direção possível — não decidida |
+| Current state | Impact | When it becomes a problem | Direction possible — not decided |
 |---|---|---|---|
-| fila executada no processo da API | trabalho disputa CPU/memória com API | jobs pesados/alta concorrência | workers separados usando a persistência PostgreSQL |
-| cache Redis sem cluster obrigatório | dependência opcional de uma instância | cache distribuído de alta disponibilidade | Sentinel/Cluster gerenciado |
-| rate limit em memória | contagem não compartilhada | várias instâncias | Redis/gateway |
-| métricas runtime locais | reiniciam e não agregam hosts | operação distribuída | OpenTelemetry/stack externa |
-| perfis não são contas | sem identidade/autorização por usuário | acesso público multiusuário | auth, users, sessions e ACL |
-| filesystem e Drive acoplados | provider novo exige mudanças de serviço | S3/R2/múltiplas regiões | `StorageProvider` |
-| um backend | sem escala horizontal segura declarada | throughput/HA | stateless API + DB/cache compartilhados |
-| API v1 é o contrato oficial | clientes antigos precisam ser substituídos | Desktop/Android independentes | novos clientes usam `/api/v1`, schemas e OpenAPI |
-| offline centrado no navegador | quota e portabilidade limitadas | múltiplos devices | sync/download protocol estável |
-| archives podem exigir buffer/ferramentas | custo variável por arquivo | HQs enormes/malformadas | extração isolada e streaming especializado |
+| queue executed in API process | CPU/memory dispute job with API | heavy/high concurrency jobs | separate workers using PostgreSQL persistence |
+| Redis cache without cluster required | optional dependency on an instance | high availability distributed cache | Sentinel/Managed cluster|
+| rate limit in memory | unshared count | multiple instances | Redis/gateway |
+| local runtime metrics | restart and do not aggregate hosts | distributed operation | OpenTelemetry/external stack |
+| profiles are not accounts | without identity/authorization per user | multi-user public access | auth, users, sessions and ACL |
+| filesystem and Drive coupled | new provider requires service changes |S3/R2/multiple regions | `StorageProvider` |
+| a backend | no declared secure horizontal scaling | throughput/HA | stateless API + DB/cache shared |
+| API v1 is the official contract | old clients need to be replaced | Independent Desktop/Android | new clients use `/api/v1`, schemas and OpenAPI |
+| browser-centric offline | limited quota and portability | multiple devices | sync/downloadstable protocol |
+| archives may require buffering/tools | variable cost per file | huge/malformed comics | isolated extraction and specialized streaming |
 
-Não há benchmark que comprove milhares de conexões simultâneas. O benchmark atual mede catálogo, e o teste de arquivos grandes mede Range com arquivos esparsos.
+There is no benchmark that proves thousands of simultaneous connections. The current benchmark measures catalog, and the large file test measures range with sparse files.

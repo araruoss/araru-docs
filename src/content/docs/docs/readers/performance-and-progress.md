@@ -1,29 +1,29 @@
 ---
-title: "Performance, Range e progresso"
-description: "Documentation for Performance, Range e progresso in the Araru ecosystem."
+title: "Performance, Range, and Progress"
+description: "Documentation for reader performance, Range, and progress in the Araru ecosystem."
 order: 100
 section: "readers"
 status: stable
 ---
 
-## Arquivos grandes
+## Large files
 
-Conteúdo local usa streams e `fs.stat`; Range lê somente o intervalo solicitado e retorna `206`. O E2E/backend cria arquivos esparsos de 500 MB, 2 GB e 5 GB e valida pequenos ranges, demonstrando que o caminho testado não aloca o arquivo inteiro.
+Local content uses streams and `fs.stat`; Range reads only the requested interval and returns `206`. E2E/backend tests create sparse files of 500 MB, 2 GB, and 5 GB and validate small ranges, demonstrating that the tested path does not allocate the entire file.
 
-Limites configuráveis:
+Configurable limits:
 
-- `READER_MAX_IN_MEMORY_MB`: orçamento backend para operações que exigem buffer;
-- `COVER_MAX_IN_MEMORY_MB` e `COVER_MAX_SOURCE_IMAGE_MB`: pipeline de capas;
-- frontend: `ResourceBudget` LRU e prefetch adaptativo por dispositivo/conexão.
+- `READER_MAX_IN_MEMORY_MB`: backend budget for operations that require buffering;
+- `COVER_MAX_IN_MEMORY_MB` and `COVER_MAX_SOURCE_IMAGE_MB`: cover pipeline;
+- frontend: `ResourceBudget` LRU and device/connection-aware prefetch.
 
-Nem todo formato pode ser totalmente streamado: ZIP/MOBI/archives podem exigir índice ou buffer parcial/total conforme biblioteca. Operações checam orçamento e devem falhar de modo controlado em vez de excedê-lo.
+Not every format can be fully streamed: ZIP/MOBI/archives may require an index or partial/full buffering depending on the library. Operations check the budget and should fail in a controlled way rather than exceed it.
 
 ## Range
 
-Cliente envia `Range: bytes=start-end`; backend valida limites, responde `Content-Range`, `Content-Length`, `Accept-Ranges` e 416 para intervalo inválido. Proxy Nginx desativa buffering nas rotas de conteúdo para preservar streaming.
+The client sends `Range: bytes=start-end`; the backend validates limits and returns `Content-Range`, `Content-Length`, `Accept-Ranges`, and 416 for an invalid interval. The Nginx proxy disables buffering on content routes to preserve streaming.
 
-## Progresso
+## Progress
 
-Estado contém ID, posição/página, total, percentual, timestamps e conclusão. Frontend grava fallback local e sincroniza `/api/v1/works/:id/reading-state`. Merge escolhe atualização mais recente por livro/perfil. Histórico mostra capa, último acesso e retomada.
+State contains ID, position/page, total, percentage, timestamps, and completion. The frontend writes a local fallback and synchronizes `/api/v1/works/:id/reading-state`. Merge chooses the most recent update per book/profile. History shows the cover, last access, and resume position.
 
-Readers novos devem implementar posição estável, total quando conhecido e cleanup idempotente.
+New readers must implement a stable position, total when known, and idempotent cleanup.

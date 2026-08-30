@@ -1,31 +1,31 @@
 ---
-title: "Protocolo de alteração"
-description: "Documentation for Protocolo de alteração in the Araru ecosystem."
+title: "CHANGE PROTOCOL"
+description: "Documentation for Amendment Protocol in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-## Antes
+PRIOR
 
-1. leia project-context, contexto da área e constraints;
-2. verifique ADRs; leia roadmap somente se a mudança for futura;
-3. encontre implementação e testes reais;
-4. identifique contratos, dados e arquivos do usuário afetados.
+1. read project-context, area context and constraints;
+2. check ADRs; read roadmap only if change is future;
+3. find actual implementation and testing;
+4. identify affected user contracts, data, and files.
 
-## Durante
+DURING
 
-- faça a menor alteração coerente;
-- preserve API, IDs, migrations, Range e boundaries;
-- não duplique abstrações;
-- mantenha arquivo grande fora da RAM;
-- não transforme direção futura em dependência atual.
+- make the slightest coherent change;
+- preserve API, IDs, migrations, range and boundaries;
+- do not duplicate abstractions;
+- keep large file out of RAM;
+- do not turn future direction into current dependency.
 
-## Depois
+After
 
-1. execute testes proporcionais;
-2. corrija até passar;
-3. atualize docs/API/LLM context;
-4. crie ADR se houve decisão significativa;
-5. valide Docker quando aplicável;
-6. informe mudanças, riscos e validações.
+1. perform proportional tests;
+2. correct until passed;
+3. update docs/API/LLM context;
+4. create ADR if there was a significant decision;
+5. validate Docker when applicable;
+6. report changes, risks and validations.

@@ -1,33 +1,33 @@
 ---
-title: "Jobs, operação, Drive, observabilidade e segurança"
-description: "Documentation for Jobs, operação, Drive, observabilidade e segurança in the Araru ecosystem."
+title: "Jobs, Operations, Drive, Observability, and Security"
+description: "Documentation for jobs, operations, Drive, observability, and security in the Araru ecosystem."
 order: 100
 section: "backend"
 status: stable
 ---
 
-## Operação
+## Operations
 
-Fila persistente oferece prioridade, dedupe, retries, recuperação e cancelamento de pendentes. Manutenção limpa metadados expirados, arquivos ausentes e cache LRU. Integridade compara índice, filesystem e derivados; reparos destrutivos exigem aplicação explícita. Backup exporta tabelas permitidas e restore é transacional.
+A persistent queue provides priority, deduplication, retries, recovery, and cancellation of pending jobs. Maintenance cleans expired metadata, missing files, and the LRU cache. Integrity compares the index, filesystem, and derived files; destructive repairs require explicit application. Backup exports permitted tables and restore is transactional.
 
 ## Google Drive
 
-API key atende operações públicas configuradas; OAuth usa login/callback/logout. Tokens são criptografados antes do PostgreSQL. Cursor incremental e estado persistente evitam varredura completa. Timeout/concorrência são configuráveis; falha externa passa por circuit breaker/logs.
+An API key serves configured public operations; OAuth uses login/callback/logout. Tokens are encrypted before PostgreSQL. An incremental cursor and persistent state avoid a full scan. Timeout/concurrency are configurable; external failures pass through circuit breakers/logs.
 
-## Observabilidade
+## Observability
 
-Logs JSON incluem timestamp, nível, evento e request ID; redaction remove segredos. `/health` é superficial; `/health/details` inclui runtime, índice, watcher, jobs, fila, Drive e sync. A administração v1 expõe métricas, cache, integridade e circuit breakers.
+JSON logs include a timestamp, level, event, and request ID; redaction removes secrets. `/health` is shallow; `/health/details` includes runtime, index, watcher, jobs, queue, Drive, and sync. The v1 administration API exposes metrics, cache, integrity, and circuit breakers.
 
-## Segurança atual
+## Current security
 
-- contas individuais usam hash `scrypt`, sessão HttpOnly persistida e expiração no PostgreSQL;
-- `APP_ACCESS_SECRET` pode proteger credenciais OAuth, mas não concede acesso global à biblioteca;
-- Bearer assinado é aceito onde o middleware prevê;
-- Google OAuth é integração de storage, não login multiusuário;
-- CORS com credenciais, rate limit local e headers defensivos;
-- respostas privadas recebem `no-store`;
-- erros 5xx escondem detalhe em produção.
+- individual accounts use `scrypt` hashing, a persisted HttpOnly session, and PostgreSQL expiration;
+- `APP_ACCESS_SECRET` can protect OAuth credentials, but does not grant global library access;
+- signed Bearer authentication is accepted where the middleware provides for it;
+- Google OAuth is a storage integration, not multi-user login;
+- credentialed CORS, local rate limiting, and defensive headers are enabled;
+- private responses receive `no-store`;
+- 5xx errors hide details in production.
 
-Configurações globais, users, escrita de profiles, backup, metadados e `/api/v1/admin` exigem `requireAdmin`. `/api/v1/admin/overview` agrega estado não secreto e `/api/v1/admin/audit` entrega auditoria ao administrador. Criação/alteração/exclusão de user, reset de senha, mudanças de profile e settings são persistidos em `admin_audit_log`, com remoção defensiva de detalhes sensíveis.
+Global settings, users, profile writes, backup, metadata, and `/api/v1/admin` require `requireAdmin`. `/api/v1/admin/overview` aggregates non-secret state and `/api/v1/admin/audit` provides audit data to administrators. User creation/updates/deletion, password resets, profile changes, and settings changes are persisted in `admin_audit_log`, with defensive removal of sensitive details.
 
-Profiles não são contas. Users são identidades autenticadas e profiles separam contextos de leitura; a associação muitos-para-muitos controla quais profiles cada user pode selecionar.
+Profiles are not accounts. Users are authenticated identities and profiles separate reading contexts; the many-to-many association controls which profiles each user may select.

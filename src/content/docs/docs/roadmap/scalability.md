@@ -1,22 +1,22 @@
 ---
-title: "Escalabilidade — FUTURO"
-description: "Documentation for Escalabilidade — FUTURO in the Araru ecosystem."
+title: "Scalability — FUTURE"
+description: "Documentation for possible future scalability in the Araru ecosystem."
 order: 100
 section: "roadmap"
 status: planned
 ---
 
-Objetivo possível: crescer para múltiplos usuários/conexões sem comprometer streams e jobs. O sistema atual não declara essa capacidade.
+Possible goal: grow to multiple users/connections without compromising streams and jobs. The current system makes no such claim.
 
-Antes de mudar arquitetura, medir:
+Before changing the architecture, measure:
 
-- conexões concorrentes e requests/s;
-- concorrência de streams e Range;
-- TTFB, p50, p95 e p99 por rota;
-- memória/CPU por formato e tamanho;
-- capacidade, conexões e latência PostgreSQL;
-- banda e cache hit ratio;
-- profundidade/latência/falha da fila;
-- tempo de sync e enriquecimento.
+- concurrent connections and requests/s;
+- stream and Range concurrency;
+- TTFB, p50, p95, and p99 by route;
+- memory/CPU by format and size;
+- PostgreSQL capacity, connections, and latency;
+- bandwidth and cache hit ratio;
+- queue depth/latency/failure;
+- sync and enrichment time.
 
-Fases possíveis: baseline reproduzível → remover gargalo comprovado → separar estado compartilhado → isolar workers → testar múltiplas instâncias. Não escolher PostgreSQL/Redis/R2 apenas por expectativa.
+Possible phases: reproducible baseline → remove a proven bottleneck → separate shared state → isolate workers → test multiple instances. Do not choose PostgreSQL/Redis/R2 based on expectation alone.

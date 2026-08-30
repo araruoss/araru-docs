@@ -6,16 +6,17 @@ section: "readers"
 status: stable
 ---
 
-O catálogo indexa formatos reconhecidos; a abertura depende de capability em `src/readers/core.js` no `araru-web`. O Server resolve ID para fonte e nunca expõe path físico.
+The catalog indexes recognized formats; opening depends on capability in `src/readers/core.js` in `araru-web`. The Server resolves ID to source and never exposes physical path.
 
-Fluxo comum:
+Common flow:
 
-1. `Leitura` obtém livro e formato;
-2. carrega engine/parser sob demanda;
-3. requisita conteúdo, índice ou página;
-4. renderiza dentro do shell comum;
-5. prefetch limitado prepara vizinhas;
-6. progresso é persistido;
-7. cleanup libera recursos ao trocar/fechar.
+1. `Reading` gets the book and format;
+2. loads engine/parser on demand;
+3. requests content, index, or page;
+4. renders within the common shell;
+5. limited prefetch prepares neighbors;
+6. progress is persisted;
+7. cleanup frees resources when switching/closing.
 
-Endpoints estão em [API/content](../../api/endpoints/#library-and-reading). Detalhes por formato em [formatos](../formats/).
+Endpoints are in [API/content](../../api/endpoints/#library-and-reading). Details by format in [formats](../formats/).
+---

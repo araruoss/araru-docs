@@ -1,11 +1,11 @@
 ---
-title: "Decisões arquiteturais"
-description: "Documentation for Decisões arquiteturais in the Araru ecosystem."
+title: "Architectural decisions"
+description: "Documentation for Architectural Decisions in the Araru ecosystem."
 order: 100
 section: "architecture"
 status: stable
 ---
 
-Decisões comprováveis pela implementação estão registradas em [ADRs](../../adr/readme/): separação frontend/backend, PostgreSQL + Redis, categorias por diretórios, Work separado de File, jobs persistentes e HTTP Range.
+Decisions verifiable by the implementation are recorded in [ADRs](../../adr/readme/): frontend/backend separation, PostgreSQL + Redis, categories by directories, work separated from file, persistent jobs and HTTP Range.
 
-O roadmap não é decisão. PostgreSQL, Redis, S3/R2, workers externos, Go, multiusuário e escala horizontal permanecem direções sob avaliação em [roadmap](../../roadmap/readme/).
+The roadmap is not a decision. PostgreSQL, Redis, S3/R2, external workers, Go, multi-user and horizontal scale remain directions under evaluation in [roadmap](../../roadmap/readme/).

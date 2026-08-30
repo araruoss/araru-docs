@@ -1,6 +1,6 @@
 ---
-title: "ADR-NNN: título"
-description: "Documentation for ADR-NNN: título in the Araru ecosystem."
+title: "ADR-NNN: titer"
+description: "Documentation for ADR-NNN: title in the Araru ecosystem."
 order: 100
 section: "adr"
 status: stable
@@ -9,10 +9,10 @@ status: stable
 Status: Proposed  
 Date: YYYY-MM-DD
 
-## Context
+Context
 
-## Decision
+Decision
 
-## Alternatives
+Alternatives
 
-## Consequences
+Consequences

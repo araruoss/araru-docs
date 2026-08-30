@@ -1,13 +1,14 @@
 ---
-title: "Diretrizes de logo"
-description: "Documentation for Diretrizes de logo in the Araru ecosystem."
+title: "Logo Guidelines"
+description: "Documentation for Logo Guidelines in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Logo oficial: **TBD**. Até sua criação, usar wordmark textual “Araru” e o ícone neutro de livro existente apenas como ícone funcional temporário.
+Official logo: **TBD**. Until its creation, use the textual wordmark “Araru” and the neutral book icon as a temporary functional icon.
 
-O sistema futuro deve prever horizontal, vertical, símbolo, monocromático, fundos claro/escuro, favicon e app icon. Símbolo pode abstrair cabeça/perfil, asa ou bico de arara em formas geométricas.
+The future system should accommodate horizontal, vertical, symbol, monochrome, light/dark background, favicon, and app icon. The symbol can abstract the head/profile, wing, or toucan beak in geometric shapes.
 
-Não usar arara realista, clipart, desenho infantil, excesso de detalhes/penas ou gradiente multicolorido. Não esticar, recolorir sem contraste ou combinar com outras marcas. Área de proteção e tamanhos mínimos serão definidos com os assets finais.
+Do not use realistic toucans, clipart, children's drawings, excessive details/lines or multicolor gradients. Do not stretch, recolor without contrast, or combine with other brands. Protection areas and minimum sizes will be defined with final assets.
+---

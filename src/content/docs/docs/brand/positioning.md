@@ -1,20 +1,20 @@
 ---
-title: "Posicionamento"
-description: "Documentation for Posicionamento in the Araru ecosystem."
+title: "Positioning"
+description: "Documentation for Araru positioning in the Araru ecosystem."
 order: 100
 section: "brand"
 status: stable
 ---
 
-Araru é um **open-source self-hosted digital library server**.
+Araru is an **open-source self-hosted digital library server**.
 
-O usuário controla seus arquivos, servidor, armazenamento, biblioteca e dados. “Your library. Your server. Your data.” é um princípio de posicionamento, não slogan oficial.
+Users control their files, server, storage, library, and data. “Your library. Your server. Your data.” is a positioning principle, not an official slogan.
 
-## Público
+## Audience
 
-Pessoas e comunidades que mantêm acervos próprios e desejam organização, leitura em diferentes dispositivos e autonomia. Deve servir usuários técnicos sem excluir quem apenas quer operar sua biblioteca.
+People and communities that maintain their own libraries and want organization, reading across devices, and autonomy. It should serve technical users without excluding people who simply want to operate their library.
 
-## Taglines em avaliação
+## Taglines under evaluation
 
 Português: “Seu acervo, do seu jeito.”; “Seu acervo. Seu servidor.”; “Seu acervo, onde você estiver.”; “Seu conteúdo. Sua biblioteca.”; “Leia. Organize. Preserve.”
 

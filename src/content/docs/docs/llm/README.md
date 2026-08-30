@@ -1,26 +1,26 @@
 ---
-title: "Araru — entrada para agentes de código"
-description: "Documentation for Araru — entrada para agentes de código in the Araru ecosystem."
+title: "Araru — input for code agents"
+description: "Documentation for Araru — entry for code agents in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-Para qualquer mudança, leia nesta ordem:
+For any change, read in this order:
 
 1. [project-context](../project-context/)
 2. [architecture-context](../architecture-context/)
 3. [constraints](../constraints/)
 4. [change-protocol](../change-protocol/)
 
-Depois, conforme a área:
+Then, according to the area:
 
 - frontend: [frontend-context](../frontend-context/)
 - backend/API/storage: [backend-context](../backend-context/)
-- entidades: [domain-model](../domain-model/)
-- testes: [testing-guidelines](../testing-guidelines/)
-- estilo: [coding-guidelines](../coding-guidelines/)
-- arquitetura futura: [roadmap-context](../roadmap-context/) e [roadmap](../../roadmap/readme/)
-- vocabulário: [glossary](../glossary/)
+- entities: [domain-model](../domain-model/)
+- tests: [testing-guidelines](../testing-guidelines/)
+- style: [coding-guidelines](../coding-guidelines/)
+- future architecture: [roadmap-context](../roadmap-context/) and [roadmap](../../roadmap/readme/)
+- vocabulary: [glossary](../glossary/)
 
-Regra principal: código e migrations são fonte de verdade. Roadmap nunca descreve estado implementado.
+Main rule: code and migrations are a source of truth. Roadmap never describes implemented state.

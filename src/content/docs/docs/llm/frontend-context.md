@@ -1,17 +1,17 @@
 ---
-title: "Contexto frontend para LLM"
-description: "Documentation for Contexto frontend para LLM in the Araru ecosystem."
+title: "Frontend context for LLM"
+description: "Documentation for Frontend Context for LLM in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-Entrypoint `main.jsx`; rotas/lazy em `App.jsx`; páginas em `pages`; UI em `components`; readers em `readers`; API em `lib/api.js`.
+Entrypoint `main.jsx`; routes/lazy in `App.jsx`; pages in `pages`; UI in `components`; readers in `readers`; API in `lib/api.js`.
 
-Estado remoto: TanStack Query. Navegação/filtros: URL. Fallback/progresso: localStorage + sync API. Scroll: sessionStorage. Offline: Cache Storage + IndexedDB. Tema: Context.
+Remote state: TanStack Query. Navigation/filters: URL. Fallback/progress: localStorage + sync API. Scroll: sessionStorage. Offline: Cache Storage + IndexedDB. Theme: Context.
 
-Biblioteca concentra navegação na sidebar/drawer e árvore de `categoryPath`; não reintroduza tabs globais no conteúdo. Histórico é “Continue de onde parou”; `/continuar` apenas redireciona.
+Library focuses navigation on the sidebar/drawer and tree of `categoryPath`; do not reintroduce global tabs in the content. History is “Pick up where you left off”; `/continuar` only redirects.
 
-Readers compartilham shell, dock, progresso, budget e cleanup. Preserve desktop/mobile/touch, viewport integral e worker PDF Vite `.js`. Service Worker não deve cachear livros automaticamente.
+Readers share shell, dock, progress, budget, and cleanup. Preserve desktop/mobile/touch, full viewport and PDF worker Vite `.js`. Service Worker should not automatically cache books.
 
-Testes mínimos para frontend: `npm run test:frontend`, build; reader/PWA exige E2E e performance.
+Minimum tests for frontend: `npm run test:frontend`, build; reader/PWA requires E2E and performance.

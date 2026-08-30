@@ -1,6 +1,6 @@
 ---
-title: "ADR-006: jobs locais com histórico persistente"
-description: "Documentation for ADR-006: jobs locais com histórico persistente in the Araru ecosystem."
+title: "ADR-006: Local Jobs with Persistent History"
+description: "Documentation for ADR-006: local jobs with persistent history in the Araru ecosystem."
 order: 100
 section: "adr"
 status: stable
@@ -9,18 +9,18 @@ status: stable
 Status: Accepted  
 Date: 2026-08-23 (retrospective)
 
-## Context
+Context
 
-Fila em memória persiste estados em `background_jobs`. Rationale inferred from current architecture.
+In-memory queue states persist in `background_jobs`. Rationale inferred from current architecture.
 
-## Decision
+Decision
 
-Backend executa jobs com prioridade, dedupe, retry e recuperação local.
+Backend executes jobs with priority, deduct, retry and local recovery.
 
-## Alternatives
+Alternatives
 
-Execução síncrona; broker externo.
+Synchronous execution; external broker.
 
-## Consequences
+Consequences
 
-Sem infraestrutura adicional e com recuperação; concorrência/coordenação permanecem limitadas a uma instância.
+No additional infrastructure and recovery; concurrency/coordination remains limited to one instance.

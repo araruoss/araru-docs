@@ -1,18 +1,18 @@
 ---
-title: "Docker, rede e produção"
-description: "Documentation for Docker, rede e produção in the Araru ecosystem."
+title: "Docker, Networking, and Production"
+description: "Documentation for Docker, networking, and production in the Araru ecosystem."
 order: 100
 section: "infrastructure"
 status: stable
 ---
 
-## Compose atual
+## Current Compose setup
 
 ```mermaid
 flowchart LR
   H[Host/browser] -->|8080| N[frontend: Nginx]
   N -->|Docker DNS :3001| B[backend: Node]
-  H -. diagnóstico .->|3001| B
+  H -. diagnostics .->|3001| B
   B --> P[(PostgreSQL :5432)]
   B --> R[(Redis :6379)]
   B -->|read-only| L[(./storage/pdfs → /library)]
@@ -20,7 +20,7 @@ flowchart LR
   B --> C[(./storage/cache → /cache)]
 ```
 
-O `Dockerfile` do [`araru-web`](https://github.com/araruoss/araru-web) faz build multi-stage com Node 22 e serve `dist` em Nginx. O [`araru-server`](https://github.com/araruoss/araru-server) usa Node 22 Alpine e instala as ferramentas de leitura necessárias. O [Compose oficial](https://github.com/araruoss/araru-docs/blob/main/examples/docker-compose.yml) usa imagens publicadas e não depende de contexto de build compartilhado.
+The [`araru-web`](https://github.com/araruoss/araru-web) `Dockerfile` performs a multi-stage build with Node 22 and serves `dist` through Nginx. [`araru-server`](https://github.com/araruoss/araru-server) uses Node 22 Alpine and installs the required reading tools. The [official Compose file](https://github.com/araruoss/araru-docs/blob/main/examples/docker-compose.yml) uses published images and does not depend on a shared build context.
 
 ```bash
 docker compose up -d --build --wait
@@ -29,20 +29,20 @@ docker compose logs -f frontend backend
 docker compose down
 ```
 
-Frontend `8080`; backend `3001`. A interface nunca deve ser aberta em `3001`.
+Frontend `8080`; backend `3001`. The interface must never be opened on `3001`.
 
-## Same-origin e cross-origin
+## Same-origin and cross-origin
 
-Compose usa `/api` no mesmo host e Nginx resolve `backend:3001`. Em deploy separado, `VITE_API_URL` deve ser absoluto, backend deve permitir a origem exata e cookies/CSP devem aceitar a topologia. Range e headers expostos precisam atravessar o proxy.
+Compose uses `/api` on the same host and Nginx resolves `backend:3001`. In a separate deployment, `VITE_API_URL` must be absolute, the backend must allow the exact origin, and cookies/CSP must accept the topology. Range and exposed headers must pass through the proxy.
 
-## Proxy/TLS externo
+## External proxy/TLS
 
-`deploy/Caddyfile` encaminha frontend e API entre containers. `deploy/nginx.conf` é exemplo para frontend estático/API local. São alternativas opcionais, não dois proxies ativos no Compose.
+`deploy/Caddyfile` forwards the frontend and API between containers. `deploy/nginx.conf` is an example for a static frontend/local API. They are optional alternatives, not two active proxies in Compose.
 
-Em produção configure domínio, TLS, `TRUST_PROXY`, origens, redirect OAuth, `SECURE_COOKIES` e backups. PWA e cookies seguros requerem HTTPS fora de localhost.
+In production configure the domain, TLS, `TRUST_PROXY`, origins, OAuth redirect, `SECURE_COOKIES`, and backups. PWA and secure cookies require HTTPS outside localhost.
 
-`DATABASE_URL` e `REDIS_URL` são usados ao executar o backend diretamente no host. No Docker Compose, use `DOCKER_DATABASE_URL` e `DOCKER_REDIS_URL` somente para bancos externos; quando ausentes, o backend usa os serviços `postgres` e `redis` da rede interna.
+`DATABASE_URL` and `REDIS_URL` are used when running the backend directly on the host. In Docker Compose, use `DOCKER_DATABASE_URL` and `DOCKER_REDIS_URL` only for external databases; when absent, the backend uses the `postgres` and `redis` services on the internal network.
 
-## Persistência
+## Persistence
 
-Não remova `storage` nem os volumes `postgres_data` e `redis_data` em upgrade. A biblioteca pode ser montada read-only; derivados precisam de escrita. Faça backup e verificação antes de restore. PostgreSQL e Redis podem ser externos por meio de `DATABASE_URL` e `REDIS_URL`.
+Do not remove `storage` or the `postgres_data` and `redis_data` volumes during an upgrade. The library may be mounted read-only; derived files need write access. Back up and verify before restoring. PostgreSQL and Redis may be external through `DATABASE_URL` and `REDIS_URL`.

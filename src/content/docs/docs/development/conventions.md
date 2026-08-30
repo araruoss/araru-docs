@@ -1,6 +1,6 @@
 ---
-title: "Convenções de desenvolvimento"
-description: "Documentation for Convenções de desenvolvimento in the Araru ecosystem."
+title: "Development Conventions"
+description: "Documentation for development conventions in the Araru ecosystem."
 order: 100
 section: "development"
 status: stable
@@ -8,14 +8,14 @@ status: stable
 
 ## Backend
 
-Rotas apenas mapeiam; controllers adaptam HTTP; services contêm regras. Erros esperados recebem `statusCode`; middleware normaliza envelope. Use logger estruturado, nunca `console` ou secrets. Streams/Range devem evitar buffers integrais. Jobs longos precisam dedupe, prioridade, retry e estado observável.
+Routes only map; controllers adapt HTTP; services contain rules. Expected errors receive `statusCode`; middleware normalizes the envelope. Use a structured logger, never `console` or secrets. Streams/Range should avoid full buffers. Long jobs need deduplication, priority, retry, and observable state.
 
-Migrations são append-only e transacionais. Preserve IDs/URLs e o boundary Work/File. Cache é derivado.
+Migrations are append-only and transactional. Preserve IDs/URLs and the Work/File boundary. Cache is derived.
 
 ## Frontend
 
-API passa por `lib/api.js`; estado remoto por Query; URL para navegação compartilhável; local state para apresentação. Componentes devem manter mobile/touch, foco, loading, erro e cleanup. Readers usam capabilities/core e não duplicam shell/progresso.
+The API goes through `lib/api.js`; remote state uses Query; URLs provide shareable navigation; local state handles presentation. Components must preserve mobile/touch, focus, loading, errors, and cleanup. Readers use capabilities/core and do not duplicate the shell/progress behavior.
 
-## Estilo atual
+## Current style
 
-ES modules, React funcional/hooks, imports relativos e nomes de domínio majoritariamente em português. O lint atual verifica TODO/FIXME e console no backend; não é um linter semântico completo.
+ES modules, functional React/hooks, relative imports, and mostly Portuguese domain names. The current lint checks TODO/FIXME and console usage in the backend; it is not a complete semantic linter.

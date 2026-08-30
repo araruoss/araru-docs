@@ -1,21 +1,21 @@
 ---
-title: "Arquitetura dos readers"
-description: "Documentation for Arquitetura dos readers in the Araru ecosystem."
+title: "Reader Architecture"
+description: "Documentation for reader architecture in the Araru ecosystem."
 order: 100
 section: "architecture"
 status: stable
 ---
 
-O frontend usa capabilities em `readers/core.js` e um shell comum para loading, erro, retry, dock, progresso e cleanup. Engines são carregadas sob demanda.
+The frontend uses capabilities in `readers/core.js` and a shared shell for loading, errors, retry, dock, progress, and cleanup. Engines are loaded on demand.
 
-| Formato | Transporte atual | Renderização |
+| Format | Current transport | Rendering |
 |---|---|---|
-| PDF | conteúdo original com Range | PDF.js + worker Vite |
-| EPUB | conteúdo binário | parser JSZip e conteúdo HTML normalizado |
-| MOBI | conteúdo/páginas/recursos | parser frontend e suporte do backend |
-| CBZ | índice e páginas | imagens sob demanda |
-| CBR | índice e páginas | extração UnRAR/7z e imagens sob demanda |
+| PDF | original content with Range | PDF.js + Vite worker |
+| EPUB | binary content | JSZip parser and normalized HTML content |
+| MOBI | content/pages/resources | frontend parser and backend support |
+| CBZ | index and pages | on-demand images |
+| CBR | index and pages | UnRAR/7z extraction and on-demand images |
 
-O reader mantém somente página atual e vizinhas quando possível, revoga Object URLs e executa cleanup no fechamento. Progresso é formato-agnóstico: posição/página, total, percentual, conclusão e timestamp.
+The reader keeps only the current and nearby pages where possible, revokes Object URLs, and runs cleanup on close. Progress is format-agnostic: position/page, total, percentage, completion, and timestamp.
 
-Detalhes: [readers](../../readers/overview/).
+Details: [readers](../../readers/overview/).

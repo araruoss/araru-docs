@@ -1,22 +1,22 @@
 ---
-title: "Diretrizes de testes para agentes"
-description: "Documentation for Diretrizes de testes para agentes in the Araru ecosystem."
+title: "Testing guidelines for agents"
+description: "Documentation for Testing Guidelines for Agents in the Araru ecosystem."
 order: 100
 section: "llm"
 status: stable
 ---
 
-| Mudança | Validação mínima |
+| Change | Minimum validation |
 |---|---|
-| componente/hook | frontend tests + build |
-| reader/formato/touch | reader tests + E2E + performance |
-| PWA/offline | PWA test + E2E; incrementar versão se política mudou |
-| rota/controller/service | backend unit/integration |
-| Range/arquivo | integration + fixtures grandes + E2E |
-| migration | banco novo + upgrade existente |
-| metadata | pipeline unit + integration do endpoint |
-| job/cache/backup | teste específico + integração operacional |
+| component/hook | frontend tests + build |
+| reader/format/touch | reader tests + E2E + performance |
+| PWA/offline | PWA test + E2E; increment version if policy changed |
+| route/controller/service | backend unit/integration |
+| Range/file | integration + large fixtures + E2E |
+| migration | new bank + existing upgrade |
+| metadata | pipeline unit + integration ofendpoint |
+| job/cache/backup | specific test + operational integration |
 | Docker/proxy/CORS | Compose health + curl/browser/E2E |
 | docs | `npm run docs:check` |
 
-Antes de concluir normalmente execute `npm run lint`, `npm test`, `npm run build`; amplie conforme a tabela.
+Before completing normally run `npm run lint`, `npm test`, `npm run build`; enlarge as per table.
