@@ -24,6 +24,6 @@ O Server controla a API e a autorização. Clientes nunca conectam diretamente a
 
 ## Incompleto ou planejado
 
-Clientes Android e Desktop, audiolivros e um ecossistema de plugins continuam planejados. Cloudflare R2, API v1, paginação, capabilities de storage e leases de workers estão implementados no working tree atual do Server; MOBI possui limitações do formato. Itens planejados não podem ser apresentados como lançados.
+Clientes Android e Desktop, audiolivros e um ecossistema de plugins continuam planejados. Cloudflare R2, API v1, paginação, capabilities de storage e leases de workers estão implementados na `main` mergeada do Server; MOBI possui limitações do formato. Itens planejados não podem ser apresentados como lançados.
 
 Consulte o [contexto arquitetural](../../llm/architecture-context/), as [restrições de código](../../llm/constraints/), as [decisões técnicas](../../adr/readme/) e o [roadmap](../../roadmap/readme/).
