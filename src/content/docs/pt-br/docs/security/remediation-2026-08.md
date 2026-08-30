@@ -12,9 +12,9 @@ Esta página registra a implementação verificada dos cinco achados da auditori
 
 | Achado | Issue | Pull request | Status | Release |
 | --- | --- | --- | --- | --- |
-| SEC-001 — isolamento por biblioteca | [araru-server#13](https://github.com/araruoss/araru-server/issues/13) | [#16](https://github.com/araruoss/araru-server/pull/16) | Corrigido | Server `v0.2.2` |
-| SEC-002 — bypass de autorização em testes | [araru-server#14](https://github.com/araruoss/araru-server/issues/14) | [#18](https://github.com/araruoss/araru-server/pull/18) | Corrigido | Server `v0.2.2` |
-| SEC-003 — defaults do Compose de desenvolvimento | [araru-server#15](https://github.com/araruoss/araru-server/issues/15) | [#20](https://github.com/araruoss/araru-server/pull/20) | Corrigido | Server `v0.2.2` |
+| SEC-001 — isolamento por biblioteca | [araru-server#13](https://github.com/araruoss/araru-server/issues/13), [follow-up #22](https://github.com/araruoss/araru-server/issues/22) | [#16](https://github.com/araruoss/araru-server/pull/16), [#23](https://github.com/araruoss/araru-server/pull/23) | Corrigido | Server `v0.2.3` |
+| SEC-002 — bypass de autorização em testes | [araru-server#14](https://github.com/araruoss/araru-server/issues/14) | [#18](https://github.com/araruoss/araru-server/pull/18) | Corrigido | Server `v0.2.3` |
+| SEC-003 — defaults do Compose de desenvolvimento | [araru-server#15](https://github.com/araruoss/araru-server/issues/15) | [#20](https://github.com/araruoss/araru-server/pull/20) | Corrigido | Server `v0.2.3` |
 | SEC-004/005 — sanitização do reader | [araru-web#17](https://github.com/araruoss/araru-web/issues/17) | [#18](https://github.com/araruoss/araru-web/pull/18) | Corrigido | Web `v0.2.1` |
 
 A automação de regressão de segurança foi integrada separadamente no [PR #21 do Server](https://github.com/araruoss/araru-server/pull/21) e no [PR #20 do Web](https://github.com/araruoss/araru-web/pull/20). Todos os checks aplicáveis do Actions passaram.
@@ -31,7 +31,7 @@ A automação de regressão de segurança foi integrada separadamente no [PR #21
 
 A validação do Server passou: `npm test` (40 testes), `npm run security:test`, `npm run lint`, `npm run build` e `docker compose config` com credenciais fortes de teste. A validação do Web passou: `npm test` (23 testes), `npm run security:test`, `npm run security:check`, `npm run typecheck`, `npm run lint` e `npm run build`.
 
-Não foi necessária migration de banco. O `araru-design` não foi alterado porque nenhum padrão de interface reutilizável foi introduzido. O workflow de release do Server publicou `v0.2.2`; a correção do reader está incluída em `v0.2.1` do Web, enquanto a automação de CI, somente de testes, não altera a release de runtime.
+Não foi necessária migration de banco. O `araru-design` não foi alterado porque nenhum padrão de interface reutilizável foi introduzido. O workflow de release do Server publicou `v0.2.3`; a correção do reader está incluída em `v0.2.1` do Web, enquanto a automação de CI, somente de testes, não altera a release de runtime.
 
 ## Verificações operacionais restantes
 
