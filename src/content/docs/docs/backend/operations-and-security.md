@@ -31,3 +31,5 @@ JSON logs include a timestamp, level, event, and request ID; redaction removes s
 Global settings, users, profile writes, backup, metadata, and `/api/v1/admin` require `requireAdmin`. `/api/v1/admin/overview` aggregates non-secret state and `/api/v1/admin/audit` provides audit data to administrators. User creation/updates/deletion, password resets, profile changes, and settings changes are persisted in `admin_audit_log`, with defensive removal of sensitive details.
 
 Profiles are not accounts. Users are authenticated identities and profiles separate reading contexts; the many-to-many association controls which profiles each user may select.
+
+See the [August 2026 security remediation record](../../security/remediation-2026-08/) for findings, merged changes, releases, and validation evidence.
