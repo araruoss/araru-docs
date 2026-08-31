@@ -20,9 +20,10 @@ Araru is software, not a hosted content service. The Araru project does not rece
 
 - **User:** an authenticated identity with a role and credentials.
 - **Profile:** a reading context isolating preferences, favorites, and progress.
-- **Library:** content discovered from configured storage.
+- **Library:** the logical catalog and authorization boundary.
+- **Source:** a configured storage location owned by one Library.
 - **Work:** the canonical item; **File:** a specific format representation.
-- **Storage provider:** local filesystem today and Google Drive when configured.
+- **Storage provider:** the service that stores or streams a Source, such as local filesystem, Google Drive, or Cloudflare R2.
 - **Metadata provider:** filename and embedded data, then ISBN and optional external sources.
 - **Reader engine:** a format-specific client engine with shared navigation and progress.
 - **Background job:** durable indexing, reconciliation, metadata, or cover work.

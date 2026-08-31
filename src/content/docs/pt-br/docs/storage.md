@@ -6,17 +6,23 @@ section: "storage"
 status: stable
 ---
 
-O Araru separa metadados do catálogo dos bytes dos arquivos. O PostgreSQL guarda a identidade estável da biblioteca e os metadados do provider; o provider escolhido guarda o conteúdo original. Assim, Server e Web continuam independentes e paths físicos ou credenciais não são expostos ao navegador.
+O Araru separa metadados do catálogo dos bytes dos arquivos. O PostgreSQL guarda a identidade estável da Library, da Source, do arquivo e os metadados do provider; o provider escolhido guarda o conteúdo original. Assim, Server e Web continuam independentes e paths físicos ou credenciais não são expostos ao navegador.
+
+## Library, source e provider
+
+Uma **Library** é o catálogo lógico e o limite de autorização. Uma **Source** pertence a uma Library e aponta para uma conexão configurada de **StorageProvider**. Todo `library_file` indexado registra `library_id` e `library_source_id`; a autorização usa o ID da Library, e não o rótulo legado de provider/source.
+
+O Server cria os vínculos padrão de Local, Google Drive e Cloudflare R2 durante a migration do PostgreSQL. Sources habilitadas adicionais podem ser administradas pela API administrativa. Uma falha de scan ou do provider não deve marcar como ausentes arquivos de outra Source.
 
 ## Visão dos providers
 
 | Provider | Ativação | Leitura | Escrita | Indicação |
 | --- | --- | --- | --- | --- |
-| Filesystem local | `STORAGE_PROVIDER=local` | Stream e HTTP Range | Gerenciada pelo operador | Desenvolvimento, host único e bibliotecas existentes |
-| Google Drive | `ENABLE_GOOGLE_DRIVE=true` e credenciais | API/OAuth, stream e Range | Não usada pelo fluxo de catálogo | Bibliotecas já existentes no Drive |
-| Cloudflare R2 | `STORAGE_PROVIDER=r2` e quatro valores R2 obrigatórios | Stream, Range e leitura assinada | Upload assinado, put, multipart e delete | Object storage privado |
+| Filesystem local | `LOCAL_LIBRARY_DIR` e uma Source Local | Stream e HTTP Range | Gerenciada pelo operador | Desenvolvimento, host único e bibliotecas existentes |
+| Google Drive | `ENABLE_GOOGLE_DRIVE=true`, credenciais e uma Source Drive | API/OAuth, stream e Range | Não usada pelo fluxo de catálogo | Bibliotecas já existentes no Drive |
+| Cloudflare R2 | Credenciais R2 e uma Source R2 | Stream, Range e leitura assinada | Upload assinado, put, multipart e delete | Object storage privado |
 
-A seleção do provider é atualmente global por instalação. Uma relação provider/biblioteca poderá ser adicionada no futuro; trocar o provider não migra objetos automaticamente.
+As credenciais e conexões dos providers continuam administradas pela instalação, enquanto a relação do catálogo é explícita por Library e Source. Alterar uma Source ou provider não migra objetos automaticamente.
 
 ## Filesystem local
 
@@ -104,7 +110,7 @@ As chaves R2 são chaves opacas do provider, não paths de filesystem. Uploads a
 
 ### Upload e entrega
 
-O endpoint protegido `POST /api/v1/admin/storage/r2/upload-url` retorna uma URL `PUT` assinada de curta duração e a chave do objeto. O cliente envia diretamente ao R2 e chama `POST /api/v1/admin/storage/r2/complete`. O servidor valida o prefixo, executa `HEAD` e indexa os metadados.
+O endpoint protegido `POST /api/v1/admin/storage/r2/upload-url` exige `libraryId` e `librarySourceId`, e retorna uma URL `PUT` assinada de curta duração e a chave do objeto. O cliente envia diretamente ao R2 e chama `POST /api/v1/admin/storage/r2/complete` com o mesmo vínculo. O servidor valida a Library/Source ativa e o prefixo, executa `HEAD` e indexa os metadados nessa Source.
 
 Para entrega privada direta, um cliente autenticado pode chamar `GET /api/v1/works/:id/content/url`. A URL retornada é temporária e não deve ser persistida nem registrada em logs. A entrega normal continua em `GET /api/v1/works/:id/content`, com suporte a `Range`, `ETag`, `Last-Modified` e `HEAD`.
 
