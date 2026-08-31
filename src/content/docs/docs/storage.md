@@ -6,17 +6,23 @@ section: "storage"
 status: stable
 ---
 
-Araru separates catalog metadata from file bytes. PostgreSQL stores the stable library identity and provider metadata; the selected provider stores the original content. This allows the server and Web repositories to remain independent and avoids exposing physical paths or provider credentials to the browser.
+Araru separates catalog metadata from file bytes. PostgreSQL stores the stable Library, Source, file identity, and provider metadata; the selected provider stores the original content. This allows the server and Web repositories to remain independent and avoids exposing physical paths or provider credentials to the browser.
+
+## Library, source, and provider
+
+A **Library** is the logical catalog and authorization boundary. A **Source** belongs to one Library and points to a configured **StorageProvider** connection. Every indexed `library_file` records both `library_id` and `library_source_id`; authorization uses the Library ID rather than the legacy provider/source label.
+
+The Server provisions default Local, Google Drive, and Cloudflare R2 bindings during the PostgreSQL migration. Additional enabled Sources can be managed through the administrative API. A source scan or provider failure must not mark files from another Source as missing.
 
 ## Provider overview
 
 | Provider | Enablement | Read | Write | Best fit |
 | --- | --- | --- | --- | --- |
-| Local filesystem | `STORAGE_PROVIDER=local` | Stream and HTTP Range | Operator-managed | Development, single-host deployments, existing libraries |
-| Google Drive | `ENABLE_GOOGLE_DRIVE=true` plus credentials | OAuth/API, stream and Range | Not used by the catalog flow | Existing Drive libraries and incremental synchronization |
-| Cloudflare R2 | `STORAGE_PROVIDER=r2` plus four required R2 values | Stream, Range, signed read | Signed upload, put, multipart, delete | Private object storage and horizontally replaceable disks |
+| Local filesystem | `LOCAL_LIBRARY_DIR` and a Local Source | Stream and HTTP Range | Operator-managed | Development, single-host deployments, existing libraries |
+| Google Drive | `ENABLE_GOOGLE_DRIVE=true`, credentials, and a Drive Source | OAuth/API, stream and Range | Not used by the catalog flow | Existing Drive libraries and incremental synchronization |
+| Cloudflare R2 | R2 credentials and an R2 Source | Stream, Range, signed read | Signed upload, put, multipart, delete | Private object storage and horizontally replaceable disks |
 
-The provider setting is currently installation-wide. A future per-library provider relationship may be added; changing the provider does not automatically migrate objects.
+Provider credentials and connections remain installation-managed, while the catalog relationship is explicit per Library and Source. Changing a Source or provider does not automatically migrate objects.
 
 ## Local filesystem
 
@@ -106,7 +112,7 @@ R2 keys are opaque provider keys, not filesystem paths. Uploads created through 
 
 ### Upload and delivery flows
 
-The protected `POST /api/v1/admin/storage/r2/upload-url` endpoint returns a short-lived signed `PUT` URL and object key. The client uploads directly to R2, then calls `POST /api/v1/admin/storage/r2/complete`. The server validates the key prefix, performs `HEAD`, and indexes the object metadata.
+The protected `POST /api/v1/admin/storage/r2/upload-url` endpoint requires `libraryId` and `librarySourceId`, then returns a short-lived signed `PUT` URL and object key. The client uploads directly to R2, then calls `POST /api/v1/admin/storage/r2/complete` with the same binding. The server validates the active Library/Source and key prefix, performs `HEAD`, and indexes the object metadata under that Source.
 
 For direct private delivery, an authenticated client can request `GET /api/v1/works/:id/content/url`. The returned URL is temporary and must not be persisted in the database or logged. Normal content delivery remains available through `GET /api/v1/works/:id/content`, with `Range`, `ETag`, `Last-Modified`, and `HEAD` support.
 
